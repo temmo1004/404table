@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>產業專屬 — 404 TABLE × JobsLab</title>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  .industry-hero { padding: 80px 32px 96px; border-bottom: 1px solid var(--line); }
+  .industry-hero .crumb { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; opacity: 0.6; margin-bottom: 32px; }
+  .industry-hero .crumb a { border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+  .industry-hero .tag { display: inline-block; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; padding: 6px 12px; margin-bottom: 24px; }
+  .industry-hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(48px, 9vw, 140px); line-height: 0.94; letter-spacing: -0.04em; max-width: 1100px; }
+  .industry-hero h1 em { font-style: italic; color: var(--warn); }
+  .industry-hero .lede { font-family: var(--serif); font-size: 24px; line-height: 1.5; max-width: 640px; margin-top: 40px; }
+  .industry-hero .quote-strip { display: grid; grid-template-columns: 200px 1fr; gap: 32px; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .industry-hero .quote-strip .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; opacity: 0.6; }
+  .industry-hero .quote-strip .q { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1.5; max-width: 720px; }
+  .recommend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .rec-card { background: var(--paper); padding: 32px; min-height: 280px; display: flex; flex-direction: column; }
+  .rec-card .num { font-family: var(--mono); font-size: 12px; opacity: 0.5; }
+  .rec-card .title { font-family: var(--serif); font-size: 28px; font-weight: 700; line-height: 1.2; margin-top: 12px; }
+  .rec-card .timer { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; padding: 4px 10px; border: 1px solid var(--ink); display: inline-block; margin-top: 16px; align-self: flex-start; }
+  .rec-card .why { margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.6; opacity: 0.75; }
+  .other-industries { padding: 96px 32px; background: var(--paper-2); }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script src="data.js"></script>
+<script type="text/babel" src="app.jsx"></script>
+<script type="text/babel" data-presets="env,react">
+const params = new URLSearchParams(location.search);
+const id = params.get('id') || 'tech-semi';
+const ind = window.INDUSTRIES.find(x => x.id === id) || window.INDUSTRIES[0];
+const idx = window.INDUSTRIES.findIndex(x => x.id === ind.id);
+
+// Recommend 3 courses by industry id (simple mapping by index)
+const recMap = {
+  'tech-semi': [0, 4, 17], 'software': [0, 6, 13], 'telecom': [9, 5, 19],
+  'media': [10, 16, 13], 'marketing': [16, 13, 10], 'finance': [4, 5, 9],
+  'realestate': [4, 14, 11], 'mfg-machine': [3, 1, 2], 'mfg-electric': [14, 1, 5],
+  'mfg-auto': [3, 19, 1], 'mfg-chem': [4, 5, 17], 'mfg-paper': [12, 0, 13],
+  'mfg-food': [11, 5, 18], 'mfg-other': [14, 1, 18], 'retail': [3, 5, 14],
+  'logistics': [9, 5, 17], 'hospitality': [8, 11, 18], 'medical': [7, 4, 15],
+  'education': [15, 17, 0], 'hr-consult': [9, 7, 17], 'design': [13, 16, 14],
+  'energy': [4, 17, 15], 'agri': [7, 6, 0], 'auto-svc': [14, 5, 13],
+  'security': [9, 17, 18], 'biotech': [4, 6, 17], 'gov-npo': [10, 15, 4],
+  'funeral': [11, 4, 15], 'museum': [10, 16, 0], 'defense': [4, 15, 9],
+};
+const recIdxs = recMap[ind.id] || [0, 4, 17];
+const recs = recIdxs.map(i => window.COURSES[i]);
+
+const App2 = () => (
+  <>
+    <TopBar/>
+    <section className="industry-hero">
+      <div className="crumb">
+        <a href="index.html">← 回首頁</a>
+        {' / '}產業 / <span style={{ opacity: 0.5 }}>{String(idx+1).padStart(2,'0')} — {ind.zh}</span>
+      </div>
+      <div className="tag">FOR {ind.en.toUpperCase()}</div>
+      <h1>
+        在<em>{ind.zh.replace(/／/g, ' / ')}</em>裡，<br/>
+        當秘書是<span className="strike">浪漫</span>的事？
+      </h1>
+      <p className="lede">{ind.pain}</p>
+      <div className="quote-strip">
+        <div className="lbl">▍那一天的那一幕</div>
+        <div className="q">「你們這行，老闆都這樣 —— 」<br/>—— 但這次，AI 站在你這邊。</div>
+      </div>
+    </section>
+
+    <Marquee/>
+
+    <section className="section">
+      <div className="section-head">
+        <div className="section-num"><span className="pill">01</span>為你的產業挑的 3 堂</div>
+        <h2 className="section-title">你產業的<em>地獄</em>，<br/>這 3 堂先<span className="strike">通關</span>。</h2>
+      </div>
+      <div className="recommend">
+        {recs.map((c, i) => (
+          <div className="rec-card" key={c.n}>
+            <div className="num">／{c.n} — RECOMMENDED FOR YOU</div>
+            <div className="title">{c.title}</div>
+            <div className="timer">{c.timer}搞定</div>
+            <p style={{ marginTop: 20, fontSize: 15, lineHeight: 1.6 }}>{c.pain}</p>
+            <div className="why">為什麼推你 — {ind.zh.split('／')[0]}業者每月都會遇到這幕，AI 工作流可重複套用。</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <Pricing/>
+
+    <Courses/>
+
+    <section className="other-industries">
+      <div className="section-head" style={{ marginBottom: 32 }}>
+        <div className="section-num"><span className="pill">+</span>其他產業</div>
+        <h2 className="section-title">不是你的產業？</h2>
+      </div>
+      <div className="industry-grid">
+        {window.INDUSTRIES.filter(x => x.id !== ind.id).slice(0, 10).map((other, i) => (
+          <a key={other.id} href={`industry.html?id=${other.id}`} className="industry-cell">
+            <div className="idx">／{String(window.INDUSTRIES.findIndex(x=>x.id===other.id)+1).padStart(2,'0')}</div>
+            <div className="name">{other.zh}</div>
+            <div className="arrow">→</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <Signup/>
+    <Foot/>
+  </>
+);
+
+// expose lazily — TopBar/Marquee/etc need to come from app.jsx
+window.IndustryApp = App2;
+ReactDOM.createRoot(document.getElementById('root')).render(<App2/>);
+</script>
+</body>
+</html>

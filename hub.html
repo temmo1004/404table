@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>90 個入口 — 404 TABLE × JobsLab</title>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  .hub-hero { padding: 80px 32px 64px; border-bottom: 1px solid var(--line); }
+  .hub-hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(56px, 9vw, 140px); line-height: 0.94; letter-spacing: -0.04em; }
+  .hub-hero h1 em { font-style: italic; color: var(--warn); }
+  .hub-hero h1 .strike { text-decoration: line-through; opacity: 0.35; }
+  .hub-hero .lede { font-family: var(--serif); font-size: 22px; line-height: 1.5; max-width: 720px; margin-top: 32px; }
+  .hub-hero .meta { display: flex; gap: 48px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; opacity: 0.7; }
+  .hub-hero .meta b { font-family: var(--display); font-size: 32px; display: block; margin-bottom: 4px; opacity: 1; }
+
+  .matrix { padding: 64px 32px; border-bottom: 1px solid var(--line); }
+  .matrix-head { display: grid; grid-template-columns: 220px repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 1px; }
+  .matrix-head .corner { background: var(--paper); padding: 20px; font-family: var(--mono); font-size: 11px; opacity: 0.5; letter-spacing: 0.1em; }
+  .matrix-head .col-h { background: var(--ink); color: var(--paper); padding: 24px; }
+  .matrix-head .col-h .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; opacity: 0.6; }
+  .matrix-head .col-h .name { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-top: 6px; }
+  .matrix-head .col-h .pr { font-family: var(--display); font-size: 32px; margin-top: 12px; line-height: 1; }
+  .matrix-head .col-h .desc { font-size: 12px; opacity: 0.7; margin-top: 8px; line-height: 1.5; }
+
+  .matrix-row { display: grid; grid-template-columns: 220px repeat(3, 1fr); gap: 1px; background: var(--line); margin-bottom: 1px; }
+  .matrix-row .ind-cell { background: var(--paper-2); padding: 18px 16px; display: flex; flex-direction: column; justify-content: center; }
+  .matrix-row .ind-cell .idx { font-family: var(--mono); font-size: 10px; opacity: 0.5; letter-spacing: 0.1em; }
+  .matrix-row .ind-cell .nm { font-family: var(--serif); font-size: 15px; font-weight: 600; line-height: 1.3; margin-top: 4px; }
+  .matrix-row .tier-link { background: var(--paper); padding: 18px 16px; cursor: pointer; transition: background 0.15s, color 0.15s; display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+  .matrix-row .tier-link:hover { background: var(--ink); color: var(--paper); }
+  .matrix-row .tier-link .code { font-family: var(--mono); font-size: 10px; opacity: 0.5; letter-spacing: 0.1em; }
+  .matrix-row .tier-link .ttl { font-size: 13px; line-height: 1.4; opacity: 0.85; }
+  .matrix-row .tier-link .arr { font-family: var(--mono); font-size: 11px; opacity: 0.4; align-self: flex-end; transition: transform 0.2s; }
+  .matrix-row .tier-link:hover .arr { transform: translateX(4px); opacity: 1; }
+
+  .legend { padding: 48px 32px; background: var(--paper-2); }
+  .legend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .legend-item { padding: 24px; border: 1px solid var(--line); background: var(--paper); }
+  .legend-item .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; opacity: 0.6; }
+  .legend-item .ttl { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-top: 6px; }
+  .legend-item .desc { font-size: 13px; line-height: 1.5; opacity: 0.75; margin-top: 12px; }
+
+  @media (max-width: 980px) {
+    .matrix-head, .matrix-row { grid-template-columns: 100px 1fr 1fr 1fr; }
+    .matrix-head .col-h .name { font-size: 14px; }
+    .matrix-head .col-h .pr { font-size: 18px; }
+    .matrix-head .col-h .desc { display: none; }
+    .matrix-row .ind-cell .nm { font-size: 11px; }
+    .matrix-row .tier-link .ttl { font-size: 11px; }
+    .legend-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script src="data.js"></script>
+<script src="tier-data.js"></script>
+<script type="text/babel" src="app.jsx"></script>
+<script type="text/babel" data-presets="env,react">
+const tierBlurbs = {
+  '01': '挑一堂 — 試水溫',
+  '02': '套組 — 工作流升級',
+  '03': '企業 — 全公司落地',
+};
+
+const Hub = () => (
+  <>
+    <window.TopBar/>
+    <section className="hub-hero">
+      <div className="mono" style={{ fontSize: 11, letterSpacing: '0.15em', opacity: 0.6, marginBottom: 24 }}>JOBSLAB / SECRETARIAL & ADMIN / S01</div>
+      <h1>30 產業 × 3 階。<br/><em>90</em> 個<span className="strike">借口</span><em>入口</em>。</h1>
+      <p className="lede">不論你在哪個產業、需要哪個階段 — 我們已經把對應的劇本寫好了。挑你的格子，進去看 90 種完全不同的「那一天的那一幕」。</p>
+      <div className="meta">
+        <div><b>30</b>產業類別</div>
+        <div><b>3</b>價位區間</div>
+        <div><b>90</b>專屬頁面</div>
+        <div><b>20</b>底層課程</div>
+      </div>
+    </section>
+
+    <section className="legend">
+      <div className="legend-grid">
+        {['01','02','03'].map(code => {
+          const T = window.TIERS[code];
+          return (
+            <div className="legend-item" key={code}>
+              <div className="lbl">TIER {code} / {T.label}</div>
+              <div className="ttl">{T.name}</div>
+              <div style={{ fontFamily: 'var(--display)', fontSize: 36, marginTop: 12, lineHeight: 1 }}>{T.price}<span style={{ fontFamily: 'var(--sans)', fontSize: 13, opacity: 0.6, marginLeft: 8 }}>{T.unit}</span></div>
+              <div className="desc">{T.pitch}</div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <section className="matrix">
+      <div className="section-head" style={{ marginBottom: 32 }}>
+        <div className="section-num"><span className="pill">MATRIX</span>30 × 3 = 90</div>
+        <h2 className="section-title">挑<em>你的</em>格子。</h2>
+      </div>
+      <div className="matrix-head">
+        <div className="corner">▍ INDUSTRY \ TIER</div>
+        {['01','02','03'].map(code => {
+          const T = window.TIERS[code];
+          return (
+            <div className="col-h" key={code}>
+              <div className="lbl">TIER {code} — {T.label}</div>
+              <div className="name">{T.name}</div>
+              <div className="pr">{T.price}<span style={{ fontFamily: 'var(--sans)', fontSize: 12, opacity: 0.6, marginLeft: 6 }}>{T.unit}</span></div>
+              <div className="desc">{tierBlurbs[code]}</div>
+            </div>
+          );
+        })}
+      </div>
+      {window.INDUSTRIES.map((ind, i) => (
+        <div className="matrix-row" key={ind.id} id={ind.id}>
+          <div className="ind-cell">
+            <div className="idx">／{String(i+1).padStart(2,'0')}</div>
+            <div className="nm">{ind.zh}</div>
+          </div>
+          {['01','02','03'].map(code => (
+            <a key={code} className="tier-link" href={`tier.html?ind=${ind.id}&tier=${code}`}>
+              <div className="code">TIER {code}</div>
+              <div className="ttl">{ind.zh.split('／')[0]} × {window.TIERS[code].name}</div>
+              <div className="arr">→</div>
+            </a>
+          ))}
+        </div>
+      ))}
+    </section>
+
+    <window.Signup/>
+    <window.Foot/>
+  </>
+);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Hub/>);
+</script>
+</body>
+</html>

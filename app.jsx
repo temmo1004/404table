@@ -317,9 +317,31 @@ const FAQ = () => {
   );
 };
 
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzvmN838Uji5413-Of7oT8RNhTdFmLtdBlL_0uMuZmotzoT0YeYAwUmItpdqGASQDlE_A/exec';
+
 // ── Signup ──────────────────────────────
 const Signup = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [fields, setFields] = useState({ name: '', email: '', company: '', title: '', industry: '' });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      });
+    } catch (_) {}
+    setLoading(false);
+    setSubmitted(true);
+  };
+
+  const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
+
   return (
     <section className="signup" id="signup">
       <div className="signup-inner">
@@ -333,20 +355,20 @@ const Signup = () => {
             <p style={{ marginTop: 16, fontFamily: 'var(--serif)', fontSize: 18, opacity: 0.8 }}>24 小時內，你的信箱會出現一封不囉唆的信。</p>
           </div>
         ) : (
-          <form className="signup-form" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+          <form className="signup-form" onSubmit={handleSubmit}>
             <div className="form-row">
-              <input required placeholder="姓名 / Name"/>
-              <input required type="email" placeholder="Email"/>
+              <input required placeholder="姓名 / Name" value={fields.name} onChange={set('name')}/>
+              <input required type="email" placeholder="Email" value={fields.email} onChange={set('email')}/>
             </div>
             <div className="form-row">
-              <input placeholder="公司 / Company"/>
-              <input placeholder="職稱 / Title"/>
+              <input placeholder="公司 / Company" value={fields.company} onChange={set('company')}/>
+              <input placeholder="職稱 / Title" value={fields.title} onChange={set('title')}/>
             </div>
-            <select required defaultValue="">
+            <select required value={fields.industry} onChange={set('industry')}>
               <option value="" disabled>選擇你的產業 — 30 個全有 ▾</option>
               {window.INDUSTRIES.map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
             </select>
-            <button type="submit">送出 — 我要開始準時下班 →</button>
+            <button type="submit" disabled={loading}>{loading ? '送出中…' : '送出 — 我要開始準時下班 →'}</button>
             <p className="consent">送出即同意我們以 Email 寄送課表與後續通知。我們不會把你的資料賣給任何人，也不會打電話。</p>
           </form>
         )}

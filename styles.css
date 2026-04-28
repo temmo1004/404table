@@ -119,6 +119,17 @@ img { display: block; max-width: 100%; }
 
 /* ── Pricing ───────────────────────────────────── */
 .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.price-banner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--ink); color: var(--paper); border: 1px solid var(--line); }
+.price-banner-left { padding: 48px 40px; border-right: 1px solid rgba(255,255,255,0.1); }
+.price-banner-right { padding: 48px 40px; }
+.price-banner .tier { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; opacity: 0.5; margin-bottom: 16px; }
+.price-banner .price-big { font-family: var(--display); font-size: 80px; line-height: 1; letter-spacing: -0.04em; }
+.price-banner .price-big .unit { font-family: var(--sans); font-size: 14px; font-weight: 400; opacity: 0.5; margin-left: 8px; vertical-align: top; }
+.price-banner .pitch { font-size: 15px; line-height: 1.65; opacity: 0.75; margin-bottom: 28px; }
+.price-list { list-style: none; }
+.price-list li { font-size: 14px; padding: 10px 0; border-bottom: 1px dashed rgba(255,255,255,0.2); opacity: 0.85; }
+.price-list li::before { content: '— '; opacity: 0.4; }
+@media (max-width: 680px) { .price-banner { grid-template-columns: 1fr; } .price-banner-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); } }
 .price-card { background: var(--paper); padding: 40px 32px; display: flex; flex-direction: column; min-height: 560px; position: relative; }
 .price-card.dark { background: var(--ink); color: var(--paper); }
 .price-card .tier { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; opacity: 0.6; }

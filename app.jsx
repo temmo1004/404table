@@ -166,22 +166,20 @@ const Courses = () => {
 // ── Pricing ─────────────────────────────
 const Pricing = () => (
   <section className="section" id="pricing">
-    <div className="section-head">
-      <div className="section-num"><span className="pill">04</span>方案</div>
-      <h2 className="section-title">一堂 <em>500</em>，<br/>離開教室<span className="strike">沒</span>帶作業。</h2>
-    </div>
-    <div className="pricing">
-      <div className="price-card dark">
+    <div className="price-banner">
+      <div className="price-banner-left">
         <div className="tier">單堂體驗</div>
-        <div className="price">500<span className="unit">NTD / 堂</span></div>
+        <div className="price-big">500<span className="unit">NTD / 堂</span></div>
+        <a href="#signup" className="btn-solid" style={{marginTop: 24}}>挑一堂報名 →</a>
+      </div>
+      <div className="price-banner-right">
         <div className="pitch">挑一個你最痛的「那一幕」，2–3 小時當場做完，離開教室就能用。</div>
-        <ul>
+        <ul className="price-list">
           <li>任選 1 堂，2–3 小時實作</li>
           <li>不帶作業回家</li>
           <li>附 3 套提示詞模板</li>
           <li>同系列累積購買享折抵</li>
         </ul>
-        <a href="#signup" className="cta"><span>挑一堂報名</span><span className="arrow">→</span></a>
       </div>
     </div>
   </section>

@@ -30,7 +30,7 @@ const TopBar = () => (
       <a href="#instructor">講師</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a href="hub.html" className="cta">90 個入口 →</a>
+    <a href="#signup" className="cta">立即報名 →</a>
   </header>
 );
 
@@ -209,10 +209,10 @@ const IndustriesSection = () => (
       <div className="section-num"><span className="pill">05</span>30 個產業 / 30 種老闆</div>
       <h2 className="section-title">你的<em>產業</em>，<br/>有你產業的<span className="strike">地獄</span>。</h2>
     </div>
-    <p className="fine" style={{ marginBottom: 24 }}>30 產業 × 3 價位 = 90 個專屬入口。<a href="hub.html" style={{ borderBottom: '1px solid currentColor' }}>看完整 90 格 →</a></p>
+    <p className="fine" style={{ marginBottom: 24 }}>30 產業 × 3 價位 = 90 個專屬入口。</p>
     <div className="industry-grid">
       {window.INDUSTRIES.map((ind, i) => (
-        <a key={ind.id} href={`hub.html#${ind.id}`} className="industry-cell">
+        <a key={ind.id} href="#signup" className="industry-cell">
           <div className="idx">／{String(i + 1).padStart(2, '0')}</div>
           <div className="name">{ind.zh}</div>
           <div className="arrow">→ 進入</div>

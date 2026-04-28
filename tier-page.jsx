@@ -17,7 +17,7 @@ const TierPage = () => {
       <window.TopBar/>
 
       <div className="tier-meta">
-        <span>JOBSLAB / TIER {T.code} / {T.label}</span>
+        <span>TIER {T.code} / {T.label}</span>
         <div className="right">
           <span>{ind.en.toUpperCase()}</span>
           <span>產業 {String(indIdx+1).padStart(2,'0')} / 30</span>

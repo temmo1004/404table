@@ -22,7 +22,7 @@ const TopBar = () => (
   <header className="topbar">
     <div className="brand">
       <Mark size={28}/>
-      <span>404 TABLE × JOBSLAB</span>
+      <span>404 TABLE</span>
     </div>
     <nav>
       <a href="#pricing">方案</a>
@@ -38,7 +38,7 @@ const TopBar = () => (
 const Hero = () => (
   <section className="hero">
     <div className="hero-meta">
-      <span>JOBSLAB / 職能實驗室 / EST. 2026</span>
+      <span>職能實驗室 / EST. 2026</span>
       <span>500元課程陣列 — 秘書／行政 — 第 01 季</span>
       <span>2026 春季班 / 招生中</span>
     </div>
@@ -266,7 +266,7 @@ const Proof = () => (
       </div>
       <div className="proof-side">
         <h4>「下班前交件」<br/>從口號變日常。</h4>
-        <p>JobsLab 的設計原則只有一條：離開教室時，今天的工作已經交了。不是 demo，是你今天回去就能用、能交、能準時下班的工作流。</p>
+        <p>我們的設計原則只有一條：離開教室時，今天的工作已經交了。不是 demo，是你今天回去就能用、能交、能準時下班的工作流。</p>
       </div>
     </div>
   </section>
@@ -285,12 +285,12 @@ const Instructor = () => (
           <rect width="400" height="500" fill="#0A0A0A"/>
           <circle cx="200" cy="180" r="80" fill="#1A1A1A" stroke="#F5F2EC" strokeWidth="1.5"/>
           <path d="M 100 500 L 100 380 Q 200 320 300 380 L 300 500 Z" fill="#1A1A1A" stroke="#F5F2EC" strokeWidth="1.5"/>
-          <text x="200" y="470" textAnchor="middle" fill="#F5F2EC" fontFamily="JetBrains Mono" fontSize="11" letterSpacing="2">JOBSLAB / FOUNDER</text>
+          <text x="200" y="470" textAnchor="middle" fill="#F5F2EC" fontFamily="JetBrains Mono" fontSize="11" letterSpacing="2">FOUNDER</text>
         </svg>
       </div>
       <div className="bio">
         <h3>陳<em style={{ fontStyle: 'italic', color: 'var(--warn)' }}>知行</em></h3>
-        <div className="role">JOBSLAB 創辦人 / 前 上市公司董事長特助</div>
+        <div className="role">創辦人 / 前 上市公司董事長特助</div>
         <p className="desc">12 年董事長特助資歷。看過 5 個老闆、3 種產業、無數次「現在馬上要」的崩潰瞬間。設計這 20 堂課，是把自己 12 年踩過的坑，變成 2 小時就能走完的捷徑。</p>
         <div className="credentials">
           <div className="cred"><div className="num">12<span style={{ fontSize: 18, fontFamily: 'var(--sans)', opacity: 0.6 }}>yr</span></div><div className="lbl">特助實戰</div></div>
@@ -305,7 +305,7 @@ const Instructor = () => (
 // ── FAQ ─────────────────────────────────
 const FAQ = () => {
   const faqs = [
-    { q: '我完全不會寫程式、不會用 AI，跟得上嗎？', a: 'JobsLab 課程全部以「滑手機等級」為設計基準。沒有程式、沒有指令列、沒有 API。你會的，就是手機錄音、複製貼上、按一個按鈕。我們對自己的要求是：教室裡最不熟科技的那一位，也要在課程結束時當場交出成果。' },
+    { q: '我完全不會寫程式、不會用 AI，跟得上嗎？', a: '課程全部以「滑手機等級」為設計基準。沒有程式、沒有指令列、沒有 API。你會的，就是手機錄音、複製貼上、按一個按鈕。我們對自己的要求是：教室裡最不熟科技的那一位，也要在課程結束時當場交出成果。' },
     { q: '課程是線上還是實體？', a: '主推實體面授（台北 / 台中 / 高雄），人數上限 12 人，講師現場逐一檢查每位學員的成果。線上同步直播班另開，但作業檢核機制不同 — 報名前我們會跟你確認。' },
     { q: '為什麼 500 元這麼便宜？是不是有後續推銷？', a: '500 元是「試水溫」階。我們的邏輯是：你上得爽就會自己回來，所以第一堂便宜得跟一杯精品咖啡一樣。不會在課堂上推銷，但你會收到下一堂的訊息 —— 因為那時候你已經想再上了。' },
     { q: '我用的不是 ChatGPT，是 Claude / Gemini / 其他，可以嗎？', a: '可以。所有提示詞模板我們提供「跨平台版本」，並現場示範同一份提示詞在三大平台上的差異。你帶哪個來，我們調哪個。' },
@@ -384,7 +384,7 @@ const Foot = () => (
     <div className="foot-grid">
       <div className="brand-blk">
         <Mark size={56} color="#F5F2EC"/>
-        <p>404 TABLE × JobsLab — 為被「現在馬上要」逼瘋的職場人，做的 AI 賦能課程。</p>
+        <p>404 TABLE — 為被「現在馬上要」逼瘋的職場人，做的 AI 賦能課程。</p>
       </div>
       <div>
         <h5>COURSES</h5>
@@ -392,7 +392,7 @@ const Foot = () => (
       </div>
       <div>
         <h5>ABOUT</h5>
-        <ul><li><a href="#instructor">講師</a></li><li><a>關於 JobsLab</a></li><li><a>媒體露出</a></li><li><a>合作邀約</a></li></ul>
+        <ul><li><a href="#instructor">講師</a></li><li><a>關於我們</a></li><li><a>媒體露出</a></li><li><a>合作邀約</a></li></ul>
       </div>
       <div>
         <h5>CONTACT</h5>
@@ -401,7 +401,7 @@ const Foot = () => (
     </div>
     <div className="foot-bottom">
       <span>© 2026 404 TABLE CO., LTD. — 屋瓦資產管理有限公司</span>
-      <span>JOBSLAB / 職能實驗室</span>
+      <span>職能實驗室</span>
     </div>
   </footer>
 );

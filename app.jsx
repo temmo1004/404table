@@ -264,12 +264,7 @@ const Instructor = () => (
     </div>
     <div className="instructor">
       <div className="photo">
-        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="500" fill="#0A0A0A"/>
-          <circle cx="200" cy="180" r="80" fill="#1A1A1A" stroke="#F5F2EC" strokeWidth="1.5"/>
-          <path d="M 100 500 L 100 380 Q 200 320 300 380 L 300 500 Z" fill="#1A1A1A" stroke="#F5F2EC" strokeWidth="1.5"/>
-          <text x="200" y="470" textAnchor="middle" fill="#F5F2EC" fontFamily="JetBrains Mono" fontSize="11" letterSpacing="2">FOUNDER</text>
-        </svg>
+        <img src="/instructor.jpg" alt="陳知行" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
       </div>
       <div className="bio">
         <h3>陳<em style={{ fontStyle: 'italic', color: 'var(--warn)' }}>知行</em></h3>

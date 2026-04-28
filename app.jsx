@@ -396,7 +396,7 @@ const Foot = () => (
       </div>
       <div>
         <h5>CONTACT</h5>
-        <ul><li>hello@404table.co</li><li>+886 2 0000 0000</li><li>台北市信義區</li></ul>
+        <ul><li>hello@404table.com</li></ul>
       </div>
     </div>
     <div className="foot-bottom">

@@ -1,19 +1,21 @@
 /* global React */
 const { useState, useEffect, useRef } = React;
 
-// ── 404 TABLE 標誌（簡化版）─────────────
+// ── 404 TABLE 標誌 ──────────────────────
 const Mark = ({ size = 32, color = 'currentColor' }) => (
-  <svg viewBox="0 0 100 60" width={size} height={size * 0.6} fill={color}>
-    {/* 4 */}
-    <path d="M0 0 L18 0 L18 30 L28 30 L28 0 L40 0 L40 60 L0 60 L0 30 L0 0 Z M14 38 L26 38 L26 60 L14 60 Z" fillRule="evenodd"/>
-    <rect x="0" y="42" width="40" height="6"/>
-    {/* table icon middle */}
-    <rect x="42" y="22" width="16" height="3"/>
-    <rect x="44" y="25" width="2" height="14"/>
-    <rect x="54" y="25" width="2" height="14"/>
-    {/* 4 mirror */}
-    <path d="M60 0 L78 0 L78 30 L88 30 L88 0 L100 0 L100 60 L60 60 L60 30 L60 0 Z M74 38 L86 38 L86 60 L74 60 Z" fillRule="evenodd"/>
-    <rect x="60" y="42" width="40" height="6"/>
+  <svg viewBox="0 0 160 80" width={size} height={size * 0.5} fill={color}>
+    {/* Left 4: diagonal stroke + crossbar + right bar */}
+    <path d="M17,0 L32,0 L15,40 L0,40 Z"/>
+    <rect x="0" y="40" width="50" height="12"/>
+    <rect x="32" y="0" width="18" height="80"/>
+    {/* Table: top + two legs */}
+    <rect x="57" y="0" width="46" height="40"/>
+    <rect x="57" y="45" width="17" height="35"/>
+    <rect x="86" y="45" width="17" height="35"/>
+    {/* Right 4: left bar + crossbar + diagonal stroke */}
+    <rect x="110" y="0" width="18" height="80"/>
+    <rect x="110" y="40" width="50" height="12"/>
+    <path d="M143,0 L128,0 L145,40 L160,40 Z"/>
   </svg>
 );
 

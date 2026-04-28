@@ -367,6 +367,7 @@ const Signup = () => {
             <select required value={fields.industry} onChange={set('industry')}>
               <option value="" disabled>選擇你的產業 — 30 個全有 ▾</option>
               {window.INDUSTRIES.map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
+              <option value="other">其他</option>
             </select>
             <button type="submit" disabled={loading}>{loading ? '送出中…' : '送出 — 我要開始準時下班 →'}</button>
             <p className="consent">送出即同意我們以 Email 寄送課表與後續通知。我們不會把你的資料賣給任何人，也不會打電話。</p>

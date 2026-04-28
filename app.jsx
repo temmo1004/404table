@@ -25,7 +25,6 @@ const TopBar = () => (
       <span>404 TABLE × JOBSLAB</span>
     </div>
     <nav>
-      <a href="#courses">課程</a>
       <a href="#pricing">方案</a>
       <a href="#industries">產業</a>
       <a href="#instructor">講師</a>
@@ -65,7 +64,7 @@ const Hero = () => (
 
     <div className="hero-cta-row">
       <a href="#signup" className="btn-solid">挑一堂試試 — NTD 500</a>
-      <a href="#courses" className="btn-ghost">看 20 堂全部 →</a>
+      <a href="#pricing" className="btn-ghost">看方案 →</a>
     </div>
   </section>
 );
@@ -415,7 +414,6 @@ const App = () => (
     <Marquee/>
     <PainStories/>
     <Metrics/>
-    <Courses/>
     <Pricing/>
     <Proof/>
     <IndustriesSection/>

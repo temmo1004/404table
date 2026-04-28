@@ -59,7 +59,7 @@ const Hero = () => (
       <div className="stats">
         <div className="stat"><div className="num">20</div><div className="lbl">堂課</div></div>
         <div className="stat"><div className="num">500</div><div className="lbl">元 / 堂</div></div>
-        <div className="stat"><div className="num">3 hr</div><div className="lbl">不帶作業</div></div>
+        <div className="stat"><div className="num">1 hr</div><div className="lbl">不帶作業</div></div>
       </div>
     </div>
 
@@ -173,9 +173,9 @@ const Pricing = () => (
         <a href="#signup" className="btn-solid" style={{marginTop: 24}}>挑一堂報名 →</a>
       </div>
       <div className="price-banner-right">
-        <div className="pitch">挑一個你最痛的「那一幕」，2–3 小時當場做完，離開教室就能用。</div>
+        <div className="pitch">挑一個你最痛的「那一幕」，1 小時當場做完，離開教室就能用。</div>
         <ul className="price-list">
-          <li>任選 1 堂，2–3 小時實作</li>
+          <li>任選 1 堂，1 小時實作</li>
           <li>不帶作業回家</li>
           <li>附 3 套提示詞模板</li>
           <li>同系列累積購買享折抵</li>

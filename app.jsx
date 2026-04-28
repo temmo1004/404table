@@ -28,7 +28,6 @@ const TopBar = () => (
     </div>
     <nav>
       <a href="#pricing">方案</a>
-      <a href="#industries">產業</a>
       <a href="#instructor">講師</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -396,7 +395,6 @@ const App = () => (
     <Metrics/>
     <Pricing/>
     <Proof/>
-    <IndustriesSection/>
     <Instructor/>
     <FAQ/>
     <Signup/>

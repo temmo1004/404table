@@ -371,10 +371,6 @@ const Foot = () => (
         <h5>ABOUT</h5>
         <ul><li><a href="#instructor">講師</a></li><li><a>關於我們</a></li><li><a>媒體露出</a></li><li><a>合作邀約</a></li></ul>
       </div>
-      <div>
-        <h5>CONTACT</h5>
-        <ul><li>hello@404table.com</li></ul>
-      </div>
     </div>
     <div className="foot-bottom">
       <span>© 2026 404 TABLE CO., LTD. — 屋瓦資產管理有限公司</span>

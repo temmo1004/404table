@@ -5,6 +5,7 @@ const { useState, useEffect } = React;
 function applyTweaks(t) {
   const r = document.documentElement.style;
   r.setProperty('--warn', t.accent);
+  window.dispatchEvent(new CustomEvent('tweaks-change', { detail: t }));
   if (t.darkMode) {
     r.setProperty('--paper', '#0A0A0A');
     r.setProperty('--paper-2', '#1A1A1A');
@@ -26,15 +27,15 @@ const TweaksApp = () => {
 
   return (
     <TweaksPanel title="Tweaks">
-      <TweakSection title="主色">
+      <TweakSection label="主色">
         <TweakColor label="強調色" value={t.accent} onChange={v => setT('accent', v)}/>
       </TweakSection>
-      <TweakSection title="底色 / 字色">
+      <TweakSection label="底色 / 字色">
         <TweakColor label="紙色" value={t.paper} onChange={v => setT('paper', v)}/>
         <TweakColor label="墨色" value={t.ink} onChange={v => setT('ink', v)}/>
         <TweakToggle label="暗色模式" value={t.darkMode} onChange={v => setT('darkMode', v)}/>
       </TweakSection>
-      <TweakSection title="Hero 文案">
+      <TweakSection label="Hero 文案">
         <TweakRadio
           label="主標版本"
           value={t.heroVariant}

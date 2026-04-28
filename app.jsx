@@ -20,55 +20,80 @@ const Mark = ({ size = 32, color = 'currentColor' }) => (
 );
 
 // ── Top bar ─────────────────────────────
-const TopBar = () => (
-  <header className="topbar">
-    <div className="brand">
-      <Mark size={28}/>
-      <span>404 TABLE</span>
-    </div>
-    <nav>
-      <a href="#pricing">方案</a>
-      <a href="#instructor">講師</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a href="#signup" className="cta">立即報名 →</a>
-  </header>
-);
+const TopBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const close = () => setMenuOpen(false);
+  return (
+    <header className="topbar">
+      <div className="brand">
+        <Mark size={28}/>
+        <span>404 TABLE</span>
+      </div>
+      <nav className={menuOpen ? 'open' : ''}>
+        <a href="#pricing" onClick={close}>方案</a>
+        <a href="#instructor" onClick={close}>講師</a>
+        <a href="#faq" onClick={close}>FAQ</a>
+      </nav>
+      <div className="topbar-right">
+        <a href="#signup" className="cta">立即報名 →</a>
+        <button className="hamburger" onClick={() => setMenuOpen(m => !m)} aria-label="選單">
+          {menuOpen ? '✕' : '☰'}
+        </button>
+      </div>
+    </header>
+  );
+};
 
 // ── Hero ────────────────────────────────
-const Hero = () => (
-  <section className="hero">
-    <div className="hero-meta">
-      <span>職能實驗室 / EST. 2026</span>
-      <span>500元課程陣列 — 秘書／行政 — 第 01 季</span>
-      <span>2026 春季班 / 招生中</span>
-    </div>
+const HERO_VARIANTS = {
+  default: {
+    h1: <><span className="strike">2 小時</span>會議記錄，<br/>現在 <em>10 分鐘</em>搞定。</>,
+    lede: <>老闆又錄了 5 分鐘語音。<br/>客戶又發了 80 字沒標點的 LINE。<br/>合約又是 100 頁、10 分鐘後要結論。<br/>—— 你是<em>秘書</em>，不是讀心術師。</>,
+  },
+  line: {
+    h1: <>老闆的 LINE，<br/>你<em>秒懂</em>秒回。</>,
+    lede: <>一行沒標點的字，背後是 10 個待辦。<br/>你不是看不懂，是沒有工具把它攤平。<br/>—— 現在有了。</>,
+  },
+  overtime: {
+    h1: <>準時<em>下班</em>，<br/>不是<span className="strike">妄想</span>。</>,
+    lede: <>每天最後一個走，不是因為最勤快。<br/>是因為沒有工具把「老闆要的」變成「5 分鐘能交的」。<br/>—— 這堂課就是那個工具。</>,
+  },
+};
 
-    <h1>
-      <span className="strike">2 小時</span>會議記錄，<br/>
-      現在 <em>10 分鐘</em>搞定。
-    </h1>
-
-    <div className="sub">
-      <p className="lede">
-        老闆又錄了 5 分鐘語音。<br/>
-        客戶又發了 80 字沒標點的 LINE。<br/>
-        合約又是 100 頁、10 分鐘後要結論。<br/>
-        —— 你是<em>秘書</em>，不是讀心術師。
-      </p>
-      <div className="stats">
-        <div className="stat"><div className="num">20</div><div className="lbl">堂課</div></div>
-        <div className="stat"><div className="num">500</div><div className="lbl">元 / 堂</div></div>
-        <div className="stat"><div className="num">1 hr</div><div className="lbl">不帶作業</div></div>
+const Hero = () => {
+  const [variant, setVariant] = useState(window.TWEAKS?.heroVariant || 'default');
+  useEffect(() => {
+    const handler = (e) => setVariant(e.detail?.heroVariant || 'default');
+    window.addEventListener('tweaks-change', handler);
+    return () => window.removeEventListener('tweaks-change', handler);
+  }, []);
+  const { h1, lede } = HERO_VARIANTS[variant] || HERO_VARIANTS.default;
+  return (
+    <section className="hero">
+      <div className="hero-meta">
+        <span>職能實驗室 / EST. 2026</span>
+        <span>500元課程陣列 — 秘書／行政 — 第 01 季</span>
+        <span>2026 春季班 / 招生中</span>
       </div>
-    </div>
 
-    <div className="hero-cta-row">
-      <a href="#signup" className="btn-solid">挑一堂試試 — NTD 500</a>
-      <a href="#pricing" className="btn-ghost">看方案 →</a>
-    </div>
-  </section>
-);
+      <h1>{h1}</h1>
+
+      <div className="sub">
+        <p className="lede">{lede}</p>
+        <div className="stats">
+          <div className="stat"><div className="num">20</div><div className="lbl">堂課</div></div>
+          <div className="stat"><div className="num">500</div><div className="lbl">元 / 堂</div></div>
+          <div className="stat"><div className="num">1 hr</div><div className="lbl">不帶作業</div></div>
+        </div>
+      </div>
+
+      <div className="hero-cta-row">
+        <a href="#signup" className="btn-solid">挑一堂試試 — NTD 500</a>
+        <a href="#pricing" className="btn-ghost">看方案 →</a>
+      </div>
+    </section>
+  );
+};
 
 // ── Marquee ─────────────────────────────
 const Marquee = () => {
@@ -119,7 +144,7 @@ const PainStories = () => {
 
 // ── Courses ─────────────────────────────
 const Courses = () => {
-  const [open, setOpen] = useState(0); // first open by default
+  const [open, setOpen] = useState(0);
   return (
     <section className="section" id="courses">
       <div className="section-head">
@@ -235,7 +260,7 @@ const Metrics = () => (
 const Proof = () => (
   <section className="section">
     <div className="section-head">
-      <div className="section-num"><span className="pill">06</span>學員回響</div>
+      <div className="section-num"><span className="pill">03</span>學員回響</div>
       <h2 className="section-title">他們<em>不再</em>加班。</h2>
     </div>
     <div className="proof-grid">
@@ -259,12 +284,19 @@ const Proof = () => (
 const Instructor = () => (
   <section className="section" id="instructor">
     <div className="section-head">
-      <div className="section-num"><span className="pill">07</span>講師</div>
+      <div className="section-num"><span className="pill">04</span>講師</div>
       <h2 className="section-title">設計者本身，<br/>就<em>當過</em>那個秘書。</h2>
     </div>
     <div className="instructor">
       <div className="photo">
-        <img src="/instructor.jpg" alt="陳知行" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}/>
+        <img
+          src="/instructor.jpg"
+          alt="陳知行 — 404 TABLE 創辦人"
+          width="1122"
+          height="1402"
+          loading="lazy"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
       </div>
       <div className="bio">
         <h3>陳<em style={{ fontStyle: 'italic', color: 'var(--warn)' }}>知行</em></h3>
@@ -293,7 +325,7 @@ const FAQ = () => {
   return (
     <section className="section" id="faq">
       <div className="section-head">
-        <div className="section-num"><span className="pill">08</span>常見問題</div>
+        <div className="section-num"><span className="pill">05</span>常見問題</div>
         <h2 className="section-title">你<em>已經</em>在猶豫了。</h2>
       </div>
       <div className="faq-list">
@@ -314,24 +346,28 @@ const FAQ = () => {
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzvmN838Uji5413-Of7oT8RNhTdFmLtdBlL_0uMuZmotzoT0YeYAwUmItpdqGASQDlE_A/exec';
 
 // ── Signup ──────────────────────────────
-const Signup = () => {
+const Signup = ({ source = 'main' }) => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [fields, setFields] = useState({ name: '', email: '', company: '', title: '', industry: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     try {
       await fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(fields),
+        body: JSON.stringify({ ...fields, source }),
       });
-    } catch (_) {}
+      setSubmitted(true);
+    } catch (_) {
+      setError(true);
+    }
     setLoading(false);
-    setSubmitted(true);
   };
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
@@ -350,6 +386,7 @@ const Signup = () => {
           </div>
         ) : (
           <form className="signup-form" onSubmit={handleSubmit}>
+            <input style={{ display: 'none' }} aria-hidden="true" tabIndex="-1" name="_hp" autoComplete="off"/>
             <div className="form-row">
               <input required placeholder="姓名 / Name" value={fields.name} onChange={set('name')}/>
               <input required type="email" placeholder="Email" value={fields.email} onChange={set('email')}/>
@@ -363,6 +400,7 @@ const Signup = () => {
               {window.INDUSTRIES.map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
               <option value="other">其他</option>
             </select>
+            {error && <p style={{ color: 'var(--warn)', fontFamily: 'var(--mono)', fontSize: 12 }}>送出失敗，請稍後再試。</p>}
             <button type="submit" disabled={loading}>{loading ? '送出中…' : '送出 — 我要開始準時下班 →'}</button>
             <p className="consent">送出即同意我們以 Email 寄送課表與後續通知。我們不會把你的資料賣給任何人，也不會打電話。</p>
           </form>
@@ -382,11 +420,23 @@ const Foot = () => (
       </div>
       <div>
         <h5>COURSES</h5>
-        <ul><li><a href="#courses">秘書 / 行政（已開）</a></li><li><a>行銷企劃（即將）</a></li><li><a>法務（即將）</a></li><li><a>會計（即將）</a></li><li><a>業務（即將）</a></li><li><a>人資（即將）</a></li></ul>
+        <ul>
+          <li><a href="#signup">秘書 / 行政（已開）</a></li>
+          <li><span style={{ opacity: 0.4 }}>行銷企劃（即將）</span></li>
+          <li><span style={{ opacity: 0.4 }}>法務（即將）</span></li>
+          <li><span style={{ opacity: 0.4 }}>會計（即將）</span></li>
+          <li><span style={{ opacity: 0.4 }}>業務（即將）</span></li>
+          <li><span style={{ opacity: 0.4 }}>人資（即將）</span></li>
+        </ul>
       </div>
       <div>
         <h5>ABOUT</h5>
-        <ul><li><a href="#instructor">講師</a></li><li><a>關於我們</a></li><li><a>媒體露出</a></li><li><a>合作邀約</a></li></ul>
+        <ul>
+          <li><a href="#instructor">講師</a></li>
+          <li><span style={{ opacity: 0.4 }}>關於我們（即將）</span></li>
+          <li><span style={{ opacity: 0.4 }}>媒體露出（即將）</span></li>
+          <li><a href="#signup">合作邀約</a></li>
+        </ul>
       </div>
     </div>
     <div className="foot-bottom">

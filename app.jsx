@@ -165,44 +165,28 @@ const Courses = () => {
 };
 
 // ── Pricing ─────────────────────────────
-const Pricing = () => {
-  const tiers = [
-    { tier: 'TIER 01 / 試水溫', name: '單堂體驗', price: '500', unit: 'NTD / 堂', dark: false,
-      pitch: '挑一個你最痛的「那一幕」，2–3 小時當場做完，離開教室就能用。',
-      bullets: ['任選 1 堂，2–3 小時實作', '不帶作業回家', '附 3 套提示詞模板', '同系列累積購買享折抵'],
-      cta: '挑一堂報名' },
-    { tier: 'TIER 02 / 進階', name: '工作流升級', price: '3,000', unit: 'NTD / 套', dark: true, badge: 'MOST POPULAR',
-      pitch: '從單點解法升級成系統化工作流。合約全流程 × 老闆決策摘要 × 客戶關係自動化。',
-      bullets: ['深度進階 4 堂 / 套', '可組合式 SOP 模板', '1 對 1 微調諮詢 30 分鐘', '套票折抵 500 元任選課'],
-      cta: '進階套組 →' },
-    { tier: 'TIER 03 / 企業', name: '企業內訓 / 顧問', price: '30,000+', unit: 'NTD / 起', dark: false,
-      pitch: '為單一公司客製化 — 從祕書流程到老闆決策層，全公司「AI 化」一次到位。',
-      bullets: ['企業內訓 1 日 8 小時', '客製化教材 + 公司專屬提示詞庫', '90 天落地陪跑', '高階主管 1 對 1 諮詢'],
-      cta: '聯繫顧問 →' },
-  ];
-
-  return (
-    <section className="section" id="pricing">
-      <div className="section-head">
-        <div className="section-num"><span className="pill">04</span>三階方案</div>
-        <h2 className="section-title">先<em>撒網</em>，再<span className="strike">補刀</span>，最後<em>包山包海</em>。</h2>
+const Pricing = () => (
+  <section className="section" id="pricing">
+    <div className="section-head">
+      <div className="section-num"><span className="pill">04</span>方案</div>
+      <h2 className="section-title">一堂 <em>500</em>，<br/>離開教室<span className="strike">沒</span>帶作業。</h2>
+    </div>
+    <div className="pricing">
+      <div className="price-card dark">
+        <div className="tier">單堂體驗</div>
+        <div className="price">500<span className="unit">NTD / 堂</span></div>
+        <div className="pitch">挑一個你最痛的「那一幕」，2–3 小時當場做完，離開教室就能用。</div>
+        <ul>
+          <li>任選 1 堂，2–3 小時實作</li>
+          <li>不帶作業回家</li>
+          <li>附 3 套提示詞模板</li>
+          <li>同系列累積購買享折抵</li>
+        </ul>
+        <a href="#signup" className="cta"><span>挑一堂報名</span><span className="arrow">→</span></a>
       </div>
-      <div className="pricing">
-        {tiers.map((t, i) => (
-          <div key={i} className={'price-card' + (t.dark ? ' dark' : '')}>
-            {t.badge && <div className="badge">{t.badge}</div>}
-            <div className="tier">{t.tier}</div>
-            <div className="name">{t.name}</div>
-            <div className="pitch">{t.pitch}</div>
-            <div className="price">{t.price}<span className="unit">{t.unit}</span></div>
-            <ul>{t.bullets.map((b, j) => <li key={j}>{b}</li>)}</ul>
-            <a href="#signup" className="cta"><span>{t.cta}</span><span className="arrow">→</span></a>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 // ── Industries ──────────────────────────
 const IndustriesSection = () => (
@@ -364,12 +348,6 @@ const Signup = () => {
             <select required defaultValue="">
               <option value="" disabled>選擇你的產業 — 30 個全有 ▾</option>
               {window.INDUSTRIES.map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
-            </select>
-            <select required defaultValue="">
-              <option value="" disabled>選擇你想要的方案 ▾</option>
-              <option>Tier 01 — 單堂 NTD 500</option>
-              <option>Tier 02 — 進階套組 NTD 3,000</option>
-              <option>Tier 03 — 企業內訓 NTD 30,000+</option>
             </select>
             <button type="submit">送出 — 我要開始準時下班 →</button>
             <p className="consent">送出即同意我們以 Email 寄送課表與後續通知。我們不會把你的資料賣給任何人，也不會打電話。</p>

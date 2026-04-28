@@ -24,8 +24,8 @@
   .rec-card .why { margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.6; opacity: 0.75; }
   .other-industries { padding: 96px 32px; background: var(--paper-2); }
 </style>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -59,7 +59,7 @@ const App2 = () => (
     <TopBar/>
     <section className="industry-hero">
       <div className="crumb">
-        <a href="index.html">← 回首頁</a>
+        <a href="/">← 回首頁</a>
         {' / '}產業 / <span style={{ opacity: 0.5 }}>{String(idx+1).padStart(2,'0')} — {ind.zh}</span>
       </div>
       <div className="tag">FOR {ind.en.toUpperCase()}</div>
@@ -95,8 +95,6 @@ const App2 = () => (
     </section>
 
     <Pricing/>
-
-    <Courses/>
 
     <section className="other-industries">
       <div className="section-head" style={{ marginBottom: 32 }}>

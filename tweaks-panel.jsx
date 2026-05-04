@@ -145,7 +145,12 @@ function useTweaks(defaults) {
     const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
       ? keyOrEdits : { [keyOrEdits]: val };
     setValues((prev) => ({ ...prev, ...edits }));
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
+    // Restrict the edit-mode RPC to the parent's own origin — broadcasting to '*' would leak
+    // tweak edits to any cross-origin frame that ever embeds this page.
+    const targetOrigin = (window.parent && window.parent !== window)
+      ? (document.referrer ? new URL(document.referrer).origin : window.location.origin)
+      : window.location.origin;
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, targetOrigin);
   }, []);
   return [values, setTweak];
 }
@@ -189,6 +194,13 @@ function TweaksPanel({ title = 'Tweaks', children }) {
     return () => ro.disconnect();
   }, [open, clampToViewport]);
 
+  // Reuse the same origin restriction as the value-write RPC.
+  const parentOrigin = React.useMemo(() => {
+    if (!(window.parent && window.parent !== window)) return window.location.origin;
+    try { return document.referrer ? new URL(document.referrer).origin : window.location.origin; }
+    catch (_) { return window.location.origin; }
+  }, []);
+
   React.useEffect(() => {
     const onMsg = (e) => {
       const t = e?.data?.type;
@@ -196,14 +208,21 @@ function TweaksPanel({ title = 'Tweaks', children }) {
       else if (t === '__deactivate_edit_mode') setOpen(false);
     };
     window.addEventListener('message', onMsg);
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    window.parent.postMessage({ type: '__edit_mode_available' }, parentOrigin);
     return () => window.removeEventListener('message', onMsg);
-  }, []);
+  }, [parentOrigin]);
 
   const dismiss = () => {
     setOpen(false);
-    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, parentOrigin);
   };
+
+  // Track in-flight drag listeners so we can detach them if the panel unmounts mid-drag.
+  const dragDisposers = React.useRef([]);
+  React.useEffect(() => () => {
+    dragDisposers.current.forEach((fn) => { try { fn(); } catch (_) {} });
+    dragDisposers.current = [];
+  }, []);
 
   const onDragStart = (e) => {
     const panel = dragRef.current;
@@ -219,12 +238,15 @@ function TweaksPanel({ title = 'Tweaks', children }) {
       };
       clampToViewport();
     };
-    const up = () => {
+    const detach = () => {
       window.removeEventListener('mousemove', move);
       window.removeEventListener('mouseup', up);
+      dragDisposers.current = dragDisposers.current.filter((fn) => fn !== detach);
     };
+    const up = () => detach();
     window.addEventListener('mousemove', move);
     window.addEventListener('mouseup', up);
+    dragDisposers.current.push(detach);
   };
 
   if (!open) return null;
@@ -309,6 +331,13 @@ function TweakRadio({ label, value, options, onChange }) {
     return opts[Math.max(0, Math.min(n - 1, i))].value;
   };
 
+  // Detach any in-flight drag listeners on unmount to avoid leaks if the panel closes mid-drag.
+  const dragDisposers = React.useRef([]);
+  React.useEffect(() => () => {
+    dragDisposers.current.forEach((fn) => { try { fn(); } catch (_) {} });
+    dragDisposers.current = [];
+  }, []);
+
   const onPointerDown = (e) => {
     setDragging(true);
     const v0 = segAt(e.clientX);
@@ -318,13 +347,16 @@ function TweakRadio({ label, value, options, onChange }) {
       const v = segAt(ev.clientX);
       if (v !== valueRef.current) onChange(v);
     };
-    const up = () => {
+    const detach = () => {
       setDragging(false);
       window.removeEventListener('pointermove', move);
       window.removeEventListener('pointerup', up);
+      dragDisposers.current = dragDisposers.current.filter((fn) => fn !== detach);
     };
+    const up = () => detach();
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', up);
+    dragDisposers.current.push(detach);
   };
 
   return (
@@ -374,6 +406,12 @@ function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) 
     return n;
   };
   const startRef = React.useRef({ x: 0, val: 0 });
+  // Detach in-flight scrub listeners on unmount; the matching pointerup may never fire if the panel closes.
+  const dragDisposers = React.useRef([]);
+  React.useEffect(() => () => {
+    dragDisposers.current.forEach((fn) => { try { fn(); } catch (_) {} });
+    dragDisposers.current = [];
+  }, []);
   const onScrubStart = (e) => {
     e.preventDefault();
     startRef.current = { x: e.clientX, val: value };
@@ -384,12 +422,15 @@ function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) 
       const snapped = Math.round(raw / step) * step;
       onChange(clamp(Number(snapped.toFixed(decimals))));
     };
-    const up = () => {
+    const detach = () => {
       window.removeEventListener('pointermove', move);
       window.removeEventListener('pointerup', up);
+      dragDisposers.current = dragDisposers.current.filter((fn) => fn !== detach);
     };
+    const up = () => detach();
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', up);
+    dragDisposers.current.push(detach);
   };
   return (
     <div className="twk-num">

@@ -1,6 +1,23 @@
 /* global React */
 const { useState, useEffect, useRef } = React;
 
+class ErrorBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { hasError: false }; }
+  static getDerivedStateFromError() { return { hasError: true }; }
+  componentDidCatch(err) { try { console.error('[ErrorBoundary]', err); } catch (_) {} }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '80px 32px', fontFamily: 'var(--mono, monospace)', textAlign: 'center' }}>
+          <div style={{ fontSize: 48, color: 'var(--warn, #FF3B00)', marginBottom: 16 }}>404</div>
+          <p>頁面載入時發生錯誤。請<a href="" onClick={(e) => { e.preventDefault(); location.reload(); }} style={{ borderBottom: '1px solid currentColor' }}>重新整理</a>。</p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 // ── 404 TABLE 標誌 ──────────────────────
 const Mark = ({ size = 32, color = 'currentColor' }) => (
   <svg viewBox="0 0 160 80" width={size} height={size * 0.5} fill={color}>
@@ -20,9 +37,11 @@ const Mark = ({ size = 32, color = 'currentColor' }) => (
 );
 
 // ── Top bar ─────────────────────────────
-const TopBar = () => {
+const TopBar = ({ onIndustryPage = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const close = () => setMenuOpen(false);
+  // Sub-pages (industry.html etc) don't render Pricing / Instructor / FAQ — route those nav links back to the homepage.
+  const prefix = onIndustryPage ? '/' : '';
   return (
     <header className="topbar">
       <div className="brand">
@@ -30,9 +49,9 @@ const TopBar = () => {
         <span>404 TABLE</span>
       </div>
       <nav className={menuOpen ? 'open' : ''}>
-        <a href="#pricing" onClick={close}>方案</a>
-        <a href="#instructor" onClick={close}>講師</a>
-        <a href="#faq" onClick={close}>FAQ</a>
+        <a href={`${prefix}#pricing`} onClick={close}>方案</a>
+        <a href={`${prefix}#instructor`} onClick={close}>講師</a>
+        <a href={`${prefix}#faq`} onClick={close}>FAQ</a>
       </nav>
       <div className="topbar-right">
         <a href="#signup" className="cta">立即報名 →</a>
@@ -103,12 +122,12 @@ const Marquee = () => {
     '月底對帳信量產術', '80 封 10 分鐘', '老闆記憶還原術', '差勤對帳魔法',
     '報價單百變工廠', '300 人請柬不出錯', '跨時區會議終結 10 輪信',
   ];
-  const row = items.map((x, i) => (
-    <React.Fragment key={i}><span>{x}</span><span className="dot">●</span></React.Fragment>
+  const makeRow = (rep) => items.map((x, i) => (
+    <React.Fragment key={`${rep}-${i}`}><span>{x}</span><span className="dot">●</span></React.Fragment>
   ));
   return (
     <div className="marquee">
-      <div className="marquee-track">{row}{row}{row}</div>
+      <div className="marquee-track">{makeRow('a')}{makeRow('b')}{makeRow('c')}</div>
     </div>
   );
 };
@@ -152,7 +171,7 @@ const Courses = () => {
         <h2 className="section-title">每一堂解一個<em>那一幕</em>。<br/>離開教室 — 成果<span className="strike">沒</span>帶回家。</h2>
       </div>
       <div className="course-list">
-        {window.COURSES.map((c, i) => (
+        {(window.COURSES || []).map((c, i) => (
           <React.Fragment key={c.n}>
             <div
               className={'course-row' + (open === i ? ' open' : '')}
@@ -214,13 +233,13 @@ const Pricing = () => (
 const IndustriesSection = () => (
   <section className="section" id="industries">
     <div className="section-head">
-      <div className="section-num"><span className="pill">05</span>30 個產業 / 30 種老闆</div>
+      <div className="section-num"><span className="pill">04</span>30 個產業 / 30 種老闆</div>
       <h2 className="section-title">你的<em>產業</em>，<br/>有你產業的<span className="strike">地獄</span>。</h2>
     </div>
     <p className="fine" style={{ marginBottom: 24 }}>30 產業 × 3 價位 = 90 個專屬入口。</p>
     <div className="industry-grid">
-      {window.INDUSTRIES.map((ind, i) => (
-        <a key={ind.id} href="#signup" className="industry-cell">
+      {(window.INDUSTRIES || []).map((ind, i) => (
+        <a key={ind.id} href={`industry.html?id=${ind.id}`} className="industry-cell">
           <div className="idx">／{String(i + 1).padStart(2, '0')}</div>
           <div className="name">{ind.zh}</div>
           <div className="arrow">→ 進入</div>
@@ -260,7 +279,7 @@ const Metrics = () => (
 const Proof = () => (
   <section className="section">
     <div className="section-head">
-      <div className="section-num"><span className="pill">03</span>學員回響</div>
+      <div className="section-num"><span className="pill">05</span>學員回響</div>
       <h2 className="section-title">他們<em>不再</em>加班。</h2>
     </div>
     <div className="proof-grid">
@@ -284,7 +303,7 @@ const Proof = () => (
 const Instructor = () => (
   <section className="section" id="instructor">
     <div className="section-head">
-      <div className="section-num"><span className="pill">04</span>講師</div>
+      <div className="section-num"><span className="pill">06</span>講師</div>
       <h2 className="section-title">設計者本身，<br/>就<em>當過</em>那個秘書。</h2>
     </div>
     <div className="instructor">
@@ -325,7 +344,7 @@ const FAQ = () => {
   return (
     <section className="section" id="faq">
       <div className="section-head">
-        <div className="section-num"><span className="pill">05</span>常見問題</div>
+        <div className="section-num"><span className="pill">07</span>常見問題</div>
         <h2 className="section-title">你<em>已經</em>在猶豫了。</h2>
       </div>
       <div className="faq-list">
@@ -381,8 +400,8 @@ const Signup = ({ source = 'main' }) => {
         </div>
         {submitted ? (
           <div style={{ padding: '32px 0' }}>
-            <div className="display" style={{ fontSize: 64, color: 'var(--warn)' }}>✓ 已收到</div>
-            <p style={{ marginTop: 16, fontFamily: 'var(--serif)', fontSize: 18, opacity: 0.8 }}>24 小時內，你的信箱會出現一封不囉唆的信。</p>
+            <div className="display" style={{ fontSize: 64, color: 'var(--warn)' }}>✓ 已送出</div>
+            <p style={{ marginTop: 16, fontFamily: 'var(--serif)', fontSize: 18, opacity: 0.8 }}>我們會在 24 小時內回信給你。若超過時間沒收到，歡迎再送一次或來信聯繫。</p>
           </div>
         ) : (
           <form className="signup-form" onSubmit={handleSubmit}>
@@ -397,7 +416,7 @@ const Signup = ({ source = 'main' }) => {
             </div>
             <select required value={fields.industry} onChange={set('industry')}>
               <option value="" disabled>選擇你的產業 — 30 個全有 ▾</option>
-              {window.INDUSTRIES.map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
+              {(window.INDUSTRIES || []).map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
               <option value="other">其他</option>
             </select>
             {error && <p style={{ color: 'var(--warn)', fontFamily: 'var(--mono)', fontSize: 12 }}>送出失敗，請稍後再試。</p>}
@@ -411,7 +430,9 @@ const Signup = ({ source = 'main' }) => {
 };
 
 // ── Footer ──────────────────────────────
-const Foot = () => (
+const Foot = ({ onIndustryPage = false }) => {
+  const prefix = onIndustryPage ? '/' : '';
+  return (
   <footer className="foot">
     <div className="foot-grid">
       <div className="brand-blk">
@@ -432,7 +453,7 @@ const Foot = () => (
       <div>
         <h5>ABOUT</h5>
         <ul>
-          <li><a href="#instructor">講師</a></li>
+          <li><a href={`${prefix}#instructor`}>講師</a></li>
           <li><span style={{ opacity: 0.4 }}>關於我們（即將）</span></li>
           <li><span style={{ opacity: 0.4 }}>媒體露出（即將）</span></li>
           <li><a href="#signup">合作邀約</a></li>
@@ -444,26 +465,30 @@ const Foot = () => (
       <span>職能實驗室</span>
     </div>
   </footer>
-);
+  );
+};
 
 // ── App ─────────────────────────────────
 const App = () => (
-  <>
+  <ErrorBoundary>
     <TopBar/>
     <Hero/>
     <Marquee/>
     <PainStories/>
+    <Courses/>
     <Metrics/>
     <Pricing/>
+    <IndustriesSection/>
     <Proof/>
     <Instructor/>
     <FAQ/>
     <Signup/>
     <Foot/>
-  </>
+  </ErrorBoundary>
 );
 
 Object.assign(window, {
   App, Mark, TopBar, Hero, Marquee, PainStories, Courses,
   Pricing, IndustriesSection, Metrics, Proof, Instructor, FAQ, Signup, Foot,
+  ErrorBoundary,
 });

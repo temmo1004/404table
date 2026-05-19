@@ -436,7 +436,7 @@ const Signup = ({ source = 'main' }) => {
           </select>
           {error && <p style={{ color: 'var(--warn)', fontFamily: 'var(--mono)', fontSize: 12 }}>{error}</p>}
           <button type="submit" disabled={loading}>{loading ? '前往付款⋯' : '立即報名 NT$500 →'}</button>
-          <p className="consent">送出後跳轉至 Recur（PAYUNi）安全付款頁。完成付款後 24 小時內專人聯繫排課。可開立發票，付款受 PAYUNi 統一金流保護。</p>
+          <p className="consent">送出後跳轉至 Recur（PAYUNi）安全付款頁。完成付款後 24 小時內專人聯繫排課。付款受 PAYUNi 統一金流保護，PAYUNi 將寄送電子收據至報名 Email。</p>
         </form>
       </div>
     </section>
@@ -475,8 +475,14 @@ const Foot = ({ onIndustryPage = false }) => {
       </div>
     </div>
     <div className="foot-bottom">
-      <span>© 2026 404 TABLE CO., LTD. — 屋瓦資產管理有限公司</span>
-      <span>職能實驗室</span>
+      <span>© 2026 404 TABLE ｜ 個人經營 ｜ 林泓賢</span>
+      <span style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        <a href="/privacy.html">隱私</a>
+        <a href="/terms.html">條款</a>
+        <a href="/refund.html">退款</a>
+        <a href="/payment-info.html">付款</a>
+        <a href="/contact.html">客服</a>
+      </span>
     </div>
   </footer>
   );

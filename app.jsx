@@ -366,27 +366,48 @@ const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzvmN838Uji5413-Of7oT
 
 // ── Signup ──────────────────────────────
 const Signup = ({ source = 'main' }) => {
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
   const [fields, setFields] = useState({ name: '', email: '', company: '', title: '', industry: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(false);
+    setError('');
+
+    // 1) 寫一份 lead 到 Google Sheets（不等回應，no-cors fire-and-forget）
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...fields, source, intent: 'paid_checkout' }),
+    }).catch(() => {});
+
+    // 2) 觸發 Meta Pixel Lead（廣告優化用，付款前就觸發）
+    if (window.fbq) window.fbq('track', 'Lead', { content_name: '404 TABLE 1堂課' });
+    if (window.gtag) window.gtag('event', 'generate_lead');
+
+    // 3) 跳 Recur Hosted Checkout
     try {
-      await fetch(SHEET_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...fields, source }),
+      if (!window.RecurCheckout) throw new Error('金流尚未載入，請重新整理頁面');
+      const recur = window.RecurCheckout.init({ publishableKey: window.RECUR_PK });
+      await recur.redirectToCheckout({
+        productId: window.RECUR_PID,
+        customerEmail: fields.email,
+        successUrl: window.location.origin + '/success.html?session_id={CHECKOUT_SESSION_ID}',
+        cancelUrl: window.location.origin + '/#signup',
+        metadata: {
+          name: fields.name,
+          company: fields.company,
+          title: fields.title,
+          industry: fields.industry,
+          source,
+        },
       });
-      setSubmitted(true);
-    } catch (_) {
-      setError(true);
+    } catch (err) {
+      setError(err.message || '結帳失敗，請稍後再試');
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
@@ -396,34 +417,27 @@ const Signup = ({ source = 'main' }) => {
       <div className="signup-inner">
         <div>
           <h2>停止<em>原地</em>加班。<br/>從一堂 <em>500</em> 開始。</h2>
-          <p className="lede">填一份 30 秒表單，我們會在 24 小時內把對應你產業的課表寄給你。沒有電話騷擾，只有對應你「那一幕」的解法。</p>
+          <p className="lede">填表後直接付款 NT$500，我們會在 24 小時內聯繫你確認上課場次（北中高實體 / 線上同步）。沒有電話騷擾。</p>
         </div>
-        {submitted ? (
-          <div style={{ padding: '32px 0' }}>
-            <div className="display" style={{ fontSize: 64, color: 'var(--warn)' }}>✓ 已送出</div>
-            <p style={{ marginTop: 16, fontFamily: 'var(--serif)', fontSize: 18, opacity: 0.8 }}>我們會在 24 小時內回信給你。若超過時間沒收到，歡迎再送一次或來信聯繫。</p>
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <input style={{ display: 'none' }} aria-hidden="true" tabIndex="-1" name="_hp" autoComplete="off"/>
+          <div className="form-row">
+            <input required placeholder="姓名 / Name" value={fields.name} onChange={set('name')}/>
+            <input required type="email" placeholder="Email" value={fields.email} onChange={set('email')}/>
           </div>
-        ) : (
-          <form className="signup-form" onSubmit={handleSubmit}>
-            <input style={{ display: 'none' }} aria-hidden="true" tabIndex="-1" name="_hp" autoComplete="off"/>
-            <div className="form-row">
-              <input required placeholder="姓名 / Name" value={fields.name} onChange={set('name')}/>
-              <input required type="email" placeholder="Email" value={fields.email} onChange={set('email')}/>
-            </div>
-            <div className="form-row">
-              <input placeholder="公司 / Company" value={fields.company} onChange={set('company')}/>
-              <input placeholder="職稱 / Title" value={fields.title} onChange={set('title')}/>
-            </div>
-            <select required value={fields.industry} onChange={set('industry')}>
-              <option value="" disabled>選擇你的產業 — 30 個全有 ▾</option>
-              {(window.INDUSTRIES || []).map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
-              <option value="other">其他</option>
-            </select>
-            {error && <p style={{ color: 'var(--warn)', fontFamily: 'var(--mono)', fontSize: 12 }}>送出失敗，請稍後再試。</p>}
-            <button type="submit" disabled={loading}>{loading ? '送出中…' : '送出 — 我要開始準時下班 →'}</button>
-            <p className="consent">送出即同意我們以 Email 寄送課表與後續通知。我們不會把你的資料賣給任何人，也不會打電話。</p>
-          </form>
-        )}
+          <div className="form-row">
+            <input placeholder="公司 / Company" value={fields.company} onChange={set('company')}/>
+            <input placeholder="職稱 / Title" value={fields.title} onChange={set('title')}/>
+          </div>
+          <select required value={fields.industry} onChange={set('industry')}>
+            <option value="" disabled>選擇你的產業 — 30 個全有 ▾</option>
+            {(window.INDUSTRIES || []).map(ind => <option key={ind.id} value={ind.id}>{ind.zh}</option>)}
+            <option value="other">其他</option>
+          </select>
+          {error && <p style={{ color: 'var(--warn)', fontFamily: 'var(--mono)', fontSize: 12 }}>{error}</p>}
+          <button type="submit" disabled={loading}>{loading ? '前往付款⋯' : '立即報名 NT$500 →'}</button>
+          <p className="consent">送出後跳轉至 Recur（PAYUNi）安全付款頁。完成付款後 24 小時內專人聯繫排課。可開立發票，付款受 PAYUNi 統一金流保護。</p>
+        </form>
       </div>
     </section>
   );

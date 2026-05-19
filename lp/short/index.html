@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1f1410">
+<title>秘書 AI 自救班｜同事問妳「會什麼」妳愣 3 秒？這 1.5 小時讓妳不再愣</title>
+<meta name="description" content="同事問「妳會什麼？」妳愣 3 秒說「Excel、訂機票、訂便當」。但妳會的，不只這些。1.5 小時 NT$500，5/31 台北實體限定。">
+<meta property="og:title" content="秘書 AI 自救班｜這 1.5 小時讓妳不再愣">
+<meta property="og:description" content="妳替老闆認識了 1,200 個人。這不是雜事，是一項只有妳會、別人 10 年都做不到的能力。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/IMG-S01-pantry-pause.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-cream: #faf6ef;
+    --bg-cream-warm: #f3ebd9;
+    --bg-dark: #1f1410;
+    --bg-dark-warm: #2a1f17;
+    --bg-dark-red: #3c2415;
+    --text-dark: #2a1f17;
+    --text-mid: #3c2c1f;
+    --text-soft: #5c4023;
+    --text-mute: #8a7d68;
+    --gold: #c9a961;
+    --gold-deep: #8a6f2a;
+    --gold-soft: #d6c4a5;
+    --line-soft: #d9ccb0;
+    --line-card: #e7dfd1;
+    --red: #8b1e1e;
+    --shadow-card: 0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(31, 20, 16, 0.04);
+    --shadow-card-hover: 0 4px 0 rgba(0,0,0,0.04), 0 18px 38px rgba(31, 20, 16, 0.08);
+    --radius: 4px;
+    --radius-lg: 8px;
+    --container-max: 700px;
+    --header-h: 56px;
+    --mobile-cta-h: 72px;
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+  }
+  body {
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-cream);
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  body.has-mobile-cta { padding-bottom: var(--mobile-cta-h); }
+  img { display: block; max-width: 100%; height: auto; }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+  section { padding: 72px 0; }
+  h1, h2, h3 {
+    font-family: 'Noto Serif TC', '思源宋體', serif;
+    line-height: 1.55;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  /* =============================================
+   * STICKY HEADER + 進度條
+   * ============================================= */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    background: rgba(31, 20, 16, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.18);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+  }
+  .site-header .h-inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--bg-cream);
+    text-decoration: none;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+  }
+  .brand .dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(201, 169, 97, 0.6);
+  }
+  .brand .brand-sub-zh { display: none; color: var(--gold); font-size: 10px; letter-spacing: 2px; font-weight: 500; }
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 11.5px;
+    color: var(--gold-soft);
+    letter-spacing: 1.2px;
+  }
+  .header-meta .meta-date {
+    border-left: 1px solid rgba(201, 169, 97, 0.3);
+    padding-left: 14px;
+  }
+  .header-cta {
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.25s var(--ease-soft);
+    white-space: nowrap;
+  }
+  .header-cta:hover {
+    background: #d4b876;
+    transform: translateY(-1px);
+  }
+  .progress-bar {
+    position: absolute;
+    bottom: -1px; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), #e6cc8c);
+    transition: width 0.1s linear;
+  }
+
+  /* =============================================
+   * 共用：圖片區塊
+   * ============================================= */
+  figure { margin: 0; }
+  .scene-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #2a1f17, #3c2415);
+    aspect-ratio: 16 / 9;
+  }
+  .scene-img.tall { aspect-ratio: 4 / 5; }
+  .scene-img.square { aspect-ratio: 1 / 1; }
+  .scene-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+  .scene-img::before {
+    content: attr(data-img-id);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(201, 169, 97, 0.45);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #2a1f17 0%, #3c2415 50%, #2a1f17 100%);
+    z-index: 0;
+  }
+  .scene-img::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .scene-img figcaption {
+    position: absolute;
+    left: 12px; bottom: 10px;
+    background: rgba(31, 20, 16, 0.72);
+    color: var(--gold-soft);
+    font-size: 10.5px;
+    padding: 4px 9px;
+    border-radius: 2px;
+    letter-spacing: 2px;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+
+  /* =============================================
+   * Reveal fade-up
+   * ============================================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* =============================================
+   * 共用 CTA
+   * ============================================= */
+  .cta-block { text-align: center; margin: 36px 0 0; }
+  .cta-sub {
+    font-size: 12.5px;
+    color: var(--text-mute);
+    margin-top: 14px;
+    font-weight: 300;
+  }
+  .cta-block.dark .cta-sub { color: #a89b86; }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 20px 32px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s var(--ease-soft);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    box-shadow: 0 4px 18px rgba(201, 169, 97, 0.25);
+  }
+  .cta-btn:hover {
+    background: #d4b876;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(201, 169, 97, 0.4);
+  }
+  .cta-btn.outline-dark {
+    background: transparent;
+    color: var(--gold-deep);
+    border: 1px solid var(--gold-deep);
+    box-shadow: none;
+  }
+  .cta-btn.outline-dark:hover {
+    background: var(--gold-deep);
+    color: var(--bg-cream);
+  }
+  .cta-btn.red {
+    background: var(--red);
+    color: var(--bg-cream);
+    box-shadow: 0 4px 18px rgba(139, 30, 30, 0.3);
+  }
+  .cta-btn.red:hover {
+    background: #a52828;
+    box-shadow: 0 8px 28px rgba(139, 30, 30, 0.45);
+  }
+  .cta-arrow { font-size: 18px; transition: transform 0.3s var(--ease-soft); }
+  .cta-btn:hover .cta-arrow { transform: translateX(4px); }
+
+  /* =============================================
+   * 共用 eyebrow + H2
+   * ============================================= */
+  .eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .eyebrow.dark { color: var(--gold-deep); }
+
+  h2.section-h {
+    font-size: 26px;
+    margin-bottom: 28px;
+    line-height: 1.55;
+    color: var(--text-dark);
+  }
+  h2.section-h .gold { color: var(--gold-deep); }
+  h2.section-h.dark-bg { color: var(--bg-cream); }
+  h2.section-h.dark-bg .gold { color: var(--gold); }
+
+  /* =============================================
+   * 屏 1：HERO（茶水間痛點）
+   * ============================================= */
+  .hero {
+    background: linear-gradient(165deg, #1f1410 0%, #2a1f17 50%, #3c2415 100%);
+    color: var(--bg-cream);
+    padding: calc(var(--header-h) + 56px) 0 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .hero .scene-img.hero-img {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 28px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+  }
+  .scene-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    padding: 28px 24px;
+    border-radius: var(--radius);
+    margin-bottom: 36px;
+    backdrop-filter: blur(8px);
+  }
+  .scene-tag {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .scene-box p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17.5px;
+    color: var(--gold-soft);
+    line-height: 1.95;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .scene-box p.q {
+    color: var(--bg-cream);
+    font-style: italic;
+  }
+  .scene-box p.beat {
+    color: var(--text-mute);
+    font-size: 14.5px;
+    font-style: italic;
+  }
+  .scene-box p.a {
+    color: var(--bg-cream);
+    font-size: 18.5px;
+    font-weight: 700;
+  }
+  .scene-box p.a .strike { color: var(--gold); }
+  .scene-box p:last-child { margin-bottom: 0; }
+
+  .hero h1 {
+    font-size: 27px;
+    margin-bottom: 24px;
+    color: var(--bg-cream);
+    line-height: 1.65;
+    font-weight: 900;
+  }
+  .hero h1 .gold { color: var(--gold); }
+  .hero h1 .em { font-size: 1.1em; }
+
+  .hero-sub {
+    font-size: 16.5px;
+    color: #c4b8a3;
+    line-height: 2;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .hero-sub strong { color: var(--bg-cream); font-weight: 500; }
+  .hero-sub .gold { color: var(--gold); font-weight: 500; }
+
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 32px 0;
+  }
+  .info-grid {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    color: #c4b8a3;
+    font-weight: 300;
+  }
+  .info-row { display: flex; align-items: baseline; gap: 14px; }
+  .info-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    min-width: 50px;
+    font-weight: 500;
+  }
+  .price-block {
+    margin-bottom: 28px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  .price-line {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .price-old {
+    font-size: 13.5px;
+    color: var(--text-mute);
+    text-decoration: line-through;
+    font-weight: 300;
+  }
+  .price-now {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+  .price-unit { font-size: 13.5px; color: #c4b8a3; font-weight: 300; }
+
+  .teacher-card-mini {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(201, 169, 97, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .teacher-avatar-mini {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gold), #8a7234);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg-dark);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .teacher-avatar-mini::before {
+    content: '玉';
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px; font-weight: 900;
+    position: absolute;
+  }
+  .teacher-avatar-mini img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: relative; z-index: 1;
+  }
+  .teacher-info-mini { font-size: 12.5px; line-height: 1.7; color: #a89b86; font-weight: 300; }
+  .teacher-info-mini strong { color: var(--bg-cream); font-weight: 500; display: block; margin-bottom: 2px; font-size: 14px; }
+
+  /* =============================================
+   * 屏 2：揭示 1,200 個人
+   * ============================================= */
+  .reveal-sec {
+    background: var(--bg-cream);
+  }
+  .reveal-sec .scene-img {
+    margin-bottom: 36px;
+  }
+  .reveal-lead {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+    line-height: 2;
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .reveal-lead strong { color: var(--gold-deep); font-weight: 700; }
+  .reveal-lead .em-num {
+    font-size: 32px;
+    color: var(--gold-deep);
+    font-weight: 900;
+    font-family: 'Noto Serif TC', serif;
+  }
+
+  .proof-list {
+    margin: 32px 0;
+  }
+  .proof-list li {
+    list-style: none;
+    padding: 18px 0 18px 32px;
+    position: relative;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16.5px;
+    color: var(--text-dark);
+    line-height: 1.9;
+    border-bottom: 1px dashed var(--line-soft);
+    font-weight: 400;
+    transition: padding-left 0.3s var(--ease-soft);
+  }
+  .proof-list li:hover { padding-left: 38px; }
+  .proof-list li:last-child { border-bottom: none; }
+  .proof-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 4px; top: 22px;
+    color: var(--gold);
+    font-size: 11px;
+  }
+  .proof-list li strong { color: var(--gold-deep); font-weight: 700; }
+
+  .key-statement {
+    background: linear-gradient(135deg, #fff9ed, #fdf4e0);
+    border: 1px solid var(--gold);
+    padding: 36px 28px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 36px 0;
+  }
+  .key-statement p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    color: var(--text-dark);
+    line-height: 1.95;
+    font-weight: 500;
+  }
+  .key-statement p strong { color: var(--gold-deep); font-weight: 900; }
+  .key-statement p .big {
+    display: block;
+    font-size: 22px;
+    margin-top: 14px;
+    color: var(--bg-dark);
+    font-weight: 700;
+  }
+
+  /* =============================================
+   * 屏 3：4 件事
+   * ============================================= */
+  .four-sec {
+    background: #fff;
+  }
+  .four-lead {
+    color: var(--text-soft);
+    font-size: 15.5px;
+    margin-bottom: 36px;
+    font-weight: 400;
+    line-height: 1.95;
+  }
+  .four-items {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .four-item {
+    background: var(--bg-cream);
+    border: 1px solid var(--line-card);
+    padding: 28px 26px;
+    border-radius: var(--radius);
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: transform 0.4s var(--ease-soft), box-shadow 0.4s var(--ease-soft), border-color 0.3s;
+  }
+  .four-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--gold);
+  }
+  .four-item.crown {
+    background: linear-gradient(135deg, #fff9ed, #fdf4e0);
+    border-color: var(--gold);
+  }
+  .four-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    color: var(--gold);
+    font-weight: 900;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .four-body h3 {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-family: 'Noto Serif TC', serif;
+    line-height: 1.5;
+  }
+  .four-body p {
+    font-size: 14.5px;
+    color: var(--text-mid);
+    line-height: 1.9;
+    font-weight: 400;
+  }
+  .four-body p.callback {
+    color: var(--gold-deep);
+    font-style: italic;
+    font-size: 13.5px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line-card);
+  }
+  .four-body p strong { color: var(--gold-deep); font-weight: 700; }
+
+  /* =============================================
+   * 屏 4：講師 + 見證
+   * ============================================= */
+  .teacher-sec {
+    background: var(--bg-dark-warm);
+    color: var(--bg-cream);
+  }
+  .teacher-sec h2 { color: var(--bg-cream); }
+  .teacher-sec h2 .gold { color: var(--gold); }
+
+  .teacher-tag {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+  }
+  .teacher-tag .tav {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gold), #8a7234);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg-dark);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .teacher-tag .tav::before {
+    content: '玉';
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px; font-weight: 900;
+    position: absolute;
+  }
+  .teacher-tag .tav img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: relative; z-index: 1;
+  }
+  .teacher-tag .ti strong {
+    color: var(--bg-cream);
+    font-size: 16.5px;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .teacher-tag .ti span {
+    color: #a89b86;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .teacher-sec .story p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16.5px;
+    color: var(--gold-soft);
+    line-height: 2.1;
+    margin-bottom: 18px;
+  }
+  .teacher-sec .story p strong { color: var(--bg-cream); font-weight: 700; }
+  .teacher-sec .story p .gold-em { color: var(--gold); font-weight: 700; }
+  .teacher-sec .story p.cry {
+    background: rgba(255,255,255,0.04);
+    border-left: 2px solid var(--gold);
+    padding: 16px 20px;
+    color: var(--bg-cream);
+    font-style: italic;
+    border-radius: 2px;
+  }
+
+  .quote-mini {
+    margin: 36px 0;
+    padding: 32px 28px;
+    background: linear-gradient(135deg, var(--bg-dark-red), #2a1812);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    text-align: center;
+    border-radius: var(--radius);
+  }
+  .quote-mini p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19.5px;
+    color: var(--gold);
+    line-height: 1.85;
+    font-weight: 700;
+  }
+
+  .voice-mini {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    padding: 28px 26px;
+    border-radius: var(--radius);
+    position: relative;
+    transition: border-color 0.3s var(--ease-soft);
+  }
+  .voice-mini:hover { border-color: rgba(201, 169, 97, 0.4); }
+  .voice-mini::before {
+    content: '"';
+    font-family: 'Noto Serif TC', serif;
+    font-size: 60px;
+    color: rgba(201, 169, 97, 0.2);
+    position: absolute;
+    top: -4px; left: 14px;
+    line-height: 1;
+  }
+  .voice-mini-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .voice-mini-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    flex-shrink: 0;
+    position: relative;
+  }
+  .voice-mini-avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+    position: relative; z-index: 1;
+  }
+  .voice-mini-avatar::before {
+    content: 'IMG-10';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg-dark);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 8px; letter-spacing: 1.5px;
+    z-index: 0;
+  }
+  .voice-mini-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--bg-cream);
+    font-weight: 700;
+  }
+  .voice-mini-meta {
+    font-size: 11.5px;
+    color: #a89b86;
+    margin-top: 2px;
+  }
+  .voice-mini p.s {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15.5px;
+    color: var(--bg-cream);
+    line-height: 2;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .voice-mini p.s strong { color: var(--gold); font-weight: 700; }
+  .voice-mini .src {
+    font-size: 12px;
+    color: #a89b86;
+    border-top: 1px dashed rgba(201, 169, 97, 0.2);
+    padding-top: 12px;
+    font-weight: 300;
+  }
+
+  /* =============================================
+   * 屏 5：終局（閉環）
+   * ============================================= */
+  .final-sec {
+    background: linear-gradient(165deg, var(--bg-dark) 0%, var(--bg-dark-warm) 50%, var(--bg-dark-red) 100%);
+    color: var(--bg-cream);
+    text-align: center;
+  }
+  .final-sec .scene-img {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 36px;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  .final-sec h2 {
+    font-size: 28px;
+    color: var(--bg-cream);
+    margin-bottom: 28px;
+    line-height: 1.7;
+    font-weight: 700;
+  }
+  .final-sec h2 .gold { color: var(--gold); }
+
+  .closing-scene {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 36px 28px;
+    border-radius: var(--radius);
+    margin-bottom: 40px;
+    text-align: left;
+    backdrop-filter: blur(8px);
+  }
+  .closing-scene .when {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .closing-scene p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17.5px;
+    color: var(--gold-soft);
+    line-height: 2;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .closing-scene p.q {
+    color: var(--bg-cream);
+    font-style: italic;
+    padding-left: 16px;
+    border-left: 2px solid rgba(201, 169, 97, 0.4);
+  }
+  .closing-scene p.a {
+    color: var(--bg-cream);
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .closing-scene p.a .gold { color: var(--gold); }
+  .closing-scene p:last-child { margin-bottom: 0; }
+
+  .final-poem {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17px;
+    color: var(--gold-soft);
+    line-height: 2.15;
+    margin-bottom: 36px;
+    font-weight: 400;
+  }
+  .final-poem strong { color: var(--bg-cream); font-weight: 700; }
+  .final-poem .gold { color: var(--gold); font-weight: 700; }
+
+  .faq { text-align: left; margin: 40px 0; }
+  .faq details {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201, 169, 97, 0.15);
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s var(--ease-soft);
+  }
+  .faq details[open] { border-color: rgba(201, 169, 97, 0.35); }
+  .faq summary {
+    padding: 20px 24px;
+    cursor: pointer;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--bg-cream);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Serif TC', serif;
+    line-height: 1.6;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--gold);
+    transition: transform 0.3s var(--ease-soft);
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-left: 14px;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq .ans {
+    padding: 0 24px 22px;
+    font-size: 13.5px;
+    color: #c4b8a3;
+    line-height: 2;
+    font-weight: 400;
+  }
+  .faq .ans strong { color: var(--gold); font-weight: 500; }
+
+  .scarcity {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(139, 30, 30, 0.15);
+    border: 1px solid rgba(139, 30, 30, 0.4);
+    color: #f5b8b8;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 13px;
+    margin: 28px auto;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .scarcity-num {
+    font-family: 'Noto Serif TC', serif;
+    color: #f5b8b8;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .pulse-dot {
+    width: 7px; height: 7px;
+    background: #f5b8b8;
+    border-radius: 50%;
+    animation: pulse 2s var(--ease-soft) infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+  }
+  .guarantee {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: #a89b86;
+    line-height: 1.95;
+    font-weight: 300;
+  }
+  .guarantee strong { color: var(--gold); font-weight: 500; }
+
+  /* =============================================
+   * FOOTER
+   * ============================================= */
+  .site-footer {
+    background: #150c08;
+    color: #a89b86;
+    padding: 48px 0 28px;
+    border-top: 1px solid rgba(201, 169, 97, 0.18);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-col h4 {
+    color: var(--gold);
+    font-size: 11.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .footer-col p, .footer-col a, .footer-col li {
+    font-size: 13px;
+    line-height: 2;
+    color: #a89b86;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-col ul { list-style: none; }
+  .footer-brand {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--bg-cream);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  .footer-bottom {
+    padding-top: 24px;
+    border-top: 1px solid rgba(201, 169, 97, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 11.5px;
+    color: #6c5d4a;
+  }
+  .footer-bottom a { color: #6c5d4a; text-decoration: none; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* =============================================
+   * MOBILE FLOATING CTA BAR
+   * ============================================= */
+  .mobile-cta-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: var(--mobile-cta-h);
+    background: rgba(31, 20, 16, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 11px 14px;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    transform: translateY(110%);
+    transition: transform 0.4s var(--ease-soft);
+  }
+  .mobile-cta-bar.show { transform: translateY(0); }
+  .mobile-cta-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .mobile-cta-info .price-mini {
+    color: var(--gold);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .mobile-cta-info .price-mini-old {
+    color: var(--text-mute);
+    font-size: 10.5px;
+    text-decoration: line-through;
+    margin-left: 5px;
+    font-weight: 400;
+  }
+  .mobile-cta-info .seats {
+    color: #f5b8b8;
+    font-size: 10.5px;
+    margin-top: 3px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mobile-cta-btn {
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 13px 20px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: background 0.25s var(--ease-soft);
+  }
+  .mobile-cta-btn:active { background: #d4b876; }
+
+  @media (min-width: 720px) {
+    .mobile-cta-bar { display: none; }
+    body.has-mobile-cta { padding-bottom: 0; }
+  }
+
+  /* =============================================
+   * RESPONSIVE
+   * ============================================= */
+  @media (min-width: 720px) {
+    :root { --container-max: 760px; }
+    section { padding: 92px 0; }
+    .brand .brand-sub-zh { display: inline; }
+
+    .hero { padding: calc(var(--header-h) + 76px) 0 72px; }
+    .hero h1 { font-size: 34px; line-height: 1.55; }
+    h2.section-h { font-size: 30px; }
+    .scene-box p.a { font-size: 21px; }
+    .final-sec h2 { font-size: 32px; }
+
+    .footer-grid {
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 15.5px; }
+    .container { padding: 0 20px; }
+    section { padding: 52px 0; }
+
+    .hero { padding: calc(var(--header-h) + 40px) 0 48px; }
+    .hero h1 { font-size: 22px; }
+    h2.section-h { font-size: 21px; }
+    .scene-box p { font-size: 15.5px; }
+    .scene-box p.a { font-size: 17px; }
+    .price-now { font-size: 34px; }
+    .cta-btn { font-size: 14.5px; padding: 17px 24px; }
+    .four-item { padding: 22px 20px; gap: 14px; }
+    .four-body h3 { font-size: 16.5px; }
+    .four-num { font-size: 28px; }
+    .key-statement { padding: 28px 22px; }
+    .key-statement p { font-size: 17px; }
+    .key-statement p .big { font-size: 19.5px; }
+    .quote-mini { padding: 26px 22px; }
+    .quote-mini p { font-size: 17.5px; }
+    .voice-mini { padding: 24px 22px; }
+    .closing-scene { padding: 28px 22px; }
+    .closing-scene p { font-size: 16px; }
+    .closing-scene p.a { font-size: 17px; }
+    .final-sec h2 { font-size: 23px; }
+    .final-poem { font-size: 15.5px; }
+    .reveal-lead { font-size: 16.5px; }
+    .reveal-lead .em-num { font-size: 28px; }
+    .header-meta { display: none; }
+    .brand { font-size: 13px; }
+    .brand .brand-sub-zh { display: none !important; }
+    .header-cta { padding: 7px 13px; font-size: 11.5px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6P4C0V0QH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6P4C0V0QH0');
+  window.LP_VARIANT = 'short';
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1501976728044362');
+fbq('track', 'PageView');
+fbq('trackCustom', 'LPView', { variant: 'short' });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1501976728044362&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="404table.com"][href*="#signup"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (window.fbq) fbq('trackCustom', 'CTAClick', { variant: window.LP_VARIANT });
+      if (window.gtag) gtag('event', 'cta_click', { variant: window.LP_VARIANT });
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<!-- ============================================
+     STICKY HEADER + 進度條
+     ============================================ -->
+<header class="site-header">
+  <div class="h-inner">
+    <a href="#top" class="brand">
+      <span class="dot"></span>
+      <span>秘書 AI 自救班</span>
+      <span class="brand-sub-zh">Vol.1</span>
+    </a>
+    <div class="header-meta">
+      <span class="meta-date">5/31 (六) 15:00 ｜ 台北</span>
+    </div>
+    <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-short#signup" class="header-cta">立即報名</a>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+</header>
+
+<!-- ============================================
+     屏 1：HERO（茶水間痛點）
+     ============================================ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-eyebrow reveal">秘書 AI 自救班｜TIER 1 體驗講座</div>
+
+    <figure class="scene-img hero-img reveal" data-img-id="IMG-S01">
+      <img src="images/IMG-S01-pantry-pause.png"
+           alt="茶水間裡愣 3 秒的秘書"
+           loading="eager"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-S01 ｜ 那 3 秒</figcaption>
+    </figure>
+
+    <div class="scene-box reveal">
+      <div class="scene-tag">場景　茶水間．週三下午</div>
+      <p>同事問妳：</p>
+      <p class="q">「妳會什麼啊？」</p>
+      <p class="beat">妳愣了 3 秒。</p>
+      <p class="a">說：「就 <span class="strike">Excel、訂機票......<br>還有訂便當。</span>」</p>
+    </div>
+
+    <h1 class="reveal">但妳會的，<br><span class="gold em">不只這些。</span><br><br>妳只是<span class="gold">還沒整理出來。</span></h1>
+
+    <p class="hero-sub reveal">1.5 小時帶妳看見：<br><strong>妳這 10 年累積的東西，<br>遠比妳以為的多。</strong></p>
+
+    <div class="divider"></div>
+
+    <div class="info-grid reveal">
+      <div class="info-row"><span class="info-label">時間</span><span>5/31（六）15:00 至 16:30</span></div>
+      <div class="info-row"><span class="info-label">地點</span><span>台北場 ｜ 實體限定</span></div>
+      <div class="info-row"><span class="info-label">名額</span><span>限 30 人 ｜ 額滿即止</span></div>
+    </div>
+
+    <div class="price-block reveal">
+      <div class="price-line">
+        <span class="price-old">原價 NT$1,300</span>
+        <span class="price-now">NT$500</span>
+        <span class="price-unit">含教材包帶回家</span>
+      </div>
+    </div>
+
+    <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-short#signup" class="cta-btn reveal">我要看見自己會什麼 <span class="cta-arrow">→</span></a>
+
+    <div class="teacher-card-mini reveal">
+      <div class="teacher-avatar-mini">
+        <img src="images/IMG-09｜屏 8 講師肖像｜林玉婷.png" alt="林玉婷講師" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="teacher-info-mini">
+        <strong>主講 ｜ 林玉婷</strong>
+        前外商科技業資深特助 12 年
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 2：揭示 1,200 個人
+     ============================================ -->
+<section class="reveal-sec">
+  <div class="container">
+    <figure class="scene-img reveal" data-img-id="IMG-S02">
+      <img src="images/IMG-S02-cards-overhead.png"
+           alt="桌上散落的大量名片"
+           loading="lazy"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-S02 ｜ 1,200 個人</figcaption>
+    </figure>
+
+    <div class="eyebrow dark reveal">妳沒被告知過的事</div>
+    <h2 class="section-h reveal">妳替老闆<span class="gold">認識了 1,200 個人</span></h2>
+
+    <p class="reveal-lead reveal">10 年 × 每月 10 張名片 × 每張背後一個人 ＝ <span class="em-num">1,200</span>。<br><br>妳記得多少？<strong>比妳以為的多。</strong></p>
+
+    <ul class="proof-list">
+      <li class="reveal">每次老闆問「<strong>上次那個誰電話</strong>」，妳能找到</li>
+      <li class="reveal">每次主管會議問「<strong>有沒有認識做 OO 的</strong>」，老闆會看妳</li>
+      <li class="reveal">每年寄賀年卡 500 張，妳知道<strong>誰換公司、誰升職、誰結婚</strong></li>
+      <li class="reveal">每次老闆喝醉 LINE 妳問「<strong>上次那個 OOO 還在不在</strong>」，妳秒回</li>
+    </ul>
+
+    <div class="key-statement reveal">
+      <p>這不是雜事。<br>這是一項<strong>只有妳會、別人 10 年都做不到</strong>的能力。<br><span class="big">而且妳已經做了 10 年。</span></p>
+    </div>
+
+    <p class="reveal-lead reveal" style="margin-top: 28px; text-align: center;">只是<strong>沒有人告訴妳，<br>這就叫能力。</strong></p>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-short#signup" class="cta-btn outline-dark">我想看見我會什麼 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 3：1.5 小時妳會做到的 4 件事
+     ============================================ -->
+<section class="four-sec">
+  <div class="container">
+    <div class="eyebrow dark reveal">這場 1.5 小時</div>
+    <h2 class="section-h reveal">妳會做到<span class="gold">這 4 件事</span></h2>
+    <p class="four-lead reveal">每一件都<strong style="color:#8a6f2a;">明天上班就能用</strong>。<br>每一件都<strong style="color:#8a6f2a;">離職那天能帶走</strong>。</p>
+
+    <div class="four-items">
+      <div class="four-item reveal">
+        <div class="four-num">01</div>
+        <div class="four-body">
+          <h3>把那 1,200 個人裝進一個工具</h3>
+          <p>可以搜尋、可以分類、可以打標籤。下次老闆問「上次那個誰」，<strong>妳 3 秒查到</strong>。</p>
+          <p class="callback">場景：老闆 LINE 妳那秒，妳不再翻 8 分鐘</p>
+        </div>
+      </div>
+
+      <div class="four-item crown reveal">
+        <div class="four-num">02</div>
+        <div class="four-body">
+          <h3>把它變成只有妳能看的版本</h3>
+          <p>不是公司資料庫，是<strong>妳的個人版本</strong>。離職那天，這 1,200 個人跟著妳走，不留在公司。</p>
+          <p class="callback">場景：那天空手離開的妳，不會再發生</p>
+        </div>
+      </div>
+
+      <div class="four-item reveal">
+        <div class="four-num">03</div>
+        <div class="four-body">
+          <h3>學會看自己的工作不一樣</h3>
+          <p>從「Excel、訂機票、訂便當」變成「<strong>我替老闆管 1,200 個人脈關係</strong>」。</p>
+          <p class="callback">場景：下次同事問妳「妳會什麼」，妳不再愣</p>
+        </div>
+      </div>
+
+      <div class="four-item reveal">
+        <div class="four-num">04</div>
+        <div class="four-body">
+          <h3>給自己一個「離職也不慌」的籌碼</h3>
+          <p>不是準備離職，是<strong>知道自己有選擇</strong>。有選擇跟有錢一樣重要，平常不用，但<strong>沒有那天會很慘</strong>。</p>
+          <p class="callback">場景：半夜失眠想到工作，妳不再翻身睡不著</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-short#signup" class="cta-btn">這 4 件我都要 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 4：講師故事 + 見證
+     ============================================ -->
+<section class="teacher-sec">
+  <div class="container">
+    <div class="eyebrow reveal">主講人</div>
+    <h2 class="section-h dark-bg reveal">為什麼我懂<br>妳<span class="gold">那 3 秒</span></h2>
+
+    <div class="teacher-tag reveal">
+      <div class="tav">
+        <img src="images/IMG-09｜屏 8 講師肖像｜林玉婷.png" alt="林玉婷講師" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="ti">
+        <strong>林玉婷</strong>
+        <span>前外商科技業資深特助 12 年</span>
+      </div>
+    </div>
+
+    <div class="story">
+      <p class="reveal">有一年，我同事問我「妳會什麼？」<br><strong>我也愣了 3 秒。</strong></p>
+
+      <p class="reveal">我說：「就 Excel 跟訂機票。」</p>
+
+      <p class="cry reveal">那天回家，我哭了一下。<br>做了這麼多年，<br>為什麼我說不出來自己會什麼？</p>
+
+      <p class="reveal">後來我才看懂：<br>我會的東西沒消失。<br><strong>只是沒整理出來。</strong></p>
+
+      <p class="reveal">我整理完之後，<br>3 年內<span class="gold-em">加薪 2 次、跳到比較好的公司、現在自己出來教課</span>。</p>
+
+      <p class="reveal">不是我變厲害。<br>是<strong>我看見了自己</strong>。</p>
+    </div>
+
+    <div class="quote-mini reveal">
+      <p>老闆的人脈會跟著老闆走。<br><br>妳的人脈，<br>從妳開始整理的那天起。</p>
+    </div>
+
+    <div class="voice-mini reveal">
+      <div class="voice-mini-head">
+        <div class="voice-mini-avatar" data-img-id="IMG-10">
+          <img src="images/IMG-10｜見證 01｜Lisa 45 歲傳產 15 年.png" alt="Lisa 肖像" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="voice-mini-name">Lisa</div>
+          <div class="voice-mini-meta">傳產老闆秘書 15 年</div>
+        </div>
+      </div>
+      <p class="s">我去年換到第二家公司面試時，<strong>我自己帶了一份名單去</strong>。<br>HR 看了愣住問我：<br>「這些真的都是妳認識的人？」<br><br>我說：<br>「是我替老闆認識的。<br><strong>現在是我自己的。</strong>」</p>
+      <p class="src">跳槽薪水上調 30%</p>
+    </div>
+
+    <div class="cta-block dark reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-short#signup" class="cta-btn">我也想看見自己 <span class="cta-arrow">→</span></a>
+      <p class="cta-sub">距 5/31 開課還有 13 天</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 5：終局（閉環）
+     ============================================ -->
+<section class="final-sec" id="final-cta">
+  <div class="container">
+    <figure class="scene-img reveal" data-img-id="IMG-S05">
+      <img src="images/IMG-S05-pantry-resolved.png"
+           alt="同場景的秘書這次不愣 從容回答"
+           loading="lazy"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-S05 ｜ 這次不愣</figcaption>
+    </figure>
+
+    <div class="eyebrow reveal">5 / 31 上完課之後</div>
+    <h2 class="reveal"><span class="gold">下次同事問妳</span><br>「妳會什麼啊？」</h2>
+
+    <div class="closing-scene reveal">
+      <div class="when">茶水間 ｜ 課後第一個週三</div>
+      <p>同事問妳：</p>
+      <p class="q">「妳會什麼啊？」</p>
+      <p>妳<strong style="color: var(--gold);">這次不愣</strong>。</p>
+      <p class="a">妳會說：<br>「我替老闆管 <span class="gold">1,200 個人脈關係</span>。<br><br>而且我有<span class="gold">自己的個人版本</span>。」</p>
+    </div>
+
+    <p class="final-poem reveal"><strong>那一秒，</strong><br>妳會發現一件事：<br><br>這 10 年妳累積的東西，<br><span class="gold">從來不是雜事。</span><br><br>妳只是<strong>第一次看見它。</strong></p>
+
+    <div class="faq reveal">
+      <details>
+        <summary>我老闆的人脈我可以這樣用嗎？這樣不會不道德？</summary>
+        <div class="ans">妳沒「拿」走任何東西。妳是把<strong>本來就經過妳手、妳花心力維護的關係</strong>整理出來。<br><br>道德的紅線是「盜用機密資料」，不是「整理妳本來就在管理的人」。</div>
+      </details>
+
+      <details>
+        <summary>我都 40 幾歲了還來得及嗎？</summary>
+        <div class="ans">這堂課<strong>最有效的學員，反而是年資 10 年以上的資深秘書</strong>。<br><br>年輕妹妹要從 0 累積，妳已經有幾百個了，<strong>只需要把它整理出來</strong>。妳的年資，是這堂課最強的入場券。</div>
+      </details>
+
+      <details>
+        <summary>我老公會問「500 塊上 1.5 小時值得嗎」</summary>
+        <div class="ans">跟他說：「<strong>這 500 塊買的不是技能。是我哪天離職時，能不能帶走幾百個聯絡人</strong>。」<br><br>他下次找工作時，沒人會問他會 Excel，會問他<strong>認識誰</strong>。</div>
+      </details>
+
+      <details>
+        <summary>萬一 5/31 那天我臨時有事？</summary>
+        <div class="ans">提前 5 個工作天通知可全額退費，或免費改下一場。<br><br>下一場 <strong>6/28（六）目前已有 8 位候補</strong>，沒有線上直播也沒錄影，<strong>只能親自到場才能拿走那 4 件東西</strong>。</div>
+      </details>
+    </div>
+
+    <div class="scarcity reveal">
+      <span class="pulse-dot"></span>
+      本場剩餘 <span class="scarcity-num">11</span> / 30 名 ｜ 額滿即截止
+    </div>
+
+    <a href="#" class="cta-btn red reveal">好，我要報名 <span class="cta-arrow">→</span></a>
+
+    <div class="guarantee reveal">
+      <strong>7 天無風險退費</strong> ｜ 不滿意全額退<br>
+      <strong>學完不值保證</strong> ｜ 課程當下覺得不值，現場退 NT$500
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">秘書 AI 自救班</div>
+        <p>這 10 年妳累積的東西，<br>從來不是雜事。</p>
+        <p style="margin-top: 12px; color: #6c5d4a;">Vol.1 名片 ｜ 2026 春季</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>講座資訊</h4>
+        <ul>
+          <li>2026/05/31（六）15:00</li>
+          <li>台北場 ｜ 實體限定</li>
+          <li>每場限 30 人</li>
+          <li>NT$500 含教材包</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>系列課程</h4>
+        <ul>
+          <li>Vol.1 名片自救（本場）</li>
+          <li>Vol.2 會議救星 ｜ 6/28</li>
+          <li>Vol.3 報帳整理 ｜ 7/26</li>
+          <li>Vol.4 跨國溝通 ｜ 8/23</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <ul>
+          <li><a href="mailto:hello@holoteam.studio">hello@holoteam.studio</a></li>
+          <li><a href="#">LINE 客服</a></li>
+          <li><a href="#">常見問題</a></li>
+          <li><a href="#">隱私權聲明</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 肆方創育 ｜ Holo Team Studio</span>
+      <span><a href="#top">回到頂端 ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     MOBILE FLOATING CTA BAR
+     ============================================ -->
+<div class="mobile-cta-bar" id="mobileCta">
+  <div class="mobile-cta-info">
+    <div class="price-mini">
+      NT$500
+      <span class="price-mini-old">原 1,300</span>
+    </div>
+    <div class="seats"><span class="pulse-dot"></span> 剩 11 / 30 名 ｜ 5/31 開課</div>
+  </div>
+  <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-short#signup" class="mobile-cta-btn">我要報名 →</a>
+</div>
+
+<!-- ============================================
+     互動腳本
+     ============================================ -->
+<script>
+(function () {
+  'use strict';
+
+  const progressBar = document.getElementById('progressBar');
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop || document.body.scrollTop);
+    const total = h.scrollHeight - h.clientHeight;
+    const pct = total > 0 ? (scrolled / total) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  };
+
+  const mobileCta = document.getElementById('mobileCta');
+  const heroEl = document.querySelector('.hero');
+  const finalCtaEl = document.getElementById('final-cta');
+  const updateMobileCta = () => {
+    if (window.innerWidth >= 720) return;
+    const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+    const finalTop = finalCtaEl.offsetTop;
+    const scrolled = window.scrollY + window.innerHeight;
+    const inFinalSection = scrolled > finalTop + 200;
+    const pastHero = window.scrollY > heroBottom - 200;
+    if (pastHero && !inFinalSection) {
+      mobileCta.classList.add('show');
+      document.body.classList.add('has-mobile-cta');
+    } else {
+      mobileCta.classList.remove('show');
+      if (!pastHero) document.body.classList.remove('has-mobile-cta');
+    }
+  };
+
+  let rafId = null;
+  const onScroll = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      updateProgress();
+      updateMobileCta();
+      rafId = null;
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateProgress();
+  updateMobileCta();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  document.querySelectorAll('.scene-img img, .teacher-avatar-mini img, .voice-mini-avatar img, .teacher-tag .tav img')
+    .forEach(img => {
+      img.addEventListener('error', () => {
+        img.style.opacity = '0';
+      });
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1f1410">
+<title>秘書 AI 自救班｜別在離職那天，才發現妳什麼都沒帶走</title>
+<meta name="description" content="秘書 AI 自救班｜1.5 小時 NT$500 實體體驗講座。把老闆的名片變成妳的人脈，別在離職那天才發現妳什麼都沒帶走。5/31 台北實體限定。">
+<meta property="og:title" content="秘書 AI 自救班｜別在離職那天，才發現妳什麼都沒帶走">
+<meta property="og:description" content="老闆每天問妳的人，妳替他記了幾年？這些不是老闆的人脈，是妳的。只是妳還沒整理出來。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/IMG-01｜HERO 主視覺.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-cream: #faf6ef;
+    --bg-cream-warm: #f3ebd9;
+    --bg-dark: #1f1410;
+    --bg-dark-warm: #2a1f17;
+    --bg-dark-red: #3c2415;
+    --text-dark: #2a1f17;
+    --text-mid: #3c2c1f;
+    --text-soft: #5c4023;
+    --text-mute: #8a7d68;
+    --gold: #c9a961;
+    --gold-deep: #8a6f2a;
+    --gold-soft: #d6c4a5;
+    --line-soft: #d9ccb0;
+    --line-card: #e7dfd1;
+    --red: #8b1e1e;
+    --shadow-card: 0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(31, 20, 16, 0.04);
+    --shadow-card-hover: 0 4px 0 rgba(0,0,0,0.04), 0 18px 38px rgba(31, 20, 16, 0.08);
+    --radius: 4px;
+    --radius-lg: 8px;
+    --container-max: 720px;
+    --header-h: 60px;
+    --mobile-cta-h: 76px;
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+  }
+  body {
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-cream);
+    line-height: 2.0;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 16.5px;
+    letter-spacing: 0.3px;
+    padding-bottom: 0;
+  }
+  body.has-mobile-cta { padding-bottom: var(--mobile-cta-h); }
+  img { display: block; max-width: 100%; height: auto; }
+
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 28px;
+    position: relative;
+  }
+  section { padding: 96px 0; }
+  h1, h2, h3 {
+    font-family: 'Noto Serif TC', '思源宋體', serif;
+    line-height: 1.6;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  /* =============================================
+   * STICKY HEADER + 進度條
+   * ============================================= */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--header-h);
+    background: rgba(31, 20, 16, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 169, 97, 0.18);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+  }
+  .site-header .h-inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--bg-cream);
+    text-decoration: none;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 15px;
+  }
+  .brand .dot {
+    width: 7px; height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(201, 169, 97, 0.6);
+  }
+  .brand .brand-sub {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 2px;
+  }
+  .brand .brand-sub-zh { display: none; }
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 12px;
+    color: var(--gold-soft);
+    letter-spacing: 1.5px;
+  }
+  .header-meta .meta-date {
+    border-left: 1px solid rgba(201, 169, 97, 0.3);
+    padding-left: 18px;
+  }
+  .header-cta {
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 9px 18px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.25s var(--ease-soft);
+    white-space: nowrap;
+  }
+  .header-cta:hover {
+    background: #d4b876;
+    transform: translateY(-1px);
+  }
+  .progress-bar {
+    position: absolute;
+    bottom: -1px; left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), #e6cc8c);
+    transition: width 0.1s linear;
+  }
+
+  /* =============================================
+   * 共用：圖片區塊（scene-img / hero-img / portrait）
+   * ============================================= */
+  figure { margin: 0; }
+  .scene-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, #2a1f17, #3c2415);
+    aspect-ratio: 4 / 5;
+  }
+  .scene-img.wide { aspect-ratio: 16 / 9; }
+  .scene-img.square { aspect-ratio: 1 / 1; }
+  .scene-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .scene-img::before {
+    /* 圖片載入前的優雅 placeholder */
+    content: attr(data-img-id);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(201, 169, 97, 0.45);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #2a1f17 0%, #3c2415 50%, #2a1f17 100%);
+    z-index: 0;
+  }
+  .scene-img::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .scene-img img { position: relative; z-index: 1; }
+  .scene-img figcaption {
+    position: absolute;
+    left: 14px; bottom: 12px;
+    background: rgba(31, 20, 16, 0.72);
+    color: var(--gold-soft);
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    letter-spacing: 2px;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+
+  /* =============================================
+   * 通用 fade-up 動畫（IntersectionObserver 觸發）
+   * ============================================= */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s var(--ease-soft), transform 0.9s var(--ease-soft);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* =============================================
+   * EYEBROW + CTA + 共用文字
+   * ============================================= */
+  .eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .eyebrow.dark { color: var(--gold-deep); }
+
+  .cta-block { text-align: center; margin: 44px 0 0; }
+  .cta-block.with-sub { margin-top: 32px; }
+  .cta-sub {
+    font-size: 13px;
+    color: var(--text-mute);
+    margin-top: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--gold);
+    color: #1f1410;
+    padding: 22px 36px;
+    border-radius: 3px;
+    font-size: 16.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s var(--ease-soft);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 420px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    box-shadow: 0 4px 18px rgba(201, 169, 97, 0.25);
+  }
+  .cta-btn:hover {
+    background: #d4b876;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(201, 169, 97, 0.4);
+  }
+  .cta-btn.outline {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    box-shadow: none;
+  }
+  .cta-btn.outline:hover { background: var(--gold); color: #1f1410; }
+  .cta-btn.dark {
+    background: var(--bg-dark-warm);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+  }
+  .cta-btn.dark:hover { background: var(--bg-dark-red); }
+  .cta-btn.red {
+    background: var(--red);
+    color: var(--bg-cream);
+    box-shadow: 0 4px 18px rgba(139, 30, 30, 0.3);
+  }
+  .cta-btn.red:hover {
+    background: #a52828;
+    box-shadow: 0 8px 28px rgba(139, 30, 30, 0.45);
+  }
+  .cta-arrow { font-size: 18px; transition: transform 0.3s var(--ease-soft); }
+  .cta-btn:hover .cta-arrow { transform: translateX(4px); }
+
+  /* =============================================
+   * 屏 1：HERO
+   * ============================================= */
+  .hero {
+    background: linear-gradient(165deg, #1f1410 0%, #2a1f17 50%, #3c2415 100%);
+    color: var(--bg-cream);
+    padding: calc(var(--header-h) + 72px) 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%; right: -20%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 44px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .boss-quote {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    color: var(--gold-soft);
+    line-height: 1.95;
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-style: italic;
+    padding-left: 18px;
+    border-left: 2px solid rgba(201, 169, 97, 0.4);
+  }
+  .boss-quote:last-of-type { margin-bottom: 40px; }
+  .hero h1 {
+    font-size: 30px;
+    margin-bottom: 32px;
+    color: var(--bg-cream);
+    line-height: 1.65;
+    font-weight: 900;
+  }
+  .hero h1 .gold { color: var(--gold); }
+  .hero-sub {
+    font-size: 17px;
+    color: #c4b8a3;
+    line-height: 2.1;
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+  .hero-sub strong { color: var(--bg-cream); font-weight: 500; }
+  .hero-sub .gold { color: var(--gold); font-weight: 500; }
+  .hero .scene-img {
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  }
+  .divider {
+    width: 56px;
+    height: 1px;
+    background: var(--gold);
+    margin: 40px 0;
+  }
+  .info-grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 36px;
+    font-size: 14.5px;
+    color: #c4b8a3;
+    font-weight: 300;
+  }
+  .info-row { display: flex; align-items: baseline; gap: 16px; }
+  .info-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+    min-width: 56px;
+    font-weight: 500;
+  }
+  .price-block {
+    margin-bottom: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  .price-line {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .price-old {
+    font-size: 14px;
+    color: var(--text-mute);
+    text-decoration: line-through;
+    font-weight: 300;
+  }
+  .price-now {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+  .price-unit { font-size: 14px; color: #c4b8a3; font-weight: 300; }
+
+  .teacher-card-mini {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(201, 169, 97, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .teacher-avatar-mini {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gold), #8a7234);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px; font-weight: 900;
+    color: var(--bg-dark);
+    flex-shrink: 0;
+  }
+  .teacher-avatar-mini img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .teacher-info-mini { font-size: 13px; line-height: 1.7; color: #a89b86; font-weight: 300; }
+  .teacher-info-mini strong { color: var(--bg-cream); font-weight: 500; display: block; margin-bottom: 2px; font-size: 14.5px; }
+
+  /* =============================================
+   * 通用 H2
+   * ============================================= */
+  h2.section-h {
+    font-size: 28px;
+    margin-bottom: 32px;
+    line-height: 1.65;
+  }
+  h2.section-h .gold { color: var(--gold-deep); }
+  h2.section-h.dark-bg { color: var(--bg-cream); }
+  h2.section-h.dark-bg .gold { color: var(--gold); }
+  h2.section-h.strike { text-decoration: line-through; color: #a89b86; }
+
+  .section-lead {
+    color: var(--text-soft);
+    font-size: 15.5px;
+    margin-bottom: 44px;
+    font-weight: 400;
+    line-height: 2;
+  }
+  .section-lead.dark-bg { color: #a89b86; }
+
+  /* =============================================
+   * 屏 2：場景共鳴 5 卡片
+   * （桌機：圖文左右；手機：水平滑動卡片 carousel）
+   * ============================================= */
+  .moments-section { background: var(--bg-cream); }
+  .moments-list { margin-bottom: 44px; }
+  .moment-card {
+    background: #fff;
+    border-left: 3px solid var(--gold);
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: transform 0.4s var(--ease-soft), box-shadow 0.4s var(--ease-soft);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .moment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .moment-card .moment-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .moment-card .scene-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+  }
+  .moment-card .moment-text {
+    padding: 28px 30px;
+  }
+  .moment-card .scene-label {
+    color: var(--gold-deep);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .moment-card p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17px;
+    color: var(--text-dark);
+    line-height: 2.05;
+    font-weight: 500;
+  }
+  .moment-card p.boss {
+    color: var(--text-soft);
+    font-style: italic;
+    padding-left: 14px;
+    border-left: 2px solid var(--gold);
+    margin: 12px 0;
+  }
+  .moment-card p.beat {
+    color: var(--text-mute);
+    font-size: 14.5px;
+    font-style: italic;
+    margin: 10px 0;
+  }
+  .moment-card p strong { color: var(--gold-deep); }
+
+  .recognize-box {
+    background: linear-gradient(135deg, #fff9ed, #fdf4e0);
+    border: 1px solid var(--gold);
+    padding: 32px 28px;
+    text-align: center;
+    margin: 44px 0 0;
+    border-radius: var(--radius);
+  }
+  .recognize-box p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18.5px;
+    color: var(--text-dark);
+    line-height: 1.95;
+    font-weight: 500;
+  }
+  .recognize-box p strong { color: var(--gold-deep); font-weight: 700; }
+
+  /* =============================================
+   * 屏 3：覺察破題
+   * ============================================= */
+  .recognize-section { background: #fff; }
+  .recognize-section .scene-img {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 36px;
+  }
+  .insight-box {
+    background: var(--bg-cream-warm);
+    padding: 36px 30px;
+    border-radius: var(--radius);
+    margin-bottom: 32px;
+  }
+  .insight-box p {
+    color: var(--text-dark);
+    font-family: 'Noto Serif TC', serif;
+    line-height: 2.05;
+    margin-bottom: 14px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .insight-box p:last-child { margin-bottom: 0; }
+  .insight-box p strong { color: var(--gold-deep); }
+  .insight-box .punchline {
+    font-size: 22px;
+    line-height: 1.85;
+    margin-top: 18px;
+  }
+  .insight-box .punchline strong {
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+
+  /* =============================================
+   * 屏 4：核彈段（深底）
+   * ============================================= */
+  .yours-sec {
+    background: var(--bg-dark);
+    color: var(--bg-cream);
+    position: relative;
+  }
+  .yours-sec h2 { color: var(--bg-cream); }
+  .yours-sec h2 .gold { color: var(--gold); }
+  .yours-sec .scene-img {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 40px;
+    border: 1px solid rgba(201, 169, 97, 0.15);
+  }
+  .stanza { margin-bottom: 40px; }
+  .stanza p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    color: var(--gold-soft);
+    line-height: 2.15;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+  .stanza p:last-child { margin-bottom: 0; }
+  .stanza p strong { color: var(--bg-cream); font-weight: 700; }
+  .stanza p .gold { color: var(--gold); font-weight: 700; }
+
+  .punch-line {
+    margin: 56px 0;
+    padding: 44px 32px;
+    background: linear-gradient(135deg, #3c2415, #2a1812);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+  .punch-line p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    line-height: 1.95;
+    color: var(--bg-cream);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .punch-line p.q {
+    color: var(--gold);
+    font-size: 19px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .punch-line p .em {
+    color: var(--gold);
+    font-size: 1.15em;
+  }
+
+  /* =============================================
+   * 屏 5：4 層價值
+   * ============================================= */
+  .reveal-sec {
+    background: linear-gradient(170deg, #faf6ef, #f3ebd9);
+  }
+  .reveal-sec h2 .gold { color: var(--gold-deep); }
+  .reveal-intro {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    color: var(--text-dark);
+    line-height: 2;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+  .reveal-intro strong { color: var(--gold-deep); }
+
+  .layer {
+    background: #fff;
+    border: 1px solid var(--line-card);
+    padding: 32px 32px;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: var(--radius);
+    transition: transform 0.4s var(--ease-soft), box-shadow 0.4s var(--ease-soft);
+    overflow: hidden;
+  }
+  .layer:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .layer::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-soft);
+  }
+  .layer:hover::after { opacity: 1; }
+  .layer-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 36px;
+    color: var(--gold);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 14px;
+    opacity: 0.7;
+  }
+  .layer h3 {
+    font-size: 19px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-family: 'Noto Serif TC', serif;
+  }
+  .layer p {
+    font-size: 15.5px;
+    color: var(--text-mid);
+    line-height: 2;
+    font-weight: 400;
+  }
+  .layer p strong { color: var(--gold-deep); font-weight: 700; }
+  .layer-tag {
+    display: inline-block;
+    background: var(--bg-cream-warm);
+    color: var(--gold-deep);
+    font-size: 11px;
+    padding: 4px 11px;
+    border-radius: 2px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  /* =============================================
+   * 屏 6：帶走有形 5 件
+   * ============================================= */
+  .take-tangible { background: var(--bg-cream); }
+  .tangible-item {
+    background: #fff;
+    border: 1px solid var(--line-card);
+    border-radius: var(--radius);
+    padding: 32px 30px;
+    margin-bottom: 22px;
+    position: relative;
+    transition: transform 0.4s var(--ease-soft), box-shadow 0.4s var(--ease-soft);
+  }
+  .tangible-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .tangible-item.crown {
+    background: linear-gradient(135deg, #fff9ed, #fdf4e0);
+    border-color: var(--gold);
+  }
+  .tangible-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .tangible-item h3 {
+    font-size: 21px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    font-family: 'Noto Serif TC', serif;
+  }
+  .tangible-item p {
+    font-size: 15.5px;
+    color: var(--text-mid);
+    line-height: 2;
+    font-weight: 400;
+  }
+  .tangible-item p strong { color: var(--gold-deep); font-weight: 700; }
+  .crown-tag {
+    position: absolute;
+    top: 24px; right: 22px;
+    background: var(--bg-dark);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 2px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* =============================================
+   * 屏 7：帶走無形 4 個下次
+   * ============================================= */
+  .take-intangible {
+    background: var(--bg-dark-warm);
+    color: var(--bg-cream);
+  }
+  .take-intangible h2 { color: var(--bg-cream); }
+  .take-intangible h2 .gold { color: var(--gold); }
+  .intangible-list { margin-bottom: 48px; }
+  .next-time {
+    border-left: 3px solid var(--gold);
+    padding: 24px 0 24px 28px;
+    margin-bottom: 36px;
+    transition: padding-left 0.4s var(--ease-soft);
+  }
+  .next-time:hover { padding-left: 32px; }
+  .next-time .label {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .next-time .before {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16.5px;
+    color: var(--text-mute);
+    line-height: 1.95;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  .next-time .before .strike { text-decoration: line-through; }
+  .next-time .after {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17.5px;
+    color: var(--bg-cream);
+    line-height: 1.95;
+    font-weight: 700;
+  }
+  .next-time .after .gold { color: var(--gold); }
+
+  /* =============================================
+   * 屏 8：講師故事
+   * ============================================= */
+  .teacher-sec { background: var(--bg-cream); }
+  .teacher-sec h2 {
+    color: var(--text-dark);
+    text-align: center;
+  }
+  .teacher-sec h2 .gold { color: var(--gold-deep); }
+  .teacher-lead-c {
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 14.5px;
+    margin-bottom: 48px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .teacher-portrait {
+    width: 200px;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto 28px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 18px 48px rgba(31, 20, 16, 0.18);
+    position: relative;
+    background: linear-gradient(135deg, var(--gold), #8a7234);
+  }
+  .teacher-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .teacher-portrait::before {
+    content: 'IMG-09';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--gold), #8a7234);
+    z-index: 0;
+  }
+  .teacher-portrait img { position: relative; z-index: 1; }
+  .teacher-name {
+    text-align: center;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  .teacher-title {
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 13px;
+    margin-bottom: 56px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+  }
+  .teacher-story {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .teacher-story .ts-block { margin-bottom: 36px; }
+  .teacher-story p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17px;
+    color: var(--text-dark);
+    line-height: 2.2;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+  .teacher-story p strong { color: var(--bg-dark); font-weight: 700; }
+  .teacher-story p .gold-em { color: var(--gold-deep); font-weight: 700; }
+  .teacher-story p.boss-said {
+    padding-left: 16px;
+    border-left: 2px solid var(--gold);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  .teacher-quote-final {
+    margin: 56px 0 32px;
+    padding: 44px 32px;
+    background: linear-gradient(135deg, var(--bg-dark-warm), var(--bg-dark));
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    text-align: center;
+    border-radius: var(--radius);
+  }
+  .teacher-quote-final p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    color: var(--gold);
+    line-height: 1.95;
+    font-weight: 700;
+  }
+  .teacher-meta {
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 13px;
+    border-top: 1px solid var(--line-soft);
+    padding-top: 32px;
+    margin-top: 36px;
+    font-weight: 400;
+    line-height: 1.95;
+  }
+
+  /* =============================================
+   * 屏 9：適合誰
+   * ============================================= */
+  .who-sec { background: var(--bg-cream); }
+  .who-sec h2 { color: var(--text-dark); }
+  .who-sec h2 .gold { color: var(--gold-deep); }
+  .who-sec .scene-img {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 36px;
+  }
+  .who-list { list-style: none; margin-bottom: 56px; }
+  .who-list li {
+    padding: 26px 0;
+    font-size: 16.5px;
+    color: var(--text-dark);
+    line-height: 1.95;
+    border-bottom: 1px dashed var(--line-soft);
+    font-weight: 400;
+    font-family: 'Noto Serif TC', serif;
+    transition: padding-left 0.3s var(--ease-soft);
+  }
+  .who-list li:hover { padding-left: 8px; }
+  .who-list li:last-child { border-bottom: none; }
+  .who-list li strong { color: var(--gold-deep); font-weight: 700; }
+  .who-list li .scene-tiny {
+    display: block;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13.5px;
+    color: var(--text-mute);
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.75;
+  }
+
+  /* =============================================
+   * 屏 10：學員見證
+   * ============================================= */
+  .voices-sec { background: var(--bg-cream-warm); }
+  .voice-eyebrow {
+    color: var(--gold-deep);
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .voice {
+    background: #fff;
+    border: 1px solid var(--line-card);
+    padding: 36px 32px;
+    margin-bottom: 22px;
+    border-radius: var(--radius);
+    position: relative;
+    transition: transform 0.4s var(--ease-soft), box-shadow 0.4s var(--ease-soft);
+  }
+  .voice:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .voice::before {
+    content: '"';
+    font-family: 'Noto Serif TC', serif;
+    font-size: 80px;
+    color: rgba(201, 169, 97, 0.25);
+    position: absolute;
+    top: -8px; left: 18px;
+    line-height: 1;
+  }
+  .voice-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .voice-avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    flex-shrink: 0;
+    position: relative;
+  }
+  .voice-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .voice-avatar::before {
+    content: attr(data-img-id);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    z-index: 0;
+  }
+  .voice-avatar img { position: relative; z-index: 1; }
+  .voice-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    color: var(--text-dark);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .voice-meta {
+    font-size: 12px;
+    color: var(--text-mute);
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+  }
+  .voice p.story {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16.5px;
+    color: var(--text-dark);
+    line-height: 2.1;
+    margin-bottom: 20px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+  .voice p.story strong {
+    background: linear-gradient(transparent 65%, rgba(201, 169, 97, 0.35) 65%);
+    font-weight: 700;
+  }
+  .voice .src {
+    font-size: 13px;
+    color: var(--text-mute);
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    border-top: 1px dashed var(--line-soft);
+    padding-top: 14px;
+  }
+
+  /* =============================================
+   * 屏 11：未來場景
+   * ============================================= */
+  .future {
+    background: linear-gradient(165deg, var(--bg-dark) 0%, var(--bg-dark-warm) 100%);
+    color: var(--bg-cream);
+  }
+  .future h2 { color: var(--bg-cream); }
+  .future h2 .gold { color: var(--gold); }
+  .future .scene-img {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 40px;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  .future .stage {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    padding: 36px 32px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    transition: border-color 0.4s var(--ease-soft);
+  }
+  .future .stage:hover {
+    border-color: rgba(201, 169, 97, 0.45);
+  }
+  .future .stage p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17.5px;
+    color: var(--gold-soft);
+    line-height: 2.15;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .future .stage p:last-child { margin-bottom: 0; }
+  .future .stage p strong { color: var(--bg-cream); font-weight: 700; }
+  .future .stage p .gold { color: var(--gold); font-weight: 700; }
+  .future .stage p.line-boss {
+    color: var(--gold);
+    padding-left: 16px;
+    border-left: 2px solid rgba(201, 169, 97, 0.5);
+    font-style: italic;
+  }
+  .future .stage p.line-you {
+    color: var(--bg-cream);
+    padding-left: 16px;
+    border-left: 2px solid var(--gold);
+  }
+  .future .stage p.silence {
+    color: var(--text-mute);
+    font-style: italic;
+    font-size: 15px;
+  }
+  .future-aftermath {
+    text-align: center;
+    margin-top: 40px;
+    padding: 40px 28px;
+    background: linear-gradient(135deg, var(--bg-dark-red), #2a1812);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    border-radius: var(--radius);
+  }
+  .future-aftermath p {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    color: var(--bg-cream);
+    line-height: 1.95;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .future-aftermath p.gold-line { color: var(--gold); }
+
+  /* =============================================
+   * 屏 12：終局
+   * ============================================= */
+  .final-sec {
+    background: linear-gradient(165deg, var(--bg-dark) 0%, var(--bg-dark-warm) 50%, var(--bg-dark-red) 100%);
+    color: var(--bg-cream);
+    text-align: center;
+  }
+  .final-sec .scene-img {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 40px;
+    border: 1px solid rgba(201, 169, 97, 0.18);
+  }
+  .final-sec h2 {
+    font-size: 30px;
+    color: var(--bg-cream);
+    margin-bottom: 32px;
+    line-height: 1.75;
+    font-weight: 700;
+  }
+  .final-sec h2 .gold { color: var(--gold); }
+  .final-poem {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    color: var(--gold-soft);
+    line-height: 2.2;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+  .final-poem strong { color: var(--bg-cream); font-weight: 700; }
+  .final-poem .gold { color: var(--gold); font-weight: 700; }
+
+  /* FAQ */
+  .faq { text-align: left; margin: 48px 0; }
+  .faq details {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201, 169, 97, 0.15);
+    border-radius: 2px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: border-color 0.3s var(--ease-soft);
+  }
+  .faq details[open] { border-color: rgba(201, 169, 97, 0.35); }
+  .faq summary {
+    padding: 22px 26px;
+    cursor: pointer;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--bg-cream);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Serif TC', serif;
+    line-height: 1.65;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+';
+    font-size: 24px;
+    color: var(--gold);
+    transition: transform 0.3s var(--ease-soft);
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq .ans {
+    padding: 0 26px 24px;
+    font-size: 14.5px;
+    color: #c4b8a3;
+    line-height: 2.05;
+    font-weight: 400;
+  }
+  .faq .ans strong { color: var(--gold); font-weight: 500; }
+
+  .scarcity {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(139, 30, 30, 0.15);
+    border: 1px solid rgba(139, 30, 30, 0.4);
+    color: #f5b8b8;
+    padding: 14px 28px;
+    border-radius: 2px;
+    font-size: 13.5px;
+    margin: 32px auto;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .scarcity-num {
+    font-family: 'Noto Serif TC', serif;
+    color: #f5b8b8;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    background: #f5b8b8;
+    border-radius: 50%;
+    animation: pulse 2s var(--ease-soft) infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+  }
+
+  .guarantee {
+    margin-top: 32px;
+    font-size: 13px;
+    color: #a89b86;
+    line-height: 1.95;
+    font-weight: 300;
+  }
+  .guarantee strong { color: var(--gold); font-weight: 500; }
+
+  /* =============================================
+   * FOOTER
+   * ============================================= */
+  .site-footer {
+    background: #150c08;
+    color: #a89b86;
+    padding: 56px 0 32px;
+    border-top: 1px solid rgba(201, 169, 97, 0.18);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 36px;
+  }
+  .footer-col h4 {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  .footer-col p, .footer-col a, .footer-col li {
+    font-size: 13.5px;
+    line-height: 2;
+    color: #a89b86;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-col ul { list-style: none; }
+  .footer-brand {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--bg-cream);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .footer-bottom {
+    padding-top: 28px;
+    border-top: 1px solid rgba(201, 169, 97, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12px;
+    color: #6c5d4a;
+  }
+  .footer-bottom a { color: #6c5d4a; text-decoration: none; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* =============================================
+   * MOBILE FLOATING CTA BAR
+   * ============================================= */
+  .mobile-cta-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: var(--mobile-cta-h);
+    background: rgba(31, 20, 16, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 12px 16px;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(110%);
+    transition: transform 0.4s var(--ease-soft);
+  }
+  .mobile-cta-bar.show { transform: translateY(0); }
+  .mobile-cta-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .mobile-cta-info .price-mini {
+    color: var(--gold);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .mobile-cta-info .price-mini-old {
+    color: var(--text-mute);
+    font-size: 11px;
+    text-decoration: line-through;
+    margin-left: 6px;
+    font-weight: 400;
+  }
+  .mobile-cta-info .seats {
+    color: #f5b8b8;
+    font-size: 11px;
+    margin-top: 3px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mobile-cta-btn {
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 14px 22px;
+    border-radius: 3px;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: background 0.25s var(--ease-soft);
+  }
+  .mobile-cta-btn:active { background: #d4b876; }
+
+  @media (min-width: 720px) {
+    .mobile-cta-bar { display: none; }
+    body.has-mobile-cta { padding-bottom: 0; }
+  }
+
+  /* =============================================
+   * RESPONSIVE 整體
+   * ============================================= */
+  @media (min-width: 720px) {
+    :root { --container-max: 1080px; }
+    section { padding: 120px 0; }
+
+    .brand .brand-sub-zh { display: inline; }
+    .hero { padding: calc(var(--header-h) + 96px) 0 100px; }
+    .hero-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 64px;
+    }
+    .hero h1 { font-size: 42px; line-height: 1.55; }
+    .boss-quote { font-size: 22px; }
+    .hero .scene-img { aspect-ratio: 4 / 5; }
+
+    h2.section-h { font-size: 34px; }
+    .stanza p { font-size: 19px; }
+    .punch-line p { font-size: 27px; }
+
+    /* 場景共鳴：桌機改成圖文左右兩欄 */
+    .moment-card .moment-inner {
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: stretch;
+    }
+    .moment-card .scene-img { aspect-ratio: auto; height: 100%; min-height: 240px; }
+    .moment-card .moment-text { padding: 36px 36px; }
+
+    /* 帶走有形：2 欄 grid */
+    .tangible-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .tangible-grid .tangible-item { margin-bottom: 0; }
+    .tangible-grid .tangible-item.span-2 { grid-column: span 2; }
+
+    /* Footer 三欄 */
+    .footer-grid {
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr;
+      gap: 48px;
+    }
+
+    /* 講師肖像放大 */
+    .teacher-portrait { width: 240px; }
+  }
+
+  @media (min-width: 1024px) {
+    .hero h1 { font-size: 48px; }
+    h2.section-h { font-size: 38px; }
+    .teacher-portrait { width: 280px; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .container { padding: 0 22px; }
+    section { padding: 64px 0; }
+
+    .hero { padding: calc(var(--header-h) + 56px) 0 64px; }
+    .hero h1 { font-size: 26px; line-height: 1.6; }
+    .boss-quote { font-size: 17px; padding-left: 14px; }
+    h2.section-h { font-size: 23px; }
+    .price-now { font-size: 38px; }
+    .cta-btn { font-size: 15px; padding: 18px 24px; }
+    .moment-card .moment-text { padding: 24px 22px; }
+    .moment-card p { font-size: 15.5px; }
+    .stanza p { font-size: 16.5px; }
+    .punch-line { padding: 36px 24px; margin: 44px 0; }
+    .punch-line p { font-size: 19px; }
+    .punch-line p.q { font-size: 16px; }
+    .insight-box { padding: 28px 22px; }
+    .insight-box p { font-size: 16px; }
+    .insight-box .punchline { font-size: 19px; }
+    .layer h3, .tangible-item h3 { font-size: 18px; }
+    .layer, .tangible-item { padding: 28px 24px; }
+    .next-time .before { font-size: 15px; }
+    .next-time .after { font-size: 16.5px; }
+    .teacher-portrait { width: 168px; }
+    .teacher-name { font-size: 22px; }
+    .teacher-story p { font-size: 16px; line-height: 2.1; }
+    .teacher-quote-final { padding: 32px 24px; }
+    .teacher-quote-final p { font-size: 18.5px; }
+    .voice { padding: 30px 24px; }
+    .voice p.story { font-size: 15.5px; }
+    .final-sec h2 { font-size: 24px; }
+    .final-poem { font-size: 16px; }
+    .future .stage { padding: 28px 24px; }
+    .future .stage p { font-size: 16px; }
+    .future-aftermath { padding: 32px 22px; }
+    .future-aftermath p { font-size: 18px; }
+    .who-list li { font-size: 16px; padding: 24px 0; }
+    .who-list li .scene-tiny { font-size: 13px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6P4C0V0QH0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6P4C0V0QH0');
+  window.LP_VARIANT = 'full';
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1501976728044362');
+fbq('track', 'PageView');
+fbq('trackCustom', 'LPView', { variant: 'full' });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1501976728044362&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="404table.com"][href*="#signup"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      if (window.fbq) fbq('trackCustom', 'CTAClick', { variant: window.LP_VARIANT });
+      if (window.gtag) gtag('event', 'cta_click', { variant: window.LP_VARIANT });
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<!-- ============================================
+     STICKY HEADER + 進度條
+     ============================================ -->
+<header class="site-header">
+  <div class="h-inner">
+    <a href="#top" class="brand">
+      <span class="dot"></span>
+      <span>秘書 AI 自救班</span>
+      <span class="brand-sub brand-sub-zh">Vol.1 名片</span>
+    </a>
+    <div class="header-meta">
+      <span class="meta-date">5/31 (六) 15:00 ｜ 台北場</span>
+    </div>
+    <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="header-cta">立即報名</a>
+  </div>
+  <div class="progress-bar" id="progressBar"></div>
+</header>
+
+<!-- ============================================
+     屏 1：HERO
+     ============================================ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <div class="hero-eyebrow">秘書 AI 自救班｜TIER 1 體驗講座</div>
+
+        <p class="boss-quote">「OO，妳幫我約一下王總。」</p>
+        <p class="boss-quote">「OO，我們有沒有認識做物流的？」</p>
+        <p class="boss-quote">「OO，上次那個展，那個誰，他電話呢？」</p>
+
+        <h1>老闆每天問妳的<br>這些人，<br><br><span class="gold">妳替他記了幾年？</span></h1>
+
+        <p class="hero-sub">1.5 小時讓妳發現一件事：<br><br><strong>這些不是老闆的人脈。</strong><br><span class="gold">是妳的。</span><br><br>只是妳還沒整理出來。</p>
+
+        <div class="divider"></div>
+
+        <div class="info-grid">
+          <div class="info-row"><span class="info-label">時間</span><span>2026/05/31（六）15:00 至 16:30</span></div>
+          <div class="info-row"><span class="info-label">地點</span><span>台北場｜實體限定（後續無錄影回看）</span></div>
+          <div class="info-row"><span class="info-label">名額</span><span>每場限 30 人</span></div>
+        </div>
+
+        <div class="price-block">
+          <div class="price-line">
+            <span class="price-old">原價 NT$1,300</span>
+            <span class="price-now">NT$500</span>
+            <span class="price-unit">含教材包帶回家</span>
+          </div>
+        </div>
+
+        <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我要把它整理出來 <span class="cta-arrow">→</span></a>
+
+        <div class="teacher-card-mini">
+          <div class="teacher-avatar-mini">
+            <img src="images/IMG-09｜屏 8 講師肖像｜林玉婷.png" alt="林玉婷講師" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="teacher-info-mini">
+            <strong>主講｜林玉婷</strong>
+            前外商科技業資深特助 12 年
+          </div>
+        </div>
+      </div>
+
+      <figure class="scene-img wide reveal reveal-delay-2" data-img-id="IMG-01">
+        <img src="images/IMG-01｜HERO 主視覺.png"
+             alt="38 歲秘書黃昏在辦公桌上整理散落的名片"
+             loading="eager"
+             width="800" height="1000"
+             onerror="this.style.display='none'">
+        <figcaption>IMG-01 ｜ Hero</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 2：場景共鳴 5 連發
+     ============================================ -->
+<section class="moments-section">
+  <div class="container">
+    <div class="eyebrow dark reveal">妳一個月會經歷的瞬間</div>
+    <h2 class="section-h reveal">這 5 個畫面<br>妳<span class="gold">這個月遇到過幾次？</span></h2>
+
+    <div class="moments-list">
+
+      <article class="moment-card reveal">
+        <div class="moment-inner">
+          <figure class="scene-img" data-img-id="IMG-02">
+            <img src="images/IMG-02｜場景共鳴 01｜主管會議.png"
+                 alt="會議室全場安靜看著秘書"
+                 loading="lazy"
+                 onerror="this.style.display='none'">
+            <figcaption>IMG-02</figcaption>
+          </figure>
+          <div class="moment-text">
+            <div class="scene-label">場景 01 ｜ 主管會議</div>
+            <p>會議室全場安靜 3 秒。</p>
+            <p class="boss">「OO，妳人面廣，妳問問看。」</p>
+            <p class="beat">所有主管都看妳。</p>
+            <p>妳臉發燙，心裡覺得「<strong>又是我</strong>」。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="moment-card reveal">
+        <div class="moment-inner">
+          <figure class="scene-img" data-img-id="IMG-03">
+            <img src="images/IMG-03｜場景共鳴 02｜LINE 突襲.png"
+                 alt="晚上 9 點手機 LINE 訊息進來"
+                 loading="lazy"
+                 onerror="this.style.display='none'">
+            <figcaption>IMG-03</figcaption>
+          </figure>
+          <div class="moment-text">
+            <div class="scene-label">場景 02 ｜ LINE 突襲</div>
+            <p>晚上 9 點，妳剛把小孩哄睡。手機亮起：</p>
+            <p class="boss">「上次那個展，那個做 OO 的，叫什麼名字？」</p>
+            <p class="beat">妳開電腦、翻 Excel、找名片夾。8 分鐘後回他。</p>
+            <p><strong>他已讀，沒回。</strong></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="moment-card reveal">
+        <div class="moment-inner">
+          <figure class="scene-img" data-img-id="IMG-04">
+            <img src="images/IMG-04｜場景共鳴 03｜年底整理.png"
+                 alt="年底整理賀年卡退回 12 張"
+                 loading="lazy"
+                 onerror="this.style.display='none'">
+            <figcaption>IMG-04</figcaption>
+          </figure>
+          <div class="moment-text">
+            <div class="scene-label">場景 03 ｜ 年底整理</div>
+            <p>年底要寄賀年卡。妳打開那個一年沒整理過的 Excel，</p>
+            <p>500 個聯絡人，<strong>妳不確定有 200 個還在不在原公司</strong>。</p>
+            <p class="beat">最後寄出 80 張，退回 12 張。</p>
+            <p>老闆說：「OO，這個我們要更新一下。」</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="moment-card reveal">
+        <div class="moment-inner">
+          <figure class="scene-img" data-img-id="IMG-05">
+            <img src="images/IMG-05｜場景共鳴 04｜茶水間閒聊.png"
+                 alt="茶水間被問妳會什麼愣那一下"
+                 loading="lazy"
+                 onerror="this.style.display='none'">
+            <figcaption>IMG-05</figcaption>
+          </figure>
+          <div class="moment-text">
+            <div class="scene-label">場景 04 ｜ 茶水間閒聊</div>
+            <p>同事問：「妳這份工作做幾年了？」</p>
+            <p>妳說「12 年」。</p>
+            <p>同事又問：「<strong>妳會什麼啊？</strong>」</p>
+            <p class="beat">妳愣了一下。</p>
+            <p>說：「就 Excel、訂機票......還有訂便當。」</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="moment-card reveal">
+        <div class="moment-inner">
+          <figure class="scene-img" data-img-id="IMG-06">
+            <img src="images/IMG-06｜場景共鳴 05｜半夜失眠.png"
+                 alt="半夜 3 點失眠想到工作"
+                 loading="lazy"
+                 onerror="this.style.display='none'">
+            <figcaption>IMG-06</figcaption>
+          </figure>
+          <div class="moment-text">
+            <div class="scene-label">場景 05 ｜ 半夜失眠</div>
+            <p>3 點妳醒過來想到工作。</p>
+            <p>想到老闆過兩年就要退休了。</p>
+            <p>想到新老闆來，<strong>妳又要重新認識所有人</strong>。</p>
+            <p class="beat">想到萬一被資遣，自己履歷上寫什麼。</p>
+            <p>翻身，睡不著。</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="recognize-box reveal">
+      <p>如果妳中了 <strong>3 個以上</strong>，<br>這堂課就是為妳開的。<br><br>但這還不是這堂課最重要的事。</p>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn outline">我也想知道最重要的是什麼 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 3：覺察破題
+     ============================================ -->
+<section class="recognize-section">
+  <div class="container">
+    <figure class="scene-img wide reveal" data-img-id="IMG-07">
+      <img src="images/IMG-07｜屏 3 覺察破題｜被需要的那一秒.png"
+           alt="老闆轉頭看著秘書全場主管模糊"
+           loading="lazy"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-07 ｜ 被需要的那一秒</figcaption>
+    </figure>
+
+    <div class="eyebrow dark reveal">妳沒注意的事</div>
+    <h2 class="section-h reveal">妳覺得<span style="text-decoration: line-through; color: #a89b86;">最煩的那一秒</span><br>其實是妳<span class="gold">最值錢的那一秒</span></h2>
+
+    <p class="section-lead reveal">主管會議上、老闆 LINE 妳那秒、茶水間被問那秒。<br>那些妳臉發燙、覺得「又是我」的瞬間，<br>其實是<strong>整間公司只有妳能扮演那個角色</strong>的瞬間。</p>
+
+    <div class="insight-box reveal">
+      <p>主管會議上，老闆抬頭看妳。<br>那一秒所有主管都看妳。</p>
+      <p><strong>那不是「又是我」，<br>是老闆當著全場主管的面承認：</strong></p>
+      <p class="punchline"><strong>「妳是這間公司，<br>我最需要的人。」</strong></p>
+    </div>
+
+    <p class="section-lead reveal">這種瞬間妳一個月會遇到幾次？<br><br><strong>但妳記得的不多，</strong>因為妳從來沒有當一回事。</p>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn outline" style="border-color:#8a6f2a; color:#8a6f2a;">我想搞清楚這幾年到底累積了什麼 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 4：核彈段
+     ============================================ -->
+<section class="yours-sec">
+  <div class="container">
+    <div class="eyebrow reveal">妳沒想過的事</div>
+    <h2 class="section-h dark-bg reveal">老闆認識的人，<br><span class="gold">其實多半是妳記得的</span></h2>
+    <p class="section-lead dark-bg reveal">這是我做了 12 年秘書才看懂的事。今天 3 分鐘講給妳聽。</p>
+
+    <figure class="scene-img wide reveal" data-img-id="IMG-08">
+      <img src="images/IMG-08｜屏 4 核彈段｜離職那天.png"
+           alt="離職那天空的辦公桌與紙箱"
+           loading="lazy"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-08 ｜ 離職那天</figcaption>
+    </figure>
+
+    <div class="stanza reveal">
+      <p>老闆每年參展、應酬、簽約，<br>經手 200 多張名片。</p>
+      <p>這些名片進到妳手上前，<br><strong>他已經忘了一半</strong>。</p>
+      <p>進到妳手上後，<br>還能找得到、約得到、打得通電話的，<br><span class="gold">是妳記得的那批。</span></p>
+    </div>
+
+    <div class="stanza reveal">
+      <p>換句話說，<br>老闆對外的人脈，<br><strong>其實是「老闆 + 妳」</strong>。</p>
+    </div>
+
+    <div class="stanza reveal">
+      <p>但有件事妳沒仔細想過：</p>
+      <p>老闆退休那天，<br>他會帶走他的人脈、<br>他的合約、<br>他的退休金。</p>
+      <p>而妳離開公司那天，<br><strong>妳帶走什麼？</strong></p>
+      <p>一份履歷，<br>上面寫「<span class="gold">精通 Office、會訂機票</span>」。</p>
+    </div>
+
+    <div class="stanza reveal">
+      <p>那些妳替老闆記了 5 年、10 年的人，<br>有些妳已經比老闆熟。</p>
+      <p>他們收過妳的信，<br>聽過妳的電話，<br>記得妳的聲音。</p>
+      <p>但妳沒把這些「整理出來」，<br><strong>所以妳走的那天，<br>什麼都帶不走。</strong></p>
+    </div>
+
+    <div class="punch-line reveal">
+      <p class="q">下次妳找工作面試</p>
+      <p>沒人會問妳<br>Excel 多熟。</p>
+      <p style="margin-top: 20px;">會問妳：<br><span class="em">「妳認識誰？」</span></p>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我不要等到那天才發現 <span class="cta-arrow">→</span></a>
+      <p class="cta-sub">距 5/31 開課還有 13 天</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 5：4 層價值揭曉
+     ============================================ -->
+<section class="reveal-sec">
+  <div class="container">
+    <div class="eyebrow dark reveal">這堂課真正在賣什麼</div>
+    <h2 class="section-h reveal">妳花的 500 元、1.5 小時，<br>真正買的<span class="gold">不是工具</span></h2>
+
+    <p class="reveal-intro reveal">是這 <strong>4 件事</strong>。<br>從表面到深處、從現在到未來。</p>
+
+    <div class="layer reveal">
+      <span class="layer-tag">第 1 層 ｜ 現在就有用</span>
+      <div class="layer-num">01</div>
+      <h3>一個讓老闆秒答的工具</h3>
+      <p>有形的、可帶回家、明天就能用。<br>老闆 LINE 問人，妳 3 秒查到，截圖回他。<br><strong>從這週開始，每週都會發生。</strong></p>
+    </div>
+
+    <div class="layer reveal">
+      <span class="layer-tag">第 2 層 ｜ 對未來有用</span>
+      <div class="layer-num">02</div>
+      <h3>妳這幾年累積的隱形履歷</h3>
+      <p>把妳替老闆認識的人，<br>變成<strong>只有妳能看、只有妳能用</strong>的個人版本。<br><br>那 600 多個聯絡人，<br>原本在公司資料庫，現在<strong>也在妳口袋裡</strong>。</p>
+    </div>
+
+    <div class="layer reveal">
+      <span class="layer-tag">第 3 層 ｜ 對妳自己有用</span>
+      <div class="layer-num">03</div>
+      <h3>看自己工作的新角度</h3>
+      <p>從「我是執行的人」到「我是節點」。<br>從「<strong>又是我</strong>」到「<strong>對，又是我</strong>」。<br><br>這個切換一旦發生，<br>不會再回去了。</p>
+    </div>
+
+    <div class="layer reveal">
+      <span class="layer-tag">第 4 層 ｜ 對人生有用</span>
+      <div class="layer-num">04</div>
+      <h3>妳遲早會離開時的籌碼</h3>
+      <p>不是「準備離職」，<br>是「<strong>知道自己有選擇</strong>」。<br><br>有沒有選擇，跟有沒有錢一樣，<br>不到那天用不上，<br>但<strong>沒有那天會很慘</strong>。</p>
+    </div>
+
+    <div class="cta-block with-sub reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我要這 4 層的全部 <span class="cta-arrow">→</span></a>
+      <p class="cta-sub">NT$500 ｜ 1.5 小時 ｜ 限 30 人</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 6：帶走有形 5 件
+     ============================================ -->
+<section class="take-tangible">
+  <div class="container">
+    <div class="eyebrow dark reveal">妳會帶走的有形東西</div>
+    <h2 class="section-h reveal">下班前<br><span class="gold">這 5 件全部進妳手機</span></h2>
+
+    <div class="tangible-grid">
+      <div class="tangible-item reveal">
+        <div class="tangible-num">· FIRST</div>
+        <h3>妳的智能名片庫網頁</h3>
+        <p>講師會帶妳現場做一個，<strong>只有妳能用</strong>的個人版本。<br>可以搜尋、可以分類、可以加標籤、可以匯出。<br>下班前存進手機書籤，明天上班就能用。</p>
+      </div>
+
+      <div class="tangible-item crown reveal">
+        <span class="crown-tag">關鍵</span>
+        <div class="tangible-num">· SECOND</div>
+        <h3>「老闆秒問妳秒答」捷徑</h3>
+        <p>把上面那個工具設成<strong>手機桌面 1-touch 捷徑</strong>。<br><br>老闆 LINE 問「上次那個誰」，妳：<br><strong>1.</strong> 按手機桌面圖示<br><strong>2.</strong> 輸入關鍵字<br><strong>3.</strong> 截圖回他<br><br>全程 5 秒。</p>
+      </div>
+
+      <div class="tangible-item span-2 reveal">
+        <div class="tangible-num">· THIRD</div>
+        <h3>5 個秘書 AI 模板包（回家伴手禮）</h3>
+        <p>除了名片整理，回家還能用同樣方法做：<br><br>· 會議紀要美化器<br>· Email 三版本草稿產生器<br>· 出差報帳整理器<br>· 主管交辦清單<br>· 跨會議爭議查詢器<br><br><strong>每個都是 Prompt 模板，貼上去就能跑。</strong></p>
+      </div>
+
+      <div class="tangible-item reveal">
+        <div class="tangible-num">· FOURTH</div>
+        <h3>講座教材包 PDF（含逐字稿）</h3>
+        <p>整堂課的 slide、講師備註、現場範例、Q&A 整理。<br><strong>30 頁 PDF</strong>，回家可以再複習一次。<br>對學員開放<strong>無限次重看</strong>。</p>
+      </div>
+
+      <div class="tangible-item reveal">
+        <div class="tangible-num">· FIFTH</div>
+        <h3>30 天課後 LINE 群</h3>
+        <p>講師親自在群裡 30 天。<br>實際操作卡關、需要客製化、想問業界做法，<strong>都能直接問</strong>。<br>每週講師會丟一個進階小技巧。</p>
+      </div>
+    </div>
+
+    <div class="cta-block with-sub reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">這 5 件我都要 <span class="cta-arrow">→</span></a>
+      <p class="cta-sub">500 元 ÷ 5 件 = 一件 100 元</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 7：帶走無形 4 個下次
+     ============================================ -->
+<section class="take-intangible">
+  <div class="container">
+    <div class="eyebrow reveal">妳會帶走的無形東西</div>
+    <h2 class="section-h dark-bg reveal">這些<span class="gold">看不見，但會跟妳一輩子</span></h2>
+    <p class="section-lead dark-bg reveal">工具會過時，下面這 4 件不會。</p>
+
+    <div class="intangible-list">
+      <div class="next-time reveal">
+        <div class="label">場景 01 ｜ 下次老闆問人</div>
+        <p class="before"><span class="strike">妳臉發燙，覺得「又是我」。</span></p>
+        <p class="after">妳會抬頭看老闆，<br>心裡知道：<span class="gold">「對，又是我。」</span></p>
+      </div>
+
+      <div class="next-time reveal">
+        <div class="label">場景 02 ｜ 下次主管會議全場安靜 3 秒</div>
+        <p class="before"><span class="strike">妳低頭希望老闆問別人。</span></p>
+        <p class="after">妳會抬頭等老闆問妳，<br>因為<span class="gold">妳已經知道答案在哪裡。</span></p>
+      </div>
+
+      <div class="next-time reveal">
+        <div class="label">場景 03 ｜ 下次有人問妳「妳是做什麼的」</div>
+        <p class="before"><span class="strike">妳說「我是某某某的秘書」。</span></p>
+        <p class="after">妳會說：<br>「我在替他<span class="gold">管 600 多個人的關係。</span>」</p>
+      </div>
+
+      <div class="next-time reveal">
+        <div class="label">場景 04 ｜ 下次妳半夜失眠想到工作</div>
+        <p class="before"><span class="strike">妳擔心自己這 10 年是不是白做了。</span></p>
+        <p class="after">妳會知道：<br><span class="gold">這 10 年妳累積的東西，<br>都在妳的工具裡，跟著妳走。</span></p>
+      </div>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我要這 4 個「下次」 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 8：講師故事
+     ============================================ -->
+<section class="teacher-sec">
+  <div class="container">
+    <div class="eyebrow dark reveal" style="text-align:center;">主講人</div>
+    <h2 class="section-h reveal" style="text-align:center;">我做了 12 年秘書，<br>第 8 年才<span class="gold">看懂一件事</span></h2>
+    <p class="teacher-lead-c reveal">這是我為什麼開這堂課</p>
+
+    <figure class="teacher-portrait reveal" data-img-id="IMG-09">
+      <img src="images/IMG-09｜屏 8 講師肖像｜林玉婷.png"
+           alt="林玉婷講師肖像"
+           loading="lazy"
+           onerror="this.style.display='none'">
+    </figure>
+    <div class="teacher-name reveal">林玉婷</div>
+    <div class="teacher-title reveal">前外商科技業資深特助 12 年 ｜ 現任肆方創育 AI 教練</div>
+
+    <div class="teacher-story">
+      <div class="ts-block reveal">
+        <p>我做了 12 年秘書。前 8 年我也跟妳一樣，把名片整理當「<strong>老闆給的雜事</strong>」。<br><br>Excel 一行一行輸，找不到、用不出來、累積成廢紙。</p>
+      </div>
+
+      <div class="ts-block reveal">
+        <p>第 8 年那次，老闆問我：</p>
+        <p class="boss-said">「我們有沒有認識做半導體的 CFO？」</p>
+        <p>我想了 3 天，<br>列出 5 個人。</p>
+        <p>老闆挑了一個，<br>3 個月後跟對方簽下一筆 <strong>8,000 萬的合約</strong>。</p>
+        <p><strong>那天我才看懂：<br>我手上的東西比我以為的有用太多。</strong></p>
+      </div>
+
+      <div class="ts-block reveal">
+        <p>從那天起，<br>我把老闆的名片當自己的人脈管。</p>
+        <p>2 年後，<br>老闆找投資人、找通路、找合作，<br>都<span class="gold-em">先問我</span>。</p>
+        <p>不是因為我變厲害，<br>是因為他發現一件事：<br><strong>「妳記得，我不記得。」</strong></p>
+      </div>
+
+      <div class="ts-block reveal">
+        <p>3 年前我離開那家公司。</p>
+        <p>我帶走了 <strong>600 多個我整理過的聯絡人</strong>。</p>
+        <p>第一份工作裡，他們是「老闆的人脈」。<br>離開那天起，<br>他們變成「<span class="gold-em">我自己的朋友</span>」。</p>
+      </div>
+
+      <div class="ts-block reveal">
+        <p>我教這堂課，<br>不是教妳學 AI。</p>
+        <p>是教妳，<br><strong>別在離職那天，<br>才發現妳什麼都沒帶走。</strong></p>
+      </div>
+    </div>
+
+    <div class="teacher-quote-final reveal">
+      <p>老闆的人脈會跟著老闆走。<br><br>妳的人脈，<br>從妳開始整理的那天起。</p>
+    </div>
+
+    <div class="teacher-meta reveal">
+      已開 8 期 ｜ 累計教過 196 位行政秘書<br>
+      學員平均回報「整理完發現有 200 個以上可用聯絡人」的時間：上完課第 2 週
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我也想 10 年沒白做 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 9：適合誰
+     ============================================ -->
+<section class="who-sec">
+  <div class="container">
+    <div class="eyebrow dark reveal">這堂課給誰</div>
+    <h2 class="section-h reveal">給<span class="gold">已經做了一段時間</span><br>但偶爾會想「就這樣嗎」的妳</h2>
+    <p class="section-lead reveal">不是給「想學 AI 工具」的妳。<br>是給「<strong>想搞清楚這份工作到底有什麼價值</strong>」的妳。</p>
+
+    <ul class="who-list">
+      <li class="reveal">
+        給每次老闆問「妳有沒有認識...」，<br>
+        <strong>心裡偷偷有點得意，但又覺得自己只是工具人</strong>的妳
+        <span class="scene-tiny">妳沒跟任何人講過這種矛盾。但這份矛盾本身就是答案。</span>
+      </li>
+      <li class="reveal">
+        做了 <strong>5 年以上</strong>、<br>
+        覺得「<strong>這份工作好像不只是這樣</strong>」的妳
+        <span class="scene-tiny">妳沒講出來，但茶水間別人問妳會什麼時，妳愣的那一秒就是答案。</span>
+      </li>
+      <li class="reveal">
+        看過<strong>前老闆退休、新老闆來</strong>，<br>
+        覺得「<strong>我又要重來一次</strong>」的妳
+        <span class="scene-tiny">公司的人脈是公司的，妳重來幾次都帶不走。除非妳有自己的版本。</span>
+      </li>
+      <li class="reveal">
+        知道自己<strong>遲早會離開</strong>這家公司，<br>
+        但<strong>還沒想過要怎麼帶走什麼</strong>的妳
+        <span class="scene-tiny">妳已經做了 10 年。再 10 年就 50 歲。妳手上有什麼？</span>
+      </li>
+      <li class="reveal">
+        老公或家人會說「<strong>妳已經夠忙了還上什麼課</strong>」的妳
+        <span class="scene-tiny">他們不知道這 1.5 小時，是妳給自己的籌碼。下次他們會懂。</span>
+      </li>
+      <li class="reveal">
+        看過太多 AI 課程，<br>
+        覺得「<strong>那些工具我學不來</strong>」的妳
+        <span class="scene-tiny">這堂課不教程式、不講術語。<strong>講師也做過 12 年秘書</strong>，她講妳聽得懂的話。</span>
+      </li>
+    </ul>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我中了 3 條以上，我要報 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 10：學員見證
+     ============================================ -->
+<section class="voices-sec">
+  <div class="container">
+    <div class="voice-eyebrow reveal">學員回聲</div>
+    <h2 class="section-h reveal">上完課的<span class="gold" style="color:#8a6f2a;">這些瞬間</span><br>她們都遇過</h2>
+
+    <div class="voice reveal">
+      <div class="voice-head">
+        <div class="voice-avatar" data-img-id="IMG-10">
+          <img src="images/IMG-10｜見證 01｜Lisa 45 歲傳產 15 年.png" alt="Lisa 肖像" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="voice-name">Lisa</div>
+          <div class="voice-meta">傳產老闆秘書 15 年</div>
+        </div>
+      </div>
+      <p class="story">上完課我才看懂，<br>這 15 年我替老闆認識的人，<strong>有 80% 我能用得到</strong>。<br><br>我去年換到第二家公司面試的時候，<br>我自己帶了一份名單去。<br>HR 看了愣住，<br>問我：「<strong>這些真的都是妳認識的人？</strong>」<br><br>我說：「是我替老闆認識的。<br>現在是我自己的。」</p>
+      <p class="src">2026 年 3 月跳槽，薪水上調 30%</p>
+    </div>
+
+    <div class="voice reveal">
+      <div class="voice-head">
+        <div class="voice-avatar" data-img-id="IMG-11">
+          <img src="images/IMG-11｜見證 02｜Emily 27 歲新創.png" alt="Emily 肖像" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="voice-name">Emily</div>
+          <div class="voice-meta">新創公司營運助理 27 歲</div>
+        </div>
+      </div>
+      <p class="story">我以前覺得整理名片是雜事。<br><br>上完課那個月我整理了一下，<br>老闆有一天看到我手機說：<br>「<strong>妳這個檔案下次可以給我看嗎？</strong>」<br><br>我那天回家笑了一整路。<br><br>因為他第一次「跟我借東西」，<br>不是「叫我做東西」。</p>
+      <p class="src">上完課第 6 週</p>
+    </div>
+
+    <div class="voice reveal">
+      <div class="voice-head">
+        <div class="voice-avatar" data-img-id="IMG-12">
+          <img src="images/IMG-12｜見證 03｜May 45 歲外商 18 年.png" alt="May 肖像" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="voice-name">May</div>
+          <div class="voice-meta">外商秘書 18 年</div>
+        </div>
+      </div>
+      <p class="story">我 45 歲，本來覺得學 AI 太晚。<br>講師也是做秘書出身，講的話我都聽得懂。<br><br>上完課三個月後，<br>老闆要找一個業務副總。<br>他問遍主管沒人選，最後問我。<br><br>我從工具裡撈出 3 個人，<br>附上他們最近的動態。<br><br>老闆<strong>那天加我薪水 5,000</strong>。<br>我做這份工作 18 年，第一次自己沒開口就被加薪。</p>
+      <p class="src">上完課第 12 週</p>
+    </div>
+
+    <div class="voice reveal">
+      <div class="voice-head">
+        <div class="voice-avatar" data-img-id="IMG-13">
+          <img src="images/IMG-13｜見證 04｜Karen 36 歲醫療 8 年.png" alt="Karen 肖像" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="voice-name">Karen</div>
+          <div class="voice-meta">醫療業特助 8 年</div>
+        </div>
+      </div>
+      <p class="story">我本來只是想學個 AI 工具，<br>結果上完課我整個人都不一樣了。<br><br>不是工具厲害，<br><strong>是看自己工作的眼光不一樣了</strong>。<br><br>以前覺得「我就是個秘書」。<br>現在覺得「<strong>我是這間公司沒人取代得了的那個位置</strong>」。<br><br>就這個差別，<br>值 500 塊。</p>
+      <p class="src">上完課第 4 週</p>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn outline" style="border-color:#8a6f2a; color:#8a6f2a;">我也想笑一整路 <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 11：未來場景
+     ============================================ -->
+<section class="future">
+  <div class="container">
+    <div class="eyebrow reveal">妳上完課隔週的某個下午</div>
+    <h2 class="section-h dark-bg reveal">那個下午<br>會<span class="gold">長這個樣子</span></h2>
+    <p class="section-lead dark-bg reveal">這不是想像，是過去 196 位學員裡，<strong>114 位</strong>真實發生過的下午。</p>
+
+    <figure class="scene-img wide reveal" data-img-id="IMG-14">
+      <img src="images/IMG-14｜屏 11 未來場景｜那個下午.png"
+           alt="週三下午秘書在桌前微笑握著手機"
+           loading="lazy"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-14 ｜ 那個下午</figcaption>
+    </figure>
+
+    <div class="stage reveal">
+      <p><strong>週三下午 3 點。</strong></p>
+      <p>老闆 LINE 過來：</p>
+      <p class="line-boss">「OO，我們有沒有認識做 AI 顧問的？<br>明天下午 5 點前要 3 個人選。」</p>
+    </div>
+
+    <div class="stage reveal">
+      <p>妳打開那個工具，<br>搜尋「AI 顧問」、「科技業」、「3 年以上」。</p>
+      <p><strong>12 秒後</strong>，<br>妳挑出 4 個人，<br>附上每個人最近一次<br>跟妳互動的紀錄。</p>
+    </div>
+
+    <div class="stage reveal">
+      <p>5 分鐘後，妳回老闆：</p>
+      <p class="line-you">「3 個人選 + 1 個備案。<br>都已經確認還在原職位。<br>要我幫你約嗎？」</p>
+      <p class="silence">那邊安靜 30 秒。</p>
+      <p class="line-boss">「......謝謝。<br>這比我預期的還要好。<br>妳是怎麼做到的？」</p>
+    </div>
+
+    <div class="future-aftermath reveal">
+      <p>妳沒回。</p>
+      <p class="gold-line">但妳知道，<br>從這一刻起，<br>妳的位置不一樣了。</p>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="cta-btn">我要那個下午 <span class="cta-arrow">→</span></a>
+      <p class="cta-sub" style="color: #a89b86;">5/31 上完課，<br>最快 6/8 那一週就會發生。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     屏 12：終局
+     ============================================ -->
+<section class="final-sec" id="final-cta">
+  <div class="container">
+    <figure class="scene-img wide reveal" data-img-id="IMG-15">
+      <img src="images/IMG-15｜屏 12 終局｜走出去那天.png"
+           alt="黃昏走出辦公大樓的秘書背影"
+           loading="lazy"
+           onerror="this.style.display='none'">
+      <figcaption>IMG-15 ｜ 走出去那天</figcaption>
+    </figure>
+
+    <div class="eyebrow reveal">2026 / 05 / 31 ｜ 週六下午</div>
+    <h2 class="reveal">妳替老闆記住的這些人，<br><span class="gold">總有一天會變成<br>妳自己的人。</span></h2>
+
+    <p class="final-poem reveal">但前提是：<br><strong>妳要先把它整理出來。</strong><br><br>那個「先」字，<br>不是明年，<br>不是下個月。<br><br><span class="gold">是 5 月 31 日，週六下午，1.5 小時。</span></p>
+
+    <div class="faq reveal">
+      <details>
+        <summary>我老闆的人脈，我可以這樣用嗎？這樣不會不道德？</summary>
+        <div class="ans">妳沒「拿」走任何東西。妳是把<strong>本來就經過妳手、妳記得、妳花心力維護的關係</strong>整理出來。<br><br>那些客戶、廠商、合作對象認得妳的聲音、收過妳的信、感謝過妳的協助，這份關係是妳花時間累積的，本來就是妳的。<br><br>道德的紅線是「<strong>盜用機密資料</strong>」，不是「整理妳本來就在管理的人」。這堂課會明確區分兩者。</div>
+      </details>
+
+      <details>
+        <summary>我已經有掃名片 App 了，跟這個差在哪？</summary>
+        <div class="ans">掃名片 App 解決「<strong>輸入快</strong>」。這堂課解決「<strong>輸入完之後，怎麼讓它真的有用</strong>」。<br><br>輸入快但用不出來，等於更快地堆廢紙。妳手機裡那個掃名片 App，妳上次打開是什麼時候？</div>
+      </details>
+
+      <details>
+        <summary>會不會被老闆覺得我「太精明」？</summary>
+        <div class="ans">如果妳老闆問「上次那個誰電話」，妳秒答出來，他會覺得妳精明嗎？<br><br>不會。他會覺得<strong>「找對人了」</strong>。<br><br>秘書最大的競爭力不是聽話，是「<strong>讓老闆覺得有妳在他比較放心</strong>」。這堂課教的就是這件事。</div>
+      </details>
+
+      <details>
+        <summary>我都 42 歲了還來得及嗎？</summary>
+        <div class="ans">這堂課<strong>最有效的學員，反而是年資 10 年以上的資深秘書</strong>。<br><br>年輕妹妹要從 0 累積這些人脈，妳已經有幾百個了，<strong>妳只需要把它整理出來</strong>。<br><br>說真的，這堂課是為妳開的，不是為剛畢業的人。</div>
+      </details>
+
+      <details>
+        <summary>我老公會問「500 塊上 1.5 小時值得嗎」</summary>
+        <div class="ans">跟他說：「<strong>這 500 塊買的不是技能。是我哪天離職時，能不能帶走幾百個聯絡人</strong>。」<br><br>他如果還是不懂，跟他說：「你下次找工作，沒人會問你會 Excel。會問你認識誰。我這 1.5 小時學的，就是這件事。」</div>
+      </details>
+
+      <details>
+        <summary>公司資料能拿出去學嗎？</summary>
+        <div class="ans">上課用講師準備的<strong>虛構名片資料</strong>。回家用時可以匿名化處理、或用公司核可的工具。<br><br>NotebookLM 不會把資料拿去訓練模型（這是 Google 官方政策，可查證），講師會在課堂上完整說明做法。</div>
+      </details>
+
+      <details>
+        <summary>萬一那天我臨時有事去不了？</summary>
+        <div class="ans">提前 <strong>5 個工作天</strong>通知可全額退費，或<strong>免費改報下一場</strong>。<br><br>下一場：2026/06/28（六）下午，目前已有 <strong>8 位候補</strong>。<br><br>本講座只辦實體現場，沒有線上直播也沒有錄影回看，<strong>只能親自到場才能拿走那 5 件交付物</strong>。建議盡早決定，免得想參加時已經滿了。</div>
+      </details>
+
+      <details>
+        <summary>我手很笨，會不會跟不上？</summary>
+        <div class="ans">講師教過 196 位行政秘書，<strong>從來沒人在 1.5 小時內做不出來</strong>。<br><br>會打字、會點滑鼠、會用 LINE 就夠了。卡關時助教會 1 對 1 幫忙，現場保證每個人下班前都能把工具帶回家。</div>
+      </details>
+    </div>
+
+    <div class="scarcity reveal">
+      <span class="pulse-dot"></span>
+      本場剩餘 <span class="scarcity-num">11</span> / 30 名 ｜ 額滿即截止
+    </div>
+
+    <a href="#" class="cta-btn red reveal">好，我要報名 <span class="cta-arrow">→</span></a>
+
+    <div class="guarantee reveal">
+      <strong>無風險保證</strong> ｜ 報名後 7 天內可全額退費<br>
+      無法到場可改下一場或退款<br><br>
+      <strong>學完不滿意保證</strong> ｜ 課程結束當下如妳覺得沒達到預期，<br>當場跟講師說「我覺得不值」，現場退款 NT$500
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">秘書 AI 自救班</div>
+        <p>別在離職那天，<br>才發現妳什麼都沒帶走。</p>
+        <p style="margin-top:14px; color: #6c5d4a;">Vol.1 名片 ｜ 2026 春季</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>講座資訊</h4>
+        <ul>
+          <li>2026/05/31（六）15:00</li>
+          <li>台北場 ｜ 實體限定</li>
+          <li>每場限 30 人</li>
+          <li>NT$500 含教材包</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>系列課程</h4>
+        <ul>
+          <li>Vol.1 名片自救（本場）</li>
+          <li>Vol.2 會議救星 ｜ 6/28</li>
+          <li>Vol.3 報帳整理 ｜ 7/26</li>
+          <li>Vol.4 跨國溝通 ｜ 8/23</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>聯絡</h4>
+        <ul>
+          <li><a href="mailto:hello@holoteam.studio">hello@holoteam.studio</a></li>
+          <li><a href="#">LINE 客服</a></li>
+          <li><a href="#">常見問題</a></li>
+          <li><a href="#">隱私權聲明</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 肆方創育 ｜ Holo Team Studio</span>
+      <span><a href="#top">回到頂端 ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     MOBILE FLOATING CTA BAR
+     ============================================ -->
+<div class="mobile-cta-bar" id="mobileCta">
+  <div class="mobile-cta-info">
+    <div class="price-mini">
+      NT$500
+      <span class="price-mini-old">原 1,300</span>
+    </div>
+    <div class="seats"><span class="pulse-dot"></span> 剩 11 / 30 名 ｜ 5/31 開課</div>
+  </div>
+  <a href="https://404table.com/?utm_source=lp&utm_medium=landing&utm_campaign=v6-full#signup" class="mobile-cta-btn">我要報名 →</a>
+</div>
+
+<!-- ============================================
+     互動腳本
+     ============================================ -->
+<script>
+(function () {
+  'use strict';
+
+  // 1. Scroll progress bar
+  const progressBar = document.getElementById('progressBar');
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop || document.body.scrollTop);
+    const total = h.scrollHeight - h.clientHeight;
+    const pct = total > 0 ? (scrolled / total) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  };
+
+  // 2. Mobile floating CTA bar (show after scrolling past hero)
+  const mobileCta = document.getElementById('mobileCta');
+  const heroEl = document.querySelector('.hero');
+  const finalCtaEl = document.getElementById('final-cta');
+  const updateMobileCta = () => {
+    if (window.innerWidth >= 720) return;
+    const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+    const finalTop = finalCtaEl.offsetTop;
+    const scrolled = window.scrollY + window.innerHeight;
+    const inFinalSection = scrolled > finalTop + 200;
+    const pastHero = window.scrollY > heroBottom - 200;
+    if (pastHero && !inFinalSection) {
+      mobileCta.classList.add('show');
+      document.body.classList.add('has-mobile-cta');
+    } else {
+      mobileCta.classList.remove('show');
+      if (!pastHero) document.body.classList.remove('has-mobile-cta');
+    }
+  };
+
+  let rafId = null;
+  const onScroll = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      updateProgress();
+      updateMobileCta();
+      rafId = null;
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateProgress();
+  updateMobileCta();
+
+  // 3. IntersectionObserver fade-up
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px'
+    });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  // 4. Image error fallback: keep placeholder styling visible
+  document.querySelectorAll('.scene-img img, .teacher-portrait img, .voice-avatar img, .teacher-avatar-mini img')
+    .forEach(img => {
+      img.addEventListener('error', () => {
+        img.style.opacity = '0';
+      });
+    });
+})();
+</script>
+
+</body>
+</html>

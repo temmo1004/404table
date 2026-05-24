@@ -350,6 +350,21 @@
       margin: 0;
     }
     .inline-cta-wrap .inline-note b { color: #D96B4C; font-weight: 700; }
+    .tool-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin: 10px 0 4px;
+      min-height: 32px;
+    }
+    .tool-logos img,
+    .tool-logos svg {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+    }
     .microcopy {
       margin: 0;
       color: var(--muted);
@@ -1500,26 +1515,45 @@
         <div class="tool-grid">
           <article class="card tool-card">
             <span class="tool-tag">表格</span>
+            <div class="tool-logos" aria-hidden="true">
+              <img src="images/logos/googlesheets.svg" alt="Google Sheets" loading="lazy">
+              <img src="images/logos/microsoftexcel.svg" alt="Microsoft Excel" loading="lazy">
+            </div>
             <h3>Google Sheet / Excel</h3>
             <p>人脈表、主管偏好庫、工作紀錄表，先用最熟的表格建立欄位。</p>
           </article>
           <article class="card tool-card">
             <span class="tool-tag">文件</span>
+            <div class="tool-logos" aria-hidden="true">
+              <img src="images/logos/notion.svg" alt="Notion" loading="lazy">
+              <img src="images/logos/googledocs.svg" alt="Google Docs" loading="lazy">
+            </div>
             <h3>Notion / Google 文件</h3>
             <p>履歷素材庫、交接筆記、案例紀錄，用文件整理脈絡。</p>
           </article>
           <article class="card tool-card">
             <span class="tool-tag">AI</span>
+            <div class="tool-logos" aria-hidden="true">
+              <img src="images/logos/openai.svg" alt="ChatGPT" loading="lazy">
+              <img src="images/logos/claude.svg" alt="Claude" loading="lazy">
+              <img src="images/logos/googlegemini.svg" alt="Google Gemini" loading="lazy">
+            </div>
             <h3>ChatGPT / Claude / Gemini</h3>
             <p>協助轉譯工作價值、整理句子、把瑣碎任務改寫成成果。</p>
           </article>
           <article class="card tool-card">
             <span class="tool-tag">資料整理</span>
+            <div class="tool-logos" aria-hidden="true">
+              <img src="images/logos/google.svg" alt="Google NotebookLM" loading="lazy">
+            </div>
             <h3>NotebookLM</h3>
             <p>把交接資料、會議紀錄、履歷素材丟進去，整理重點、問答和摘要。</p>
           </article>
           <article class="card tool-card">
             <span class="tool-tag">手機</span>
+            <div class="tool-logos" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#1F3A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            </div>
             <h3>備忘錄也可以</h3>
             <p>課前先收集素材，不需要先把工具準備得很完美。</p>
           </article>

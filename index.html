@@ -1177,7 +1177,7 @@
         <a href="#flow">90 分鐘流程</a>
         <a href="#instructor">講師</a>
         <a href="#faq">FAQ</a>
-        <a class="cta" href="https://buy.recur.tw/Wsx3XesSMyzhXPA8" target="_blank" rel="noopener" data-cta="nav">預留補助名額</a>
+        <a class="cta" href="https://buy.recur.tw/Wsx3XesSMyzhXPA8" target="_blank" rel="noopener" data-cta="nav">預留 NT$500 補助名額</a>
       </nav>
     </div>
   </header>
@@ -1674,7 +1674,7 @@
             <div class="final-actions">
               <a class="cta final" href="https://buy.recur.tw/Wsx3XesSMyzhXPA8" target="_blank" rel="noopener" data-cta="final">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                我要預留 NT$500 補助名額
+                預留 NT$500 補助名額
               </a>
               <p class="microcopy" style="color:rgba(255,255,255,.78)">報名前只需要先準備一個真實工作情境，公司名稱或客戶姓名可以先改掉。</p>
             </div>
@@ -1738,5 +1738,40 @@
   <div class="mobile-cta" aria-label="手機固定報名按鈕">
     <a class="cta" href="https://buy.recur.tw/Wsx3XesSMyzhXPA8" target="_blank" rel="noopener" data-cta="mobile-fixed">預留 NT$500 補助名額</a>
   </div>
+
+  <script>
+    (function(){
+      document.addEventListener('click', function(e){
+        var el = e.target.closest('[data-cta]');
+        if (!el) return;
+        var pos = el.getAttribute('data-cta');
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', 'begin_checkout', {
+              event_category: 'cta',
+              event_label: pos,
+              cta_position: pos,
+              value: 500,
+              currency: 'TWD',
+              items: [{ item_id: 'admin-ai-workshop-0531', item_name: '高價值行政 AI 實戰工作坊 5/31', price: 500, quantity: 1 }]
+            });
+          }
+        } catch(_) {}
+        try {
+          if (typeof fbq === 'function') {
+            fbq('track', 'InitiateCheckout', {
+              content_ids: ['admin-ai-workshop-0531'],
+              content_name: '高價值行政 AI 實戰工作坊 5/31',
+              content_type: 'product',
+              value: 500,
+              currency: 'TWD',
+              num_items: 1
+            });
+            fbq('trackCustom', 'CTAClick', { cta_position: pos });
+          }
+        } catch(_) {}
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>

@@ -34,6 +34,61 @@
     });
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1501976728044362&ev=PageView&noscript=1"/></noscript>
+  <!-- Engagement tracking (scroll depth, time on page, CTA visibility/clicks) -->
+  <script>
+  (function(){
+    var V = 'b';
+    var fired = {};
+    function fire(name, params){
+      if (fired[name]) return; fired[name] = true;
+      try { if (typeof gtag === 'function') gtag('event', name, Object.assign({lp_variant: V}, params || {})); } catch(_){}
+      try { if (typeof fbq === 'function') fbq('trackCustom', name, params || {}); } catch(_){}
+    }
+    var pcts = [25,50,75,90,100];
+    function checkScroll(){
+      var doc = document.documentElement, body = document.body;
+      var scrolled = (doc.scrollTop || body.scrollTop) + window.innerHeight;
+      var height = Math.max(doc.scrollHeight, body.scrollHeight);
+      var pct = Math.round(scrolled / height * 100);
+      pcts.forEach(function(t){ if (pct >= t) fire('scroll_'+t, {pct:t}); });
+    }
+    window.addEventListener('scroll', checkScroll, {passive:true});
+    window.addEventListener('load', checkScroll);
+    [30,60,120,300].forEach(function(s){
+      setTimeout(function(){ fire('time_'+s+'s', {seconds:s}); }, s*1000);
+    });
+    function onReady(fn){ document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn); }
+    onReady(function(){
+      var ctas = document.querySelectorAll('a[href*="pay"], a[href*="signup"], a[href*="checkout"], [data-cta], button[type="submit"]');
+      if ('IntersectionObserver' in window && ctas.length){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (!e.isIntersecting) return;
+            var id = (e.target.dataset.cta || e.target.textContent || '').trim().slice(0,30).replace(/\s+/g,'_') || 'cta';
+            fire('cta_visible_'+id, {cta:id});
+          });
+        }, {threshold: 0.5});
+        ctas.forEach(function(c){ io.observe(c); });
+      }
+      document.addEventListener('click', function(e){
+        var t = e.target.closest('a[href*="pay"], a[href*="signup"], a[href*="checkout"], [data-cta], button[type="submit"]');
+        if (!t) return;
+        var id = (t.dataset.cta || t.textContent || '').trim().slice(0,30) || 'cta';
+        if (typeof gtag === 'function') gtag('event', 'cta_click', {cta:id, lp_variant:V});
+        if (typeof fbq === 'function') try { fbq('trackCustom', 'CTAClick', {cta:id, lp_variant:V}); } catch(_){}
+      }, true);
+    });
+  })();
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wy48emhf5j");
+  </script>
+
   <meta name="description" content="5/31 15:00-16:30，高價值行政 AI 實戰工作坊。實體小班限額 20 名，90 分鐘做出 5 份主管看得懂、履歷寫得出、交接用得上的工作模板。原價 1500，404TABLE 首梯補助價 500。">
   <link rel="canonical" href="https://404table.com/b/">
   <meta property="og:locale" content="zh_TW">

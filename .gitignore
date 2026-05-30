@@ -1,0 +1,17 @@
+# 機密 / 私密文件 — 絕對禁止 commit
+公司章程*.md
+股東協議*.md
+_archive_legal_versions/
+contracts/
+seal*.png
+seal*.svg
+generate_seal_image.py
+
+# Claude Code 工作區
+.claude/
+
+# 系統雜物
+.DS_Store
+*.log
+node_modules/
+.wrangler/

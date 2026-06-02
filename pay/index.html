@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>正在前往安全結帳頁…｜404 TABLE</title>
-<meta http-equiv="refresh" content="0;url=https://buy.recur.tw/Wsx3XesSMyzhXPA8">
 <link rel="canonical" href="https://buy.recur.tw/Wsx3XesSMyzhXPA8">
 <style>
   html,body { margin:0; padding:0; background:#F7F1E7; color:#1F3A36; font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif; }
@@ -24,12 +23,11 @@
   gtag('js', new Date());
   gtag('config', 'G-6P4C0V0QH0');
 </script>
-<!-- Meta Pixel -->
+<!-- Meta Pixel — 只送 PageView，InitiateCheckout 已在 LP click 時送出，避免重複計數 -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1501976728044362');
 fbq('track','PageView');
-fbq('track','InitiateCheckout',{content_ids:['admin-ai-workshop-0531'],content_name:'高價值行政 AI 實戰工作坊 6/14',content_type:'product',value:500,currency:'TWD',num_items:1,lp_variant:'a'});
 </script>
 </head>
 <body>
@@ -39,12 +37,8 @@ fbq('track','InitiateCheckout',{content_ids:['admin-ai-workshop-0531'],content_n
   <p>如未自動跳轉，請點 <a href="https://buy.recur.tw/Wsx3XesSMyzhXPA8">這裡</a></p>
 </div>
 <script>
-  try {
-    if (typeof gtag === 'function') {
-      gtag('event','begin_checkout',{event_category:'cta',event_label:'a_pay-redirect',cta_position:'pay-page',lp_variant:'a',value:500,currency:'TWD',items:[{item_id:'admin-ai-workshop-0531',item_name:'高價值行政 AI 實戰工作坊 6/14',price:500,quantity:1,item_variant:'a'}]});
-    }
-  } catch(_) {}
-  setTimeout(function(){ location.replace('https://buy.recur.tw/Wsx3XesSMyzhXPA8'); }, 80);
+  // 等 1500ms 讓 PageView beacon 確實發出後再跳轉
+  setTimeout(function(){ location.replace('https://buy.recur.tw/Wsx3XesSMyzhXPA8'); }, 1500);
 </script>
 </body>
 </html>

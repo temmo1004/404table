@@ -1898,6 +1898,7 @@
       var $h = document.getElementById('cd-h');
       var $m = document.getElementById('cd-m');
       var $s = document.getElementById('cd-s');
+      var timer = null;
       function pad(n){ return n < 10 ? '0' + n : '' + n; }
       function tick(){
         var diff = target - Date.now();
@@ -1905,7 +1906,7 @@
           cd.classList.add('expired');
           cd.querySelector('.cd-label').textContent = '本梯次報名已截止';
           cd.querySelector('.cd-units').style.display = 'none';
-          clearInterval(timer);
+          if (timer) { clearInterval(timer); timer = null; }
           return;
         }
         var d = Math.floor(diff / 86400000);
@@ -1918,7 +1919,7 @@
         $s.textContent = pad(s);
       }
       tick();
-      var timer = setInterval(tick, 1000);
+      if (target - Date.now() > 0) timer = setInterval(tick, 1000);
     })();
   </script>
 

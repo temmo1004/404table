@@ -901,9 +901,8 @@
 
     .take-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+      grid-template-columns: 1fr;
       gap: 24px;
-      align-items: stretch;
     }
     .take-grid {
       display: grid;
@@ -972,23 +971,15 @@
 
     .flow-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, .72fr);
+      grid-template-columns: 1fr;
       gap: 34px;
       align-items: start;
     }
     .timeline {
       position: relative;
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 33px;
-      top: 30px;
-      bottom: 30px;
-      width: 2px;
-      background: linear-gradient(var(--gold), rgba(31,58,54,.18));
     }
     .step {
       position: relative;
@@ -1348,8 +1339,8 @@
       .audience-section { padding: 54px 0 62px; }
       .audience-tags { justify-content: flex-start; }
       .take-grid { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; }
       .conclusion-strip, .step, .trust-card { grid-template-columns: 1fr; }
-      .timeline::before { display: none; }
       .apply-panel { padding: 24px; }
       .info-row { display: grid; gap: 4px; }
       .info-row strong { text-align: left; }

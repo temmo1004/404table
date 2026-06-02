@@ -838,6 +838,75 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
+    .faq-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .faq-item[open] {
+      border-color: rgba(31,58,54,.32);
+      box-shadow: var(--card-shadow);
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--primary);
+      user-select: none;
+      line-height: 1.5;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before {
+      content: "Q";
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-item summary::after {
+      content: "+";
+      margin-left: auto;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: transform .2s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      padding: 0 22px 20px 64px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .faq-answer::before {
+      content: "A ";
+      color: var(--coral);
+      font-weight: 900;
+      margin-right: 4px;
+    }
     .pain-card, .take-card, .faq-card, .trust-card { padding: 24px; }
     .pain-card p, .take-card p, .faq-card p, .trust-card p {
       margin-bottom: 0;
@@ -1689,35 +1758,35 @@
           <span class="badge">報名前最常問的問題</span>
           <h2 id="faq-title">你不需要先很懂 AI，重點是帶一個真實工作情境來練。</h2>
         </div>
-        <div class="faq-grid">
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>行政、秘書、總務、行銷行政、轉職中都適合嗎？</h3>
-            <p><span class="a-label">A</span>都適合。只要工作包含跨部門支援、資料整理、主管或同事交辦，課程會協助把這些經驗轉成可用模板與履歷素材。</p>
-          </article>
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>完全不會 AI、沒用過 ChatGPT 可以嗎？</h3>
-            <p><span class="a-label">A</span>可以。課堂不從技術名詞開始，而是從你的真實工作情境出發，現場帶你操作 AI 工具整理與改寫。</p>
-          </article>
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>會帶走什麼？需要先準備什麼？</h3>
-            <p><span class="a-label">A</span>會帶走 4 份可複製的欄位架構與 AI 提問句模板。報名後只要準備一個最近最卡住的工作情境，建議帶筆電（只有手機也能參與）。</p>
-          </article>
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>公司資料不能外流怎麼辦？</h3>
-            <p><span class="a-label">A</span>公司名稱、客戶姓名、主管名字都可以改掉，上課不需要公開公司機密。</p>
-          </article>
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>可以退費嗎？</h3>
-            <p><span class="a-label">A</span>開課前 7 天（含）以前可全額退款；前 3 至 6 天退 70%；前 48 小時內因席次已備料不予退款，但可改候補下一梯或轉讓席次給朋友。</p>
-          </article>
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>報名後怎麼通知？滿 20 人怎麼辦？</h3>
-            <p><span class="a-label">A</span>付款完成後 1 個工作日內以 Email 寄出報名確認信（含地點、時間、需帶物品），開課前 24 小時再提醒一次。額滿會開放候補名單，依順序通知，整梯爆滿者以同價加入下一梯。</p>
-          </article>
-          <article class="card faq-card">
-            <h3><span class="q-label">Q</span>當天不能到場怎麼辦？</h3>
-            <p><span class="a-label">A</span>若確認無法出席，請最晚於開課前 48 小時聯繫我們改候補下一梯；48 小時內僅可轉讓席次給朋友（提供姓名 + Email 替換），恕不退費。</p>
-          </article>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>行政、秘書、總務、行銷行政、轉職中都適合嗎？</summary>
+            <p class="faq-answer">都適合。只要工作包含跨部門支援、資料整理、主管或同事交辦，課程會協助把這些經驗轉成可用模板與履歷素材。</p>
+          </details>
+          <details class="faq-item">
+            <summary>完全不會 AI、沒用過 ChatGPT 可以嗎？</summary>
+            <p class="faq-answer">可以。課堂不從技術名詞開始，而是從你的真實工作情境出發，現場帶你操作 AI 工具整理與改寫。</p>
+          </details>
+          <details class="faq-item">
+            <summary>會帶走什麼？需要先準備什麼？</summary>
+            <p class="faq-answer">會帶走 4 份可複製的欄位架構與 AI 提問句模板。報名後只要準備一個最近最卡住的工作情境，建議帶筆電（只有手機也能參與）。</p>
+          </details>
+          <details class="faq-item">
+            <summary>公司資料不能外流怎麼辦？</summary>
+            <p class="faq-answer">公司名稱、客戶姓名、主管名字都可以改掉，上課不需要公開公司機密。</p>
+          </details>
+          <details class="faq-item">
+            <summary>可以退費嗎？</summary>
+            <p class="faq-answer">開課前 7 天（含）以前可全額退款；前 3 至 6 天退 70%；前 48 小時內因席次已備料不予退款，但可改候補下一梯或轉讓席次給朋友。</p>
+          </details>
+          <details class="faq-item">
+            <summary>報名後怎麼通知？滿 20 人怎麼辦？</summary>
+            <p class="faq-answer">付款完成後 1 個工作日內以 Email 寄出報名確認信（含地點、時間、需帶物品），開課前 24 小時再提醒一次。額滿會開放候補名單，依順序通知，整梯爆滿者以同價加入下一梯。</p>
+          </details>
+          <details class="faq-item">
+            <summary>當天不能到場怎麼辦？</summary>
+            <p class="faq-answer">若確認無法出席，請最晚於開課前 48 小時聯繫我們改候補下一梯；48 小時內僅可轉讓席次給朋友（提供姓名 + Email 替換），恕不退費。</p>
+          </details>
         </div>
         <div class="inline-cta-wrap">
           <a class="cta" href="/b/pay/" target="_blank" rel="noopener" data-cta="inline-faq">

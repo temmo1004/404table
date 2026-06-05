@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>免費領｜行政成果履歷產生器：把雜事變成可以談加薪的成果清單</title>
+  <meta name="description" content="不用會 AI，照著填就好。把你做過的行政雜事，翻譯成一頁可以寫進履歷、拿去談加薪/轉職的成果句。工作坊〈履歷成果產生器〉精簡版。">
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6P4C0V0QH0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6P4C0V0QH0');
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1501976728044362');
+    fbq('track','PageView');
+  </script>
+  <style>
+    :root{
+      --bg:#F7F1E7; --bg-soft:#EFE4D2; --primary:#1F3A36; --primary-dark:#102522;
+      --gold:#B8893B; --line:rgba(16,37,34,.14); --muted:#5b5246;
+    }
+    *{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0; font-family:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+      color:var(--primary-dark); line-height:1.75;
+      background:linear-gradient(180deg,var(--bg) 0%,#FBF7EF 42%,var(--bg) 100%); -webkit-font-smoothing:antialiased;}
+    .wrap{max-width:680px; margin:0 auto; padding:0 20px;}
+    header.hero{padding:40px 0 14px;}
+    .eyebrow{display:inline-block; font-size:13px; letter-spacing:.04em; color:var(--gold);
+      font-weight:700; border:1px solid var(--gold); border-radius:999px; padding:4px 12px; margin-bottom:16px;}
+    h1{font-size:clamp(25px,6vw,36px); line-height:1.28; margin:0 0 12px; letter-spacing:-.01em;}
+    h1 .hl{color:var(--primary);}
+    .lede{font-size:17px; color:var(--muted); margin:0 0 8px;}
+    .card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px 18px; margin:16px 0; box-shadow:0 1px 0 rgba(16,37,34,.04);}
+    .card h2{font-size:19px; margin:0 0 8px;}
+    .pain{color:var(--muted); font-size:15.5px; margin:0;}
+    .ba{display:grid; gap:10px; margin:12px 0 2px;}
+    .ba .row{border-radius:10px; padding:11px 13px; font-size:14.5px;}
+    .ba .before{background:#f4ecec; border-left:3px solid #b65b53;}
+    .ba .after{background:var(--bg-soft); border-left:3px solid var(--primary);}
+    .ba .tag{display:block; font-size:11.5px; font-weight:800; letter-spacing:.04em; margin-bottom:3px;}
+    .ba .before .tag{color:#b65b53;} .ba .after .tag{color:var(--primary);}
+    .formula{background:var(--primary); color:#fff; border-radius:12px; padding:14px 16px; font-weight:700; font-size:15.5px; text-align:center; margin:10px 0;}
+    .formula b{color:#ffd98a;}
+    /* gate */
+    .gate{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%); color:#fff; border-radius:18px; padding:24px 20px; margin:22px 0;}
+    .gate h3{margin:0 0 6px; font-size:20px;}
+    .gate ul{margin:6px 0 14px; padding-left:18px; color:#e7e0d2; font-size:14.5px;}
+    .gate li{margin:3px 0;}
+    .gate form{display:flex; flex-direction:column; gap:10px;}
+    .gate input{padding:14px; border-radius:11px; border:0; font-size:16px; width:100%;}
+    .gate button{padding:14px 16px; border-radius:11px; border:0; background:#fff; color:var(--primary); font-size:16px; font-weight:800; cursor:pointer;}
+    .gate small{display:block; margin-top:10px; color:#cfc8ba; font-size:12px;}
+    #locked{filter:blur(6px); pointer-events:none; user-select:none; opacity:.55;}
+    .unlocked #locked{filter:none; pointer-events:auto; user-select:auto; opacity:1;}
+    .unlocked #gate{display:none;}
+    .ok-msg{display:none; background:#e9f3ec; border:1px solid #bcd9c5; color:#1f5132; border-radius:12px; padding:14px; margin:16px 0; font-size:15px;}
+    .unlocked .ok-msg{display:block;}
+    /* template table */
+    .tmpl{width:100%; border-collapse:collapse; font-size:13px; margin:8px 0;}
+    .tmpl th,.tmpl td{border:1px solid var(--line); padding:8px 9px; text-align:left; vertical-align:top;}
+    .tmpl th{background:var(--bg-soft); color:var(--primary); font-size:12.5px;}
+    .tmpl td.ex{color:var(--muted);}
+    .tblwrap{overflow-x:auto;}
+    .btn{display:inline-block; font-size:13.5px; border:1px solid var(--primary); background:#fff; color:var(--primary); border-radius:9px; padding:9px 14px; cursor:pointer; font-weight:700; margin:6px 6px 0 0;}
+    .btn:active{transform:scale(.97);}
+    .prompt{background:var(--bg-soft); border-left:3px solid var(--primary); border-radius:8px; padding:12px 14px; font-size:14px; white-space:pre-wrap; position:relative; margin:10px 0;}
+    .prompt .lbl{display:block; font-size:12px; color:var(--primary); font-weight:700; margin-bottom:6px;}
+    .copy{position:absolute; top:10px; right:10px; font-size:12px; border:1px solid var(--primary); background:#fff; color:var(--primary); border-radius:7px; padding:4px 9px; cursor:pointer;}
+    /* bridge */
+    .bridge{background:#fff; border:2px solid var(--primary); border-radius:18px; padding:26px 20px; margin:30px 0 10px; text-align:center;}
+    .bridge h2{font-size:22px; margin:0 0 10px;}
+    .bridge p{color:var(--muted); font-size:15px; margin:0 0 8px;}
+    .bridge .price b{font-size:30px; color:var(--primary);}
+    .bridge .price del{color:#a99; margin-right:8px; font-size:16px;}
+    .cta{display:inline-flex; gap:8px; align-items:center; justify-content:center; margin-top:14px; background:var(--primary); color:#fff; text-decoration:none; font-weight:800; font-size:17px; padding:15px 26px; border-radius:13px; box-shadow:0 6px 18px rgba(16,37,34,.22);}
+    .guarantee{font-size:13.5px; color:var(--primary); font-weight:700; margin-top:12px;}
+    footer{padding:24px 0 48px; color:var(--muted); font-size:13px; text-align:center;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="eyebrow">404TABLE 免費模板</span>
+      <h1>把你做過的雜事，<span class="hl">變成一頁可以談加薪的成果清單</span></h1>
+      <p class="lede">不用會 AI，照著填就好。這是工作坊〈履歷成果產生器〉的精簡版——行政、助理、總務都適用。</p>
+    </header>
+
+    <!-- 痛點 -->
+    <div class="card">
+      <h2>為什麼你寫不出自己的成果？</h2>
+      <p class="pain">不是你做得不夠，是你一直用「流水帳」記事情，沒把它<strong>翻譯成成果</strong>。年度考核、談加薪、投履歷時，只擠得出「協助處理日常行政」——主管當然看不到你的價值。</p>
+    </div>
+
+    <!-- 免費全開：公式 + 一個 before/after -->
+    <div class="card">
+      <h2>核心：一條「成果句公式」</h2>
+      <div class="formula">成果句 ＝ <b>動詞</b> ＋ <b>規模/數字</b> ＋ <b>做法/工具</b> ＋ <b>結果</b></div>
+      <div class="ba">
+        <div class="row before"><span class="tag">你現在會寫的（流水帳）</span>幫忙處理員工報帳</div>
+        <div class="row after"><span class="tag">用公式翻譯後（履歷可用）</span>每月審核 <b>200+ 筆</b>員工報帳，導入 Excel 自動對帳表，將結算時間<b>從 5 天縮短到 2 天、錯誤率歸零</b></div>
+      </div>
+      <p class="pain" style="margin-top:10px;">看到差別了嗎？同一件事，左邊是雜事、右邊是成果。下面整份模板把這件事變成你「照填就會」的流程。</p>
+    </div>
+
+    <!-- Gate -->
+    <div class="gate" id="gate">
+      <h3>解鎖完整〈成果履歷產生器〉</h3>
+      <ul>
+        <li>✓ 可直接複製到 Google 試算表的<strong>空白模板</strong></li>
+        <li>✓ 3 種職能<strong>填寫範例</strong>（報帳財務／會議行程／檔案資料）</li>
+        <li>✓ 一鍵<strong>AI 生成指令</strong>：貼流水帳，自動產成果句</li>
+      </ul>
+      <form id="leadForm">
+        <input type="email" id="email" name="email" placeholder="你的 email" required autocomplete="email" inputmode="email">
+        <button type="submit">解鎖完整模板 →</button>
+      </form>
+      <small>只用來寄這份模板與課程通知，不轉發、可隨時退訂。</small>
+    </div>
+
+    <div class="ok-msg">✅ 已解鎖！下面是完整模板＋範例＋AI 指令，點「複製空白模板」直接貼進你的試算表開始填。</div>
+
+    <div id="locked">
+      <!-- 空白模板 -->
+      <div class="card">
+        <h2>① 空白模板（複製貼進 Google 試算表）</h2>
+        <div class="tblwrap">
+          <table class="tmpl">
+            <tr><th>我做的事（流水帳）</th><th>規模/頻率（數字）</th><th>做法/工具</th><th>改善/結果</th><th>→ 成果句</th></tr>
+            <tr><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+            <tr><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+            <tr><td>　</td><td>　</td><td>　</td><td>　</td><td>　</td></tr>
+          </table>
+        </div>
+        <button class="btn" id="copyTmpl">📋 複製空白模板（含表頭）</button>
+        <p class="pain" style="font-size:13px;margin-top:8px;">貼進 Google 試算表或 Excel 後，每格自動分欄。前 4 欄你填，最後一欄用下面的 AI 指令自動產生。</p>
+      </div>
+
+      <!-- 3 範例 -->
+      <div class="card">
+        <h2>② 3 種職能・填寫範例</h2>
+        <div class="ba">
+          <div class="row before"><span class="tag">報帳/財務行政</span>流水帳：核銷發票<br>→ 成果句：每月處理 <b>300+ 張</b>發票核銷，建立分類對照表，將月結時間<b>縮短 40%</b></div>
+          <div class="row after"><span class="tag">會議/行程</span>流水帳：安排會議、訂會議室<br>→ 成果句：統籌跨 <b>4 部門</b>週會排程，導入共用行事曆與會前自動提醒，<b>會議遲到率降為近零</b></div>
+          <div class="row before"><span class="tag">檔案/資料管理</span>流水帳：整理文件<br>→ 成果句：重建 <b>2,000+ 份</b>合約檔案命名與索引，讓全組找檔時間<b>從平均 10 分鐘降到 1 分鐘內</b></div>
+        </div>
+      </div>
+
+      <!-- AI 指令 -->
+      <div class="card">
+        <h2>③ AI 一鍵生成指令（貼進 ChatGPT 或 Claude）</h2>
+        <div class="prompt"><span class="lbl">複製，把你的流水帳貼在後面：</span><button class="copy" data-c="以下是我的工作流水帳，請幫我每一條改寫成「履歷可用的成果句」。公式＝動詞＋規模/數字＋做法/工具＋結果。沒有數字的地方，請反問我需要補哪些數字。請用繁體中文，每條成果句一行。流水帳：">複製</button>以下是我的工作流水帳，請幫我每一條改寫成「履歷可用的成果句」。公式＝動詞＋規模/數字＋做法/工具＋結果。沒有數字的地方，請反問我需要補哪些數字。請用繁體中文，每條成果句一行。流水帳：……</div>
+      </div>
+    </div>
+
+    <!-- 互惠 → 付費橋接 -->
+    <div class="bridge">
+      <h2>這只是 4 份模板裡的 1 份</h2>
+      <p>工作坊 90 分鐘，用<strong>你自己真實的工作情境</strong>，現場把這份做完，再加帶走另外 3 份：</p>
+      <p>你的工作第二大腦・工作紀錄表・履歷素材庫・AI 指令大全</p>
+      <p class="price"><del>原價 NT$1,500</del><b>NT$500</b>　（404TABLE 首梯補助・限 20 名）</p>
+      <a class="cta" href="/b/pay/" target="_blank" rel="noopener" data-cta="free-to-paid">預留我的名額 →</a>
+      <p class="guarantee">✓ 不滿意，當天課後無條件全額退費。</p>
+    </div>
+
+    <footer>© 404TABLE｜高價值行政 AI 實戰工作坊</footer>
+  </div>
+
+  <script>
+    var V = 'b';
+    var TMPL_TSV = [
+      ['我做的事（流水帳）','規模/頻率（數字）','做法/工具','改善/結果','成果句'].join('\t'),
+      ['範例：處理員工報帳','每月 200+ 筆','Excel 自動對帳表','結算 5 天→2 天、錯誤歸零','每月審核 200+ 筆員工報帳，導入 Excel 自動對帳表，將結算時間從 5 天縮短到 2 天、錯誤率歸零'].join('\t'),
+      ['','','','',''].join('\t'),
+      ['','','','',''].join('\t'),
+      ['','','','',''].join('\t')
+    ].join('\n');
+
+    function copyText(t, btn){
+      try { navigator.clipboard && navigator.clipboard.writeText(t); } catch(_){}
+      if (btn){ var o=btn.textContent; btn.textContent='✓ 已複製'; setTimeout(function(){btn.textContent=o;},1500); }
+    }
+    var ct = document.getElementById('copyTmpl');
+    if (ct) ct.addEventListener('click', function(){ copyText(TMPL_TSV, ct); try{gtag('event','copy_template',{lp_variant:V});}catch(_){}});
+    document.querySelectorAll('.copy').forEach(function(b){
+      b.addEventListener('click', function(){ copyText(b.getAttribute('data-c')||'', b); try{gtag('event','copy_prompt',{lp_variant:V});}catch(_){}});
+    });
+    // CTA 追蹤
+    document.querySelectorAll('[data-cta]').forEach(function(a){
+      a.addEventListener('click', function(){
+        var id=a.getAttribute('data-cta');
+        try{gtag('event','cta_click',{cta:id,lp_variant:V});}catch(_){}
+        try{fbq('trackCustom','CTAClick',{cta:id,lp_variant:V});}catch(_){}
+        if(id==='free-to-paid'){
+          try{gtag('event','begin_checkout',{value:500,currency:'TWD',lp_variant:V,items:[{item_id:'admin-ai-workshop-0531',item_name:'高價值行政 AI 實戰工作坊 6/14',price:500,quantity:1,item_variant:V}]});}catch(_){}
+          try{fbq('track','InitiateCheckout',{content_ids:['admin-ai-workshop-0531'],content_type:'product',value:500,currency:'TWD',num_items:1});}catch(_){}
+        }
+      });
+    });
+    // Email 解鎖
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var email=(document.getElementById('email').value||'').trim();
+      if(!email) return;
+      try{gtag('event','generate_lead',{lp_variant:V,value:0,currency:'TWD',method:'resume_generator'});}catch(_){}
+      try{fbq('track','Lead',{content_name:'resume_generator',lp_variant:V});}catch(_){}
+      try{
+        var ep = window.LEAD_ENDPOINT || 'https://srv-404table-webhook.zeabur.app/lead';
+        fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({email:email,source:'resume_generator',lp_variant:V,ts:new Date().toISOString()})}).catch(function(){});
+      }catch(_){}
+      try{localStorage.setItem('b2_lead_email',email);}catch(_){}
+      document.body.classList.add('unlocked');
+      var ok=document.querySelector('.ok-msg'); if(ok) ok.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    try{ if(localStorage.getItem('b2_lead_email')) document.body.classList.add('unlocked'); }catch(_){}
+  </script>
+</body>
+</html>

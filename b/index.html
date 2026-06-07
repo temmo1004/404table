@@ -52,14 +52,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       try { if (typeof fbq === 'function') fbq('trackCustom', name, params || {}); } catch(_){}
     }
     var pcts = [25,50,75,90,100];
-    function checkScroll(){
-      var doc = document.documentElement, body = document.body;
-      var scrolled = (doc.scrollTop || body.scrollTop) + window.innerHeight;
-      var height = Math.max(doc.scrollHeight, body.scrollHeight);
+    function checkScroll(e){
+      var el = (e && e.target && e.target.nodeType===1 && e.target!==document.documentElement && e.target!==document.body)
+                 ? e.target : (document.scrollingElement || document.documentElement);
+      var scrolled = (el.scrollTop||0) + (el.clientHeight||window.innerHeight);
+      var height = el.scrollHeight || 1;
       var pct = Math.round(scrolled / height * 100);
       pcts.forEach(function(t){ if (pct >= t) fire('scroll_'+t, {pct:t}); });
     }
     window.addEventListener('scroll', checkScroll, {passive:true});
+    document.addEventListener('scroll', checkScroll, {passive:true, capture:true});
     window.addEventListener('load', checkScroll);
     [30,60,120,300].forEach(function(s){
       setTimeout(function(){ fire('time_'+s+'s', {seconds:s}); }, s*1000);
